@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rapid Test Index – Abundant Science</title>
+
+    <!-- Link to your external stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Supabase Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.5/dist/umd/supabase.min.js"></script>
+</head>
+
+
+<!-- Navigation Bar -->
+<nav>
+    <div class="logo-container">
+        <a href="index.html"
+            style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: inherit;">
+            <img src="logo-nobackground.jpg" alt="Abundant Science logo">
+            <strong>Abundant Science</strong>
+        </a>
+    </div>
+    <div class="nav-links">
+        <a href="about.html">Our Mission</a>
+    </div>
+</nav>
+
+<!-- Hero / Form Section -->
+<div class="container">
+    <h1>
+        Rapid Test Index <br>
+        by Abundant Science
+    </h1>
+
+    <p style="max-width: 500px; margin: 0 auto;">
+        Provide your email to access the Rapid Test Index and explore available at-home testing options.
+    </p>
+
+    </p>
+    <!-- <p> Provide your email to explore which biomarkers and health indciators are available.</p> -->
+
+    <form id="access-form">
+        <input type="email" id="email" placeholder="Your email address" required />
+
+        <!-- Country selection -->
+        <select id="country" required>
+            <option value="" disabled selected>Select your country</option>
+            <option value="Canada">Canada</option>
+            <option value="United States">United States</option>
+        </select>
+
+        <button type="submit">Explore Rapid Tests</button>
+
+        <!-- New helpful message -->
+        <p style="max-width: 500px; color: grey; margin: 0 auto; font-size: 0.9rem;">
+            Select your country to see tests available in your region.
+            Sign up to get the latest updates from Abundant Science on new tests.
+        </p>
+    </form>
+
+    <br>
+    <br>
+    <H3>
+        The Rapid Test Index by Abundant Science is an educational resource designed to help individuals discover and
+        better understand at-home testing options.
+    </h3>
+
+    <div id="message"></div>
+
+    <script>
+        const client = window.supabase.createClient(
+            "https://jicytgdlbevccejowlnf.supabase.co",
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppY3l0Z2RsYmV2Y2Nlam93bG5mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUzNDQzNTYsImV4cCI6MjA2MDkyMDM1Nn0.DRfZefUPOLjhdxYudhvQKGePr6ex-Xf3JBkedbF7_OY"
+        );
+
+        document.getElementById("access-form").addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById("email").value.trim();
+            const country = document.getElementById("country").value;
+
+            localStorage.setItem("user_email", email);
+            localStorage.setItem("user_country", country);
+
+            const { data, error } = await client
+                .from("waitlist")
+                .insert([{ email, country, source_page: "Rapid Test Index" }]);
+
+            if (error) {
+                document.getElementById("message").textContent = "❌ Error: " + error.message;
+            } else {
+                window.location.href = "rapid-test-finder.html";
+            }
+        });
+    </script>
+
+    </body>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2025 Abundant Science. All rights reserved.</p>
+        <p><a href="mailto:contact@abundant.science">Contact Us</a></p>
+    </footer>
+
+
+</html>
