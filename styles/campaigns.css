@@ -46,12 +46,13 @@
     letter-spacing: -2.2px;
     margin-bottom: 0.5rem;
     font-weight: 400;
-    text-align: left;
+    text-align: center;
 }
 
 .hero-text-block {
     margin: 0;
     padding: 0;
+
 }
 
 .hero-text {
@@ -64,7 +65,7 @@
     font-weight: 200;
     text-align: left;
     margin-top: 0;
-    padding-left: 1rem;
+    text-align: center;
 }
 
 .hero-title strong {
@@ -176,10 +177,7 @@
         letter-spacing: -1.2px;
         padding: 0 1rem;
         word-break: break-word;
+
     }
 
-    .hero-group {
-        padding: 0;
-    }
 }
-
