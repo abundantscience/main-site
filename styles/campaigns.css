@@ -9,7 +9,8 @@
 }
 
 .hero-title {
-    font-size: 5rem;
+    font-size: clamp(2rem, 6vw, 5rem);
+    /* Responsive size */
     color: #111;
     width: 100%;
     font-family: 'Inter', sans-serif;
