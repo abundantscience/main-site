@@ -12,8 +12,8 @@
     <meta property="og:title" content="Clinic Rapid Test Program – Abundant Science" />
     <meta property="og:description"
         content="Request a bespoke list of Health Canada–approved rapid tests for your clinic. Offer high-quality, accurate tests to your patients with expert support." />
-    <meta property="og:image" content="https://www.abundantscience.com/cover-hiv-image.jpg" />
-    <meta property="og:url" content="https://www.abundantscience.com/hiv" />
+    <meta property="og:image" content="https://www.abundantscience.com/images/clinic-form.svg" />
+    <meta property="og:url" content="https://www.abundantscience.com/vitamin-d-rapid-test-clinic" />
     <meta property="og:type" content="website" />
 
     <!-- Fonts and CSS -->
@@ -99,70 +99,11 @@
 
     </div>
 
-
-
-
-    <!-- <p class="form-footer-text">
-                By submitting your email address, we will subscribe you to occasional updates from
-                Abundant Science. Your data are protected by <a href="privacy.html" target="_blank">our privacy
-                    policy</a> and the laws of Canada and Ontario.
-            </p> -->
-    </div>
-
-
-    <!-- <span style="font-size: 0.8rem; max-width: 700px; display: block; margin: 0 auto; text-align: justify;">
-                <i>By submitting your email address, we will subscribe you to occasional updates from
-                    Abundant Science. Your data are protected by <a href="privacy.html" target="_blank">our privacy
-                        policy</a> and the laws of Canada and
-                    Ontario.</i>
-            </span> -->
     </form>
 
     <div id="message"></div>
     </div>
 
-    <!-- <section class="biomarker-section">
-
-
-        <section class="resources-section"
-            style="padding: 2rem; background-color: #f9f9f9; border-top: 1px solid #ddd;">
-            <h3 style="font-size: 1.75rem; margin-bottom: 1.5rem;">Abundant Resources • HIV Rapid Testing</h3>
-            <ul style="list-style: none; text-align: left; padding: 0; line-height: 1.6;">
-                <li>
-
-                    <b> <a href="https://hivtestingontario.ca/self-testing" target="_blank">
-                            HIV self-testing in Canada</a></b><b> (HIVTestingOntario.ca)</b>
-
-                    <br>
-                    Comprehensive overview of self-testing options and where to access them in Canada, including
-                    Ontario-only programs.
-                </li>
-
-                <br>
-                <li>
-
-                    <a href="https://www.catie.ca/catie-statement-on-the-hiv-self-test-as-a-highly-effective-tool-for-increasing-uptake-of-testing-in"
-                        target="_blank">
-                        <b>HIV Self-Testing Evidence Review</b></a><b> (CATIE.ca)</b>
-                    <br>
-                    Self-testing can help to overcome barriers people face when accessing testing: stigma,
-                    privacy fears, lack of local options.
-                    </br>
-                </li>
-
-                <br>
-                <li>
-
-                    <a href="https://www.catie.ca/the-epidemiology-of-hiv-in-canada" target="_blank">
-                        <b>Epidemiology of HIV in Canada</b></a><b> (CATIE.ca)</b>
-                    <br>
-                    Where, who, and how people are acquiring HIV infections in Canada. Focuses on
-                    post-pandemic rise in HIV diagnoses.
-
-                </li>
-
-            </ul>
-        </section> -->
 
     <div id="footer-placeholder"></div>
 
@@ -183,7 +124,7 @@
                 const checkboxes = document.querySelectorAll(".campaign-checkbox:checked");
                 const discreet = document.getElementById("discreet-checkbox").checked;
 
-                let campaign = ["free-hiv-rapid-test"]; // always include this tag
+                let campaign = ["vitamin-d-rapid-test-clinic"]; // always include this tag
 
                 checkboxes.forEach(cb => {
                     campaign.push(cb.value);
@@ -206,7 +147,7 @@
                         .from("waitlist")
                         .insert([{
                             email,
-                            source_page: "HIV Test",
+                            source_page: "Vitamin D Rapid Test Clinic",
                             campaign,
                             discreet
                         }]);
