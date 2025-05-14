@@ -5,7 +5,7 @@
     background-color: white;
     padding: 1rem;
     text-align: center;
-
+    padding-bottom: 5rem;
     max-width: 1400px;
     /* more balanced width */
     width: 100%;
@@ -13,6 +13,7 @@
     margin: 0 auto;
     box-sizing: border-box;
 }
+
 
 .hero-title {
     font-size: clamp(2rem, 6vw, 5rem);
