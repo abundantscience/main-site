@@ -1,0 +1,202 @@
+/* === Global Styles === */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #FFD9B5, #f0f4f8);
+    color: #111;
+    margin: 0;
+    padding-top: 70px;
+}
+
+/* === Global Layout Containers === */
+
+/* Full-width base container, centered content */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+    /* adds horizontal padding on mobile */
+}
+
+/* For readable paragraphs and text blocks */
+.content-wide {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: justify;
+    background-color: white;
+    padding: 2rem;
+    border-top: 1px solid #ddd;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    text-align: left;
+
+}
+
+/* For readable paragraphs and text blocks */
+.content-narrow {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: justify;
+    background-color: white;
+
+}
+
+/* For full page forms, promo boxes, email inputs */
+.form-wide {
+    max-width: 620px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #fef6f2;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+/* For small forms, promo boxes, email inputs */
+.form-narrow {
+    max-width: 420px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #fef6f2;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* === Responsive Tweaks === */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.25rem 1rem;
+    }
+
+    .form-narrow {
+        /* padding: 1.5rem; */
+        margin: 1.5rem auto;
+    }
+
+    .content-narrow {
+        padding: 0 0.5rem;
+        text-align: left;
+        /* better for small screens */
+    }
+}
+
+
+/* === Global Navigation Bar === */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    z-index: 999;
+    box-sizing: border-box;
+}
+
+/* Mobile-specific: push nav links to right */
+@media (max-width: 768px) {
+    nav .nav-links {
+        margin-left: auto;
+    }
+}
+
+nav .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+nav img {
+    max-height: 35px;
+}
+
+nav .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+nav .nav-links a {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: #222;
+    font-size: 0.95rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+nav .nav-links a:hover {
+    color: black;
+}
+
+
+/* === Global Footer Bar === */
+
+.site-footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+    padding: 1rem 1rem;
+    border-top: 1px solid #eee;
+    margin-top: 4rem;
+}
+
+.site-footer a {
+    color: #777;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+
+/* === Main Container === */
+.container {
+
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+    text-align: center;
+
+}
+
+
+/* === Hero Section === */
+.logo {
+    max-width: 80px;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0.5rem 0 1rem;
+}
+
+
+p {
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+    color: #444;
+}
+
+p.italic {
+    font-size: 1.05rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+    color: #444;
+}
+
+p.light {
+    font-size: 1.05rem;
+    color: #888;
+    margin-bottom: 2rem;
+}
