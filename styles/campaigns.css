@@ -6,9 +6,9 @@
     padding: 4rem 1rem;
     text-align: center;
 
-    max-width: 1200px;
+    max-width: 1400px;
     /* more balanced width */
-    width: 90%;
+    width: 100%;
     /* adapts to screen size */
     margin: 0 auto;
     box-sizing: border-box;
