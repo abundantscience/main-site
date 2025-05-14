@@ -1,0 +1,42 @@
+<!-- form template-->
+<div class="form-container">
+
+    <form>
+        <h2>Clinic Request Form</h2>
+
+        <div class="input-row">
+            <input type="text" name="business" placeholder="Clinic / Business Name" required />
+            <input type="text" name="name" placeholder="Full Name" Your Name />
+        </div>
+        <div class="input-row">
+            <input type="email" name="email" placeholder="Work Email" required />
+            <input type="tel" name="phone" placeholder="Phone Number" required />
+        </div>
+        <div>
+            <p style="margin-bottom: 0.5rem; font-size: large;font-weight: 1000;">Categories of Interest:
+            </p>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="interest" value="general-health" /> General & Metabolic</label>
+                <label><input type="checkbox" name="interest" value="womens-health" /> Women</label>
+                <label><input type="checkbox" name="interest" value="sexual-health" /> Sexual Health</label>
+                <label><input type="checkbox" name="interest" value="screening" /> Screening</label>
+
+                <label><input type="checkbox" name="interest" value="screening" /> Drug Testing</label>
+                <label><input type="checkbox" name="interest" value="other" /> Other</label>
+            </div>
+
+
+        </div>
+
+
+        <br>
+
+        <button type="submit">Get Custom Offer</button>
+        <div class="form-consent">
+            <label>
+                <input type="checkbox" name="consent" required />
+                I agree to receive email communications.
+            </label>
+        </div>
+    </form>
+</div>
