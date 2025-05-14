@@ -3,10 +3,14 @@
     flex-direction: column;
     align-items: center;
     background-color: white;
-    /* background-color: #ffeadd; */
     padding: 4rem 1rem;
     text-align: center;
+
+    /* NEW: Constrain width */
+    max-width: 1000px;
+    margin: 0 auto;
 }
+
 
 .hero-title {
     font-size: clamp(2rem, 6vw, 5rem);
