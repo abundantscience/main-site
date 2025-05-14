@@ -22,7 +22,6 @@
 /* === Form Container === */
 .form-container {
     max-width: 80%;
-    width: 100%;
     margin: 0 auto;
     padding: 2rem;
     border: 1px solid #ddd;
