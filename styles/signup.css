@@ -7,7 +7,7 @@
     border-radius: 5px;
     padding: 1.5rem;
     max-width: auto;
-    margin: 1rem 1rem;
+    margin: 1rem, auto;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     font-family: 'Inter', sans-serif;
     max-width: 80%;
