@@ -19,6 +19,7 @@
     font-family: 'Inter', sans-serif;
 }
 
+
 /* === Form Container === */
 .form-container {
     max-width: 80%;
@@ -172,4 +173,41 @@ form button[type="submit"]:hover {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+@media (max-width: 780px) {
+    .form-container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    form {
+        padding: 1rem;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="tel"] {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+
+    form button[type="submit"] {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .form-hero-title {
+        font-size: 3rem;
+        line-height: 1.1;
+    }
+
+    .form-hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .checkbox-group {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
 }
