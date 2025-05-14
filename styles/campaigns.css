@@ -36,6 +36,7 @@
 
 
 
+
 .hero-title-text {
     font-size: 4.5rem;
     color: #111;
@@ -71,13 +72,12 @@
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 2vw, 1.5rem);
+    font-size: clamp(1rem, 2vw, 1.5rem);
     font-weight: 300;
     color: #333;
     margin-bottom: 2rem;
     font-family: 'Inter', sans-serif;
-        text-align: center;
-
+    text-align: center;
 }
 
 .hero-image {
@@ -150,4 +150,16 @@
     z-index: 10;
     font-size: clamp(1rem, 2.5vw, 1.3rem);
     padding: clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+}
+
+
+/* Mobile styles  */
+@media (min-width: 780px) {
+    .hero-title {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
