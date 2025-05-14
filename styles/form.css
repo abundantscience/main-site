@@ -1,249 +1,174 @@
-/* === Global Styles === */
-html {
-    scroll-behavior: smooth;
-}
+/* Font */
 
-body {
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #FFD9B5, #f0f4f8);
+.form-hero-title {
+    font-size: 5rem;
     color: #111;
-    margin: 0;
-    padding-top: 70px;
-}
-
-/* === Global Layout Containers === */
-
-/* Full-width base container, centered content */
-.container {
-    max-width: auto;
     width: 100%;
-    margin: 0 auto;
-    padding: 1.5rem 1rem;
-    /* adds horizontal padding on mobile */
-}
-
-/* For readable paragraphs and text blocks */
-.content-wide {
-    max-width: 850px;
-    margin: 0 auto;
-    text-align: justify;
-    background-color: white;
-    padding: 2rem;
-    border-top: 1px solid #ddd;
-    margin-bottom: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    text-align: left;
-
-}
-
-/* For readable paragraphs and text blocks */
-.content-narrow {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: justify;
-    background-color: white;
-
-}
-
-/* For full page forms, promo boxes, email inputs */
-.form-wide {
-    max-width: 620px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background-color: #fef6f2;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-
-/* For small forms, promo boxes, email inputs */
-.form-narrow {
-    max-width: 420px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background-color: #fef6f2;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-
-/* === Global Navigation Bar === */
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.75rem 1rem;
-    z-index: 999;
-    box-sizing: border-box;
-}
-
-
-nav .logo-container {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-nav img {
-    max-height: 35px;
-}
-
-nav .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-nav .nav-links a {
-    margin-left: 1rem;
-    text-decoration: none;
-    color: #222;
-    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    line-height: 0.9;
+    letter-spacing: -3px;
+    margin-bottom: 0.5rem;
     font-weight: 500;
-    white-space: nowrap;
 }
 
-nav .nav-links a:hover {
-    color: black;
+.form-hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #333;
+    margin-bottom: auto;
+    font-family: 'Inter', sans-serif;
 }
 
 
-/* === Global Footer Bar === */
+/* === Form Container === */
+.form-container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f8ff;
 
-.site-footer {
+}
+
+/* === Form Title & Description === */
+.form-container h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
     text-align: center;
+    margin-bottom: 0.5rem;
+    color: #111;
+    font-family: 'Inter', sans-serif;
+}
+
+.form-container p {
+    font-size: 1rem;
+    color: #444;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* === Form Layout === */
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    /* increased gap for better separation */
+}
+
+/* === Input Fields === */
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"] {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    /* soft neutral border */
+    background-color: #fff;
+    box-sizing: border-box;
+    margin: 0.3rem;
+    /* Added space after each row */
+}
+
+form input::placeholder {
+    color: #6b7280;
+    /* A medium gray – visible on white */
+    font-weight: 100;
+}
+
+
+.input-row input {
+    flex: 1;
+    min-width: 0;
+    ;
+}
+
+
+/* === Checkboxes === */
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* ⬅️ 2 columns for checkboxes */
+    gap: 0.5rem;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: #555;
+    font-weight: normal;
+}
+
+/* === Consent Checkbox === */
+.form-consent {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 0.9rem;
-    color: #777;
-    padding: 1rem 1rem;
-    border-top: 1px solid #eee;
-    margin-top: 2rem;
+    color: #666;
+    margin-top: -0.5rem;
+    align-self: center;
 }
 
-.site-footer a {
-    color: #777;
-    text-decoration: none;
+/* === Submit Button === */
+form button[type="submit"] {
+    display: inline-block;
+    width: 100%;
+    margin: 1rem auto;
+    padding: 1rem 2rem;
+
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #fff;
+
+    background-color: #1e3a8a;
+    border-radius: 8px;
+    backdrop-filter: blur(6px);
+
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
-.site-footer a:hover {
-    color: black;
-    text-decoration: underline;
+form button[type="submit"]:hover {
+    background-color: #333;
 }
 
-
-/* === Main Container === */
-.container {
-
-    max-width: 960px;
-    margin: 2rem auto;
-    padding: 2rem 1rem;
-    text-align: center;
-
-}
-
-
-/* === Hero Section === */
-.logo {
-    max-width: 80px;
-    margin-bottom: 1rem;
-}
-
-h1 {
-    font-size: 2rem;
-    margin: 0.5rem 0 1rem;
-}
-
-
-p {
-    font-size: 1.05rem;
-    margin-bottom: 2rem;
-    color: #444;
-}
-
-p.italic {
-    font-size: 1.05rem;
-    font-style: italic;
-    margin-bottom: 2rem;
-    color: #444;
-}
-
-p.light {
-    font-size: 1.05rem;
+/* === Helper Text === */
+.form-footer-text {
+    padding-top: 1rem;
+    font-size: 0.8rem;
+    max-width: 700px;
+    display: block;
+    text-align: justify;
+    margin: 0 auto;
     color: #888;
-    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem 2rem;
+    max-width: 600px;
+    margin: 1.5rem auto;
+    text-align: left;
 }
 
 
-
-/* === Global Mobile Responsive Tweaks === */
-@media (max-width: 768px) {
-    .container {
-        padding: 0;
-    }
-
-    body {
-        padding-top: 0;
-    }
-
-
-    /* 
-    used for overflow issues */
-    html,
-    body {
-        overflow-x: hidden;
-    }
-}
-
-@media (max-width: 400px) {
-
-    .container {
-        padding: 0;
-    }
-
-    body {
-        padding-top: 0;
-    }
-
-
-    /* 
-    used for overflow issues */
-    html,
-    body {
-        overflow-x: hidden;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        gap: 1rem;
-        width: 100%;
-        margin-top: 1rem;
-    }
-
-    .nav-links.show {
-        display: flex;
-    }
-
-
-    .nav-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .logo {
-        font-size: 1.2rem;
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-    }
-
-    .form-wide,
-    .form-narrow {
-        padding: 0;
-    }
-
+.checkbox-group label {
+    font-size: 1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
