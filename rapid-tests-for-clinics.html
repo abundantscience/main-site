@@ -1,178 +1,211 @@
-<!-- Hard coded design for the clinic request form page.
-<body> = blue 
-<hero-image = blue
--->
+/* Font */
 
-<!DOCTYPE html>
-<html lang="en">
+.form-hero-title {
+    font-size: 5rem;
+    color: #111;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    line-height: 0.9;
+    letter-spacing: -3px;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clinic Request Form – Rapid Test Kits | Abundant Science</title>
-    <meta name="description"
-        content="Request a curated list of Health Canada–approved rapid tests for your clinic. Fast, accurate, and designed for elevated patient experiences. Offered by Abundant Science." />
-    <link rel="canonical" href="https://www.abundantscience.com/rapid-tests-for-clinics" />
-
-    <meta property="og:title" content="Clinic Rapid Test Program – Abundant Science" />
-    <meta property="og:description"
-        content="Request a bespoke list of Health Canada–approved rapid tests for your clinic. Offer high-quality, accurate tests to your patients with expert support." />
-    <meta property="og:image" content="https://www.abundantscience.com/images/clinic-form.svg" />
-    <meta property="og:url" content="https://www.abundantscience.com/rapid-tests-for-clinics" />
-    <meta property="og:type" content="website" />
-
-    <!-- Fonts and CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles/marketing.css" />
-    <link rel="stylesheet" href="styles/form.css" />
-    <link rel="stylesheet" href="styles/campaigns.css" />
-    <link rel="stylesheet" href="styles/signup.css" />
-</head>
+.form-hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #333;
+    margin-bottom: auto;
+    font-family: 'Inter', sans-serif;
+}
 
 
-<body style="background: linear-gradient(135deg, #d2daff, #eaeeff);">
+/* === Form Container === */
+.form-container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f8ff;
+
+}
+
+/* === Form Title & Description === */
+.form-container h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: #111;
+    font-family: 'Inter', sans-serif;
+}
+
+.form-container p {
+    font-size: 1rem;
+    color: #444;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* === Form Layout === */
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    /* increased gap for better separation */
+}
+
+/* === Input Fields === */
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"] {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    /* soft neutral border */
+    background-color: #fff;
+    box-sizing: border-box;
+    margin: 0.3rem;
+    /* Added space after each row */
+}
+
+form input::placeholder {
+    color: #6b7280;
+    /* A medium gray – visible on white */
+    font-weight: 100;
+}
 
 
-    <!-- Navigation Bar -->
-    <div id="nav-placeholder"></div>
-
-    <!-- Hero / Form Section -->
-
-    <div class="container">
-        <div class="hero-group">
-            <!-- big title -->
-            <h2 class="hero-title"><strong> BRING RAPID TESTS TO</strong><br> <span style="font-weight: 500;">Your
-                    Clinic/ Business</span></h2>
-
-            <!-- subtitle -->
-            <h2 class="hero-subtitle">We’ve done the research — so you don’t have to
-                <br>
-            </h2>
-
-            <!-- hero image section, buy button -->
-            <div class="hero-image-wrapper">
-                <img src="images/clinic-form.svg" alt="Banner" class="hero-image"
-                    style="height: 300px; background: linear-gradient(135deg, #97aaff, #eaeeff);">
-
-                <!-- CTA button -->
-            </div>
+.input-row input {
+    flex: 1;
+    min-width: 0;
+    ;
+}
 
 
-            <br>
-            <br>
+/* === Checkboxes === */
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* ⬅️ 2 columns for checkboxes */
+    gap: 0.5rem;
+}
 
-            <!-- sign up form inserted-->
-            <div class="hero-image-wrapper">
-                <div id="basic-form-template-placeholder"></div>
-            </div>
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: #555;
+    font-weight: normal;
+}
 
-            <br>
+/* === Consent Checkbox === */
+.form-consent {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: -0.5rem;
+    align-self: center;
+}
 
-            <!-- added text, content -->
-            <div class="hero-text-block">
-                <h2 class="hero-title-text" style="color: #97aaff;"><strong>Trusted Globally</strong> </h2>
-                <h3 class="hero-text">Health Canada Approved 🇨🇦
+/* === Submit Button === */
+form button[type="submit"] {
+    display: inline-block;
+    width: 100%;
+    margin: 1rem auto;
+    padding: 1rem 2rem;
 
-                    <br> Globally Certified & Trusted
-                    <br> Profesional Use Quality
-                </h3>
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #fff;
 
+    background-color: #1e3a8a;
+    border-radius: 8px;
+    backdrop-filter: blur(6px);
 
-                <h2 class="hero-title-text" style="color: #97aaff;"><strong>Pre-Qualified Tests</strong></h2>
-                <h3 class="hero-text"><strong>Select from our growing catalog of Health Canada approved
-                        Rapid Tests and become
-                        an industry leader</strong> </h3>
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
 
+form button[type="submit"]:hover {
+    background-color: #333;
+}
 
+/* === Helper Text === */
+.form-footer-text {
+    padding-top: 1rem;
+    font-size: 0.8rem;
+    max-width: 700px;
+    display: block;
+    text-align: justify;
+    margin: 0 auto;
+    color: #888;
+    font-style: italic;
+}
 
-                <h2 class="hero-title-text" style="color: #97aaff;"><strong>Join Our Provider Network</strong></h2>
-                <h3 class="hero-text">Custom Rapid Test Catalog for your business
-                    <br> Early access to new tests
-                    <br>Provide On-Site testing or offer test kits directly
-                </h3>
-
-            </div>
-            <br>
-
-            <div id="signup-form-placeholder"></div>
-
-        </div>
-
-
-    </div>
-
-
-    <div id="message"></div>
-
-    <div id="footer-placeholder"></div>
-
-
-    <!-- Supabase Script -->
-    <script>
-        window.addEventListener("DOMContentLoaded", function () {
-            const SUPABASE_URL = "https://jicytgdlbevccejowlnf.supabase.co";
-            const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppY3l0Z2RsYmV2Y2Nlam93bG5mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUzNDQzNTYsImV4cCI6MjA2MDkyMDM1Nn0.DRfZefUPOLjhdxYudhvQKGePr6ex-Xf3JBkedbF7_OY";
-
-            const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
-            document.getElementById("waitlist-form").addEventListener("submit", async function (e) {
-                e.preventDefault();
-
-                const email = document.getElementById("email").value.trim();
-                const msg = document.getElementById("message");
-                const checkboxes = document.querySelectorAll(".campaign-checkbox:checked");
-                const discreet = document.getElementById("discreet-checkbox").checked;
-
-                let campaign = ["rapid-tests-for-clinics"]; // always include this tag
-
-                checkboxes.forEach(cb => {
-                    campaign.push(cb.value);
-                    if (cb.dataset.extra) {
-                        campaign.push(cb.dataset.extra);
-                    }
-                });
-
-                msg.textContent = "";
-                msg.className = "";
-
-                if (!email || !email.includes("@")) {
-                    msg.textContent = "Please enter a valid email.";
-                    msg.className = "error";
-                    return;
-                }
-
-                try {
-                    const { data, error } = await client
-                        .from("waitlist")
-                        .insert([{
-                            email,
-                            source_page: "Rapid Tests for Clinics",
-                            campaign,
-                            discreet
-                        }]);
-
-                    if (error) {
-                        msg.textContent = "❌ Error: " + error.message;
-                        msg.className = "error";
-                    } else {
-                        msg.textContent = "✅ You're on the list!";
-                        msg.className = "success";
-                        document.getElementById("waitlist-form").reset();
-                    }
-                } catch (err) {
-                    console.error("❗ Unexpected error:", err);
-                    msg.textContent = "❌ Something went wrong.";
-                    msg.className = "error";
-                }
-            });
-        });
-    </script>
+.checkbox-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem 2rem;
+    max-width: 600px;
+    margin: 1.5rem auto;
+    text-align: left;
+}
 
 
-    <script src="scripts/template-loader.js"></script>
-    <script src="scripts/component-loader.js"></script>
+.checkbox-group label {
+    font-size: 1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
 
+@media (max-width: 400px) {
+    .form-container {
+        max-width: 100%;
+        padding: 0;
+    }
 
-</body>
+    form {
+        padding: 1rem;
+    }
 
-</html>
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="tel"] {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+
+    form button[type="submit"] {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .form-hero-title {
+        font-size: 3rem;
+        line-height: 1.1;
+    }
+
+    .form-hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .checkbox-group {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+}
