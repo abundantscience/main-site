@@ -14,13 +14,12 @@ body {
 /* === Global Layout Containers === */
 
 /* Full-width base container, centered content */
-.container {
+/* .container {
     max-width: auto;
     width: 100%;
     margin: 0 auto;
     padding: 1.5rem 1rem;
-    /* adds horizontal padding on mobile */
-}
+} */
 
 /* For readable paragraphs and text blocks */
 .content-wide {
@@ -181,41 +180,15 @@ p.light {
 
 
 /* === Global Mobile Responsive Tweaks === */
-@media (max-width: 780px) {
-    .container {
-        padding: 0;
-    }
-
-    body {
-        padding-top: 0;
-    }
-
-
-    /* 
-    used for overflow issues */
-    html,
-    body {
-        overflow-x: hidden;
-    }
-}
 
 @media (max-width: 500px) {
 
-    .container {
-        padding: 0;
-    }
-
-    body {
-        padding-top: 0;
-    }
-
-
     /* 
-    used for overflow issues */
-    html,
+    used for overflow issues removed so there is padding on mobile*/
+    /* html,
     body {
         overflow-x: hidden;
-    }
+    } */
 
     .nav-links {
         display: none;
