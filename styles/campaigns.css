@@ -1,0 +1,134 @@
+.hero-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    /* background-color: #ffeadd; */
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 5rem;
+    color: #111;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    line-height: 0.9;
+    letter-spacing: -3px;
+    margin-bottom: 0.5rem;
+}
+
+
+.hero-title-text {
+    font-size: 4.5rem;
+    color: #111;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    line-height: 0.9;
+    letter-spacing: -2.2px;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    text-align: left;
+}
+
+.hero-text-block {
+    margin: 0;
+    padding: 0;
+}
+
+.hero-text {
+    font-size: 2rem;
+    color: #5d5d5d;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    line-height: 0.95;
+    letter-spacing: -1px;
+    font-weight: 200;
+    text-align: left;
+    margin-top: 0;
+    padding-left: 1rem;
+}
+
+.hero-title strong {
+    font-weight: 800;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #333;
+    margin-bottom: 2rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.hero-image {
+    max-width: 100%;
+    width: 100%;
+    margin: 0rem 0;
+    max-width: 900px;
+    border-radius: 5px;
+    height: auto;
+    object-fit: cover;
+    overflow: hidden;
+    background: linear-gradient(135deg, #FFD9B5, #f0f4f8);
+}
+
+
+.hero-link {
+    font-size: 1.2rem;
+    color: #111;
+    margin-top: 2rem;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+
+.hero-button {
+    display: inline-block;
+    background-color: #111;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 2rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(6px);
+    background-color: rgba(17, 17, 17, 0.90);
+
+}
+
+.hero-button:hover {
+    background-color: #333;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* Button Overlay
+ */
+.hero-image-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 900px;
+
+
+}
+
+
+
+.hero-button {
+    position: absolute;
+    bottom: 35px;
+    right: 0%;
+    transform: translateX(-20%);
+    z-index: 10;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    padding: clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+}
