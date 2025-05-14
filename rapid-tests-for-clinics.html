@@ -1,0 +1,185 @@
+<!-- Hard coded design for the clinic request form page.
+<body> = blue 
+<hero-image = blue
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clinic Request Form – Rapid Test Kits | Abundant Science</title>
+    <meta name="description"
+        content="Request a curated list of Health Canada–approved rapid tests for your clinic. Fast, accurate, and designed for elevated patient experiences. Offered by Abundant Science." />
+    <link rel="canonical" href="https://www.abundantscience.com/clinic-request-form" />
+
+    <meta property="og:title" content="Clinic Rapid Test Program – Abundant Science" />
+    <meta property="og:description"
+        content="Request a bespoke list of Health Canada–approved rapid tests for your clinic. Offer high-quality, accurate tests to your patients with expert support." />
+    <meta property="og:image" content="https://www.abundantscience.com/cover-hiv-image.jpg" />
+    <meta property="og:url" content="https://www.abundantscience.com/hiv" />
+    <meta property="og:type" content="website" />
+
+    <!-- Fonts and CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/marketing.css" />
+    <link rel="stylesheet" href="styles/form.css" />
+    <link rel="stylesheet" href="styles/campaigns.css" />
+    <link rel="stylesheet" href="styles/signup.css" />
+</head>
+
+
+<body style="background: linear-gradient(135deg, #d2daff, #eaeeff);">
+
+
+    <!-- Navigation Bar -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Hero / Form Section -->
+
+    <div class="container">
+        <div class="hero-group">
+            <!-- big title -->
+            <h1 class="hero-title"><strong> BRING RAPID TESTS TO</strong><br> <span style="font-weight: 500;">Your
+                    Clinic/ Business</span></h1>
+
+            <!-- subtitle -->
+            <h2 class="hero-subtitle">We’ve done the research — so you don’t have to
+                <br>
+            </h2>
+
+            <!-- hero image section, buy button -->
+            <div class="hero-image-wrapper">
+                <img src="images/clinic-form.svg" alt="Banner" class="hero-image"
+                    style="height: 300px; background: linear-gradient(135deg, #97aaff, #eaeeff);">
+
+                <!-- CTA button -->
+            </div>
+            <!-- <div class="hero-image-wrapper">
+                <img src="images/provider-image.png" alt="Banner" class="hero-image"
+                    style="height: 300px; object-position: center 60%;"> -->
+            <!-- buy button -->
+            <!-- <a href="https://rapidte.st/products/vitamin-d-rapid-test-clinic" class="hero-button">Work with Us</a>
+            </div> -->
+
+            <br>
+            <br>
+
+            <!-- sign up form inserted-->
+            <div class="hero-image-wrapper">
+                <div id="basic-form-template-placeholder"></div>
+            </div>
+
+            <br>
+
+
+
+            <!-- added text, content -->
+            <div class="hero-text-block">
+                <h2 class="hero-title-text" style="color: #97aaff;"><strong>Trusted Globally</strong> </h2>
+                <h3 class="hero-text">Health Canada Approved 🇨🇦
+
+                    <br> Globally Certified & Trusted
+                    <br> Profesional Use Quality
+                </h3>
+
+
+                <h2 class="hero-title-text" style="color: #97aaff;"><strong>Pre-Qualified Tests</strong></h2>
+                <h3 class="hero-text"><strong>Select from our growing catalog of Health Canada approved
+                        Rapid Tests and become
+                        an industry leader</strong> </h3>
+
+
+
+                <h2 class="hero-title-text" style="color: #97aaff;"><strong>Join Our Provider Network</strong></h2>
+                <h3 class="hero-text">Custom Rapid Test Catalog for your business
+                    <br> Early access to new tests
+                    <br>Provide On-Site testing or offer test kits directly
+                </h3>
+
+            </div>
+            <br>
+
+            <div id="signup-form-placeholder"></div>
+
+        </div>
+
+
+    </div>
+
+
+    <div id="message"></div>
+
+    <div id="footer-placeholder"></div>
+
+
+    <!-- Supabase Script -->
+    <script>
+        window.addEventListener("DOMContentLoaded", function () {
+            const SUPABASE_URL = "https://jicytgdlbevccejowlnf.supabase.co";
+            const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppY3l0Z2RsYmV2Y2Nlam93bG5mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUzNDQzNTYsImV4cCI6MjA2MDkyMDM1Nn0.DRfZefUPOLjhdxYudhvQKGePr6ex-Xf3JBkedbF7_OY";
+
+            const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+            document.getElementById("waitlist-form").addEventListener("submit", async function (e) {
+                e.preventDefault();
+
+                const email = document.getElementById("email").value.trim();
+                const msg = document.getElementById("message");
+                const checkboxes = document.querySelectorAll(".campaign-checkbox:checked");
+                const discreet = document.getElementById("discreet-checkbox").checked;
+
+                let campaign = ["free-hiv-rapid-test"]; // always include this tag
+
+                checkboxes.forEach(cb => {
+                    campaign.push(cb.value);
+                    if (cb.dataset.extra) {
+                        campaign.push(cb.dataset.extra);
+                    }
+                });
+
+                msg.textContent = "";
+                msg.className = "";
+
+                if (!email || !email.includes("@")) {
+                    msg.textContent = "Please enter a valid email.";
+                    msg.className = "error";
+                    return;
+                }
+
+                try {
+                    const { data, error } = await client
+                        .from("waitlist")
+                        .insert([{
+                            email,
+                            source_page: "HIV Test",
+                            campaign,
+                            discreet
+                        }]);
+
+                    if (error) {
+                        msg.textContent = "❌ Error: " + error.message;
+                        msg.className = "error";
+                    } else {
+                        msg.textContent = "✅ You're on the list!";
+                        msg.className = "success";
+                        document.getElementById("waitlist-form").reset();
+                    }
+                } catch (err) {
+                    console.error("❗ Unexpected error:", err);
+                    msg.textContent = "❌ Something went wrong.";
+                    msg.className = "error";
+                }
+            });
+        });
+    </script>
+
+
+    <script src="scripts/template-loader.js"></script>
+    <script src="scripts/component-loader.js"></script>
+
+
+</body>
+
+</html>
