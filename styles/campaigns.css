@@ -6,13 +6,12 @@
     padding: 4rem 1rem;
     text-align: center;
 
-    /* NEW: Constrain width */
-    max-width: 1000px;
+    max-width: 1200px;
+    /* more balanced width */
+    width: 90%;
+    /* adapts to screen size */
     margin: 0 auto;
-}
-
-.hero-group h2 {
-    margin-top: 0;
+    box-sizing: border-box;
 }
 
 .hero-title {
