@@ -152,14 +152,29 @@
     padding: clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
 }
 
+@media (max-width: 500px) {
+    .hero-text-block {
+        padding: 0 1rem;
+        text-align: left;
+    }
 
-/* Mobile styles  */
-@media (min-width: 780px) {
-    .hero-title {
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 4;
-        overflow: hidden;
-        text-overflow: ellipsis;
+    .hero-text {
+        font-size: 1.1rem;
+        line-height: 1.4;
+        font-weight: 300;
+        text-align: left;
+        padding: 0 1rem;
+        letter-spacing: -0.5px;
+        margin-top: 0.5rem;
+    }
+
+    .hero-title-text {
+        font-size: 2.2rem;
+        line-height: 1.1;
+        font-weight: 500;
+        text-align: left;
+        letter-spacing: -1.2px;
+        padding: 0 1rem;
+        word-break: break-word;
     }
 }
