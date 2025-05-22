@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clinic Request Form – Rapid Test Kits | Abundant Science</title>
+    <meta name="description"
+        content="Request a curated list of Health Canada–approved rapid tests for your clinic. Fast, accurate, and designed for elevated patient experiences. Offered by Abundant Science." />
+    <link rel="canonical" href="https://www.abundantscience.com/clinic-request-form" />
+
+    <meta property="og:title" content="We are Building Rapid Testing as a Category – Abundant Science" />
+    <meta property="og:description"
+        content="Request a bespoke list of Health Canada–approved rapid tests for your clinic. Offer high-quality, accurate tests to your patients with expert support." />
+    <meta property="og:image" content="https://www.abundantscience.com/images/clinic-form.svg" />
+    <meta property="og:url" content="https://www.abundantscience.com/vitamin-d-rapid-test-clinic" />
+    <meta property="og:type" content="website" />
+
+    <!-- Fonts and CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+
+    <link rel="stylesheet" href="styles/marketing.css" />
+    <link rel="stylesheet" href="styles/form.css" />
+    <link rel="stylesheet" href="styles/campaigns.css" />
+    <link rel="stylesheet" href="styles/signup.css" />
+    <link rel="stylesheet" href="styles/home-page.css" />
+
+
+    <!-- Supabase JS library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+    <!-- Your reusable Supabase form handler -->
+    <script src="/js/supabaseFormHandler.js"></script>
+
+
+
+</head>
+
+
+<body>
+
+
+    <!-- Navigation Bar -->
+    <div id="nav-placeholder"></div>
+
+
+    <!-- keeps everything aligned, all items centered. 100% body is light blue by default -->
+
+    <div class="home-hero-section">
+        <h2 class="home-title"><strong> Welcome to Abundant Science.</strong><br> <span style="font-weight: 400;">We’re
+                a Canadian company building rapid testing as a category.</span></h2>
+
+
+        <!-- <div class="home-image-wrapper">
+            <img src="images/home-page-blue.svg" alt="Banner" class="home-image">
+        </div> -->
+
+        <div class="home-button-container"></div>
+        <a href="https://rapidte.st" class="button-beige-large">
+            Buy A Test →
+        </a>
+    </div>
+    </div>
+
+    <!-- Hero Banner, 100% background is darker blue 100% width, 1250px container inside is white-->
+    <!-- after the fold section, 1200px container(home-container) + 900-1100px body inside(home-group), all items centered -->
+    <!-- homecontainer needs to be 100% width, home-group needs to be white and 1200ox -->
+    <!-- <div class="section-divider fade-in-section"></div> -->
+
+
+    <div class="section-divider-beige"> </div>
+
+    <!-- More Links -->
+
+    <section class="home-hero-section-lightblue">
+        <h2 class="home-section-title">More Links</h2>
+
+
+        <div class="home-section-column fade-in-section">
+            <div class="home-box-column-left">
+                <h2 class="home-column-subtitle">For Everybody</h2>
+                <a href="https://rapidte.st/products/vitamin-d-test" target="_blank" class="button-links">Vitamin D
+                    Rapid Test $15</a>
+                <a href="https://www.abundantscience.com/free-hiv-rapid-test" target="_blank" class="button-links">Free
+                    HIV Rapid Test</a>
+                <button class="button-links">Find Your Test</button>
+                <a href="https://www.tiktok.com/@abundantscience" target="_blank" class="button-links">Follow our
+                    TikTok</a>
+                <button class="button-links">Join Discord (Coming Soon)</button>
+            </div>
+
+            <div class="home-box-column-right">
+                <h2 class="home-column-subtitle">Work With Us</h2>
+                <a href="https://www.abundantscience.com/vitamin-d-rapid-test-clinic" target="_blank"
+                    class="button-links">Vitamin D Clinic Sample Kit</a>
+                <button class="button-links">Become a Clinic Partner</button>
+                <button class="button-links">White Label For Brands</button>
+                <button class="button-links">Partners</button>
+                <button class="button-links">For Investors</button>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider-lightblue"> </div>
+
+
+    <div class="home-hero-section fade-in-section" style="background-color: white">
+
+        <form id="waitlist-form" class="signup-card">
+            <div class="waitlist-form">
+
+                <h1>Sign Up For Updates</h1>
+
+                <p>Join our email list for updates on our rapid tests, latest research and
+                    exclusive community discounts and opportunities.</p>
+
+                <div class="input-with-icon">
+                    <input type="email" name="email" id="email" placeholder="📧 Your Email Address" required />
+                </div>
+
+                <label>
+                    <input type="checkbox" id="subscribe" required />
+                    I agree to subscribe to emails from Abundant Science.
+                </label>
+
+                <button type="submit">Subscribe</button>
+                <div id="message"></div>
+
+
+                <div class="form-subnote">By submitting your email address
+                    we will subscribe you to occasional updates from Abundant Science. <br>
+                    Your data is protected by
+                    our privacy policy and the laws of Canada and Ontario.
+                </div>
+            </div>
+        </form>
+
+
+        <div id="footer-placeholder"></div>
+
+        <script>
+
+            window.addEventListener("DOMContentLoaded", function () {
+                const SUPABASE_URL = "https://jicytgdlbevccejowlnf.supabase.co";
+                const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppY3l0Z2RsYmV2Y2Nlam93bG5mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUzNDQzNTYsImV4cCI6MjA2MDkyMDM1Nn0.DRfZefUPOLjhdxYudhvQKGePr6ex-Xf3JBkedbF7_OY";
+
+                const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+                document.getElementById("waitlist-form").addEventListener("submit", async function (e) {
+                    e.preventDefault();
+
+                    const msg = document.getElementById("message");
+                    msg.textContent = "";
+                    msg.className = "";
+
+                    const formData = new FormData(e.target);
+                    const dataToSubmit = {
+                        source_page: window.location.pathname
+                    };
+
+                    const SUPPORTED_FIELDS = [
+                        "email", "source_page", "country", "campaign", "discreet",
+                        "business_name", "business_type", "province", "quiz-lab-rb", "quiz-hc-sa"
+                    ];
+
+                    for (let [key, value] of formData.entries()) {
+                        // Convert checkbox values to boolean
+                        if (key === "discreet") {
+                            dataToSubmit[key] = true;
+                        } else if (SUPPORTED_FIELDS.includes(key)) {
+                            dataToSubmit[key] = value;
+                        }
+                    }
+
+                    // Email is required
+                    if (!dataToSubmit.email || !dataToSubmit.email.includes("@")) {
+                        msg.textContent = "Please enter a valid email address.";
+                        msg.className = "error";
+                        return;
+                    }
+
+                    try {
+                        const { data, error } = await client
+                            .from("waitlist")
+                            .insert([dataToSubmit]);
+
+                        if (error) {
+                            msg.textContent = "❌ Error: " + error.message;
+                            msg.className = "error";
+                        } else {
+                            msg.textContent = "✅ You're on the list!";
+                            msg.className = "success";
+                            e.target.reset();
+                        }
+                    } catch (err) {
+                        console.error("Unexpected error:", err);
+                        msg.textContent = "❌ Something went wrong.";
+                        msg.className = "error";
+                    }
+                });
+            });
+
+
+        </script>
+
+
+        <script src="scripts/template-loader.js"></script>
+        <script src="scripts/component-loader.js"></script>
+
+        <script>
+            // Fade in on scroll
+            const faders = document.querySelectorAll('.fade-in-section');
+
+            const appearOnScroll = new IntersectionObserver(
+                function (entries, observer) {
+                    entries.forEach(entry => {
+                        if (!entry.isIntersecting) return;
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    });
+                },
+                {
+                    threshold: 0.1
+                }
+            );
+
+            faders.forEach(fader => {
+                appearOnScroll.observe(fader);
+            });
+        </script>
+
+
+</body>
+
+</html>
