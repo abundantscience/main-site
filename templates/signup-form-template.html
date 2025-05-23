@@ -1,5 +1,5 @@
-<form id="signup-form" class="signup-card">
-    <div class="signup-form">
+<form id="waitlist-form" class="signup-card">
+    <div class="waitlist-form">
 
         <h1>Sign Up For Updates</h1>
 
@@ -7,15 +7,17 @@
             exclusive community discounts and opportunities.</p>
 
         <div class="input-with-icon">
-            <input type="email" id="email" placeholder="📧 Your Email Address" required />
+            <input type="email" name="email" id="email" placeholder="📧 Your Email Address" required />
         </div>
 
-        <label>
+        <label style="text-align: left; display: block;">
             <input type="checkbox" id="subscribe" required />
             I agree to subscribe to emails from Abundant Science.
         </label>
 
         <button type="submit">Subscribe</button>
+        <div id="message"></div>
+
 
         <div class="form-subnote">By submitting your email address
             we will subscribe you to occasional updates from Abundant Science. <br>
