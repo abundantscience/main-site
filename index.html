@@ -58,7 +58,7 @@
 
         <div class="home-button-container"></div>
         <a href="https://www.abundantscience.com/find-your-test" class="button-beige-large">
-            Find Your Test →
+            Get Started (1-Minute Test Finder) →
         </a>
     </div>
     </div>
@@ -107,10 +107,13 @@
 
     <div class="section-divider-lightblue"> </div>
 
-
+    <!-- Sign Up For Updates Form -->
     <div class="home-hero-section fade-in-section" style="background-color: white">
 
-        <form id="waitlist-form" class="signup-card">
+        <div id="signup-form-placeholder"></div>
+
+
+        <!-- <form id="waitlist-form" class="signup-card">
             <div class="waitlist-form">
 
                 <h1>Sign Up For Updates</h1>
@@ -123,7 +126,7 @@
                 </div>
 
                 <label>
-                    <input type="checkbox" id="subscribe" required />
+                    <input type="checkbox" id="subscribe" name="consent" required />
                     I agree to subscribe to emails from Abundant Science.
                 </label>
 
@@ -137,36 +140,41 @@
                     our privacy policy and the laws of Canada and Ontario.
                 </div>
             </div>
-        </form>
+        </form> -->
 
 
         <div id="footer-placeholder"></div>
+    </div>
 
 
-        <script src="scripts/template-loader.js"></script>
-        <script src="scripts/component-loader.js"></script>
+    <!-- Supabase & Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="/scripts/supabaseFormHandler.js"></script>
+    <script src="/scripts/template-loader.js"></script>
+    <script src="scripts/component-loader.js"></script>
 
-        <script>
-            // Fade in on scroll
-            const faders = document.querySelectorAll('.fade-in-section');
 
-            const appearOnScroll = new IntersectionObserver(
-                function (entries, observer) {
-                    entries.forEach(entry => {
-                        if (!entry.isIntersecting) return;
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    });
-                },
-                {
-                    threshold: 0.1
-                }
-            );
+    <script>
+        // Fade in on scroll
+        const faders = document.querySelectorAll('.fade-in-section');
 
-            faders.forEach(fader => {
-                appearOnScroll.observe(fader);
-            });
-        </script>
+        const appearOnScroll = new IntersectionObserver(
+            function (entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                });
+            },
+            {
+                threshold: 0.1
+            }
+        );
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
 
 
 </body>
