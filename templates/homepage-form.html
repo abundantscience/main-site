@@ -1,0 +1,145 @@
+<form id="waitlist-form" class="form-container">
+    <div class="form-intro">
+        <h2 class="form-hero-title">Let’s Find the Right Test for You.</h2>
+        <p class="form-hero-subtitle">
+            A few quick questions to understand your health habits and guide our recommendation.
+
+        </p>
+    </div>
+
+
+    <!-- Radio Buttons Section -->
+    <div class="input-row">
+        <label class="label-bold">How often do you typically see a doctor?</label>
+        <label><input type="radio" name="quiz-dr-rb" value="regular" required /> Regularly (1-2 months) </label>
+        <label><input type="radio" name="quiz-dr-rb" value="occasionally" /> Occasionally (once a year) </label>
+        <label><input type="radio" name="quiz-dr-rb" value="rarely" /> Rarely (every few years)</label>
+        <label><input type="radio" name="quiz-dr-rb" value="never" /> Never</label>
+    </div>
+
+    <!-- Radio Buttons Section -->
+    <div class="input-row">
+        <label class="label-bold">When was your most recent lab visit?</label>
+        <label><input type="radio" name="quiz-lab-rb" value="1-2 months" required /> 0-2 months</label>
+        <label><input type="radio" name="quiz-lab-rb" value="2-12 months" /> 3-12 months</label>
+        <label><input type="radio" name="quiz-lab-rb" value="1-2 years" /> 1-2 years</label>
+        <label><input type="radio" name="quiz-lab-rb" value="2+ years" /> 2+ years</label>
+    </div>
+
+
+    <!-- Short Answer
+    <div class="input-row">
+        <label for="quiz-hc-sa" class="label-bold">What’s one change you would make to the health care system?</label>
+        <input type="text" id="quiz-hc-sa" name="quiz-hc-sa" placeholder="Tell us anything on your mind..." />
+    </div> -->
+
+
+
+    <!-- Checkboxes -->
+    <div class="input-row">
+        <label class="label-bold">What best describes you?</label>
+        <label><input type="checkbox" class="campaign-checkbox" name="campaign" value="type-investor" /> I'm
+            interested in rapid tests for personal use</label>
+
+        <label><input type="checkbox" class="campaign-checkbox" name="campaign" value="type-provider" /> I'm a
+            clinic or healthcare provider</label>
+
+        <label><input type="checkbox" class="campaign-checkbox" name="campaign" value="type-investor" /> I'm a
+            wellness brand or retailer</label>
+
+        <label><input type="checkbox" class="campaign-checkbox" name="campaign" value="type-investor" /> I'm an
+            investor or potential partner </label>
+    </div>
+
+
+
+    <!-- Province Dropdown -->
+    <div class="input-row">
+        <label for="province" class="label-bold">Where are you located?</label>
+        <select id="province" name="province" required class="styled-select">
+            <option value="">Select a Province</option>
+            <option value="AB">Alberta</option>
+            <option value="BC">British Columbia</option>
+            <option value="MB">Manitoba</option>
+            <option value="NB">New Brunswick</option>
+            <option value="NL">Newfoundland and Labrador</option>
+            <option value="NS">Nova Scotia</option>
+            <option value="ON">Ontario</option>
+            <option value="PE">Prince Edward Island</option>
+            <option value="QC">Quebec</option>
+            <option value="SK">Saskatchewan</option>
+            <option value="NT">Northwest Territories</option>
+            <option value="NU">Nunavut</option>
+            <option value="YT">Yukon</option>
+
+            <option value="Not_Canada">Outside Canada</option>
+        </select>
+    </div>
+
+
+
+    <!-- Radio Buttons Dropdown -->
+    <div class="input-row">
+        <label for="label-bold" class="label-bold">How did you hear about us?</label>
+        <select name="quiz_source" id="quiz_source" required>
+            <option value="" disabled selected>Select one (e.g., TikTok, Google, Word of Mouth...)</option>
+            <option value="TikTok (Organic)">TikTok</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Google Search">Google Search</option>
+            <option value="Word of Mouth">Word of Mouth (Friend or Family)</option>
+            <option value="From My Doctor or Clinic">From My Doctor or Clinic</option>
+            <option value="Community Group">Community Group (e.g., Reddit, Facebook)</option>
+            <option value="TTC Ad or Poster">TTC Ad or Poster</option>
+            <option value="Event or Conference">Event or Conference</option>
+            <option value="Other">Other</option>
+        </select>
+
+
+    </div>
+
+    <!-- Email  -->
+
+    <div class="input-row">
+        <label for="email" class="label-bold">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your Email Address" required />
+    </div>
+
+
+
+    <!-- Short Answer -->
+    <div class="input-row">
+        <label for="quiz-hc-sa" class="label-bold">More to Say? We're Listening <span
+                style="font-weight: normal; color: #6b7280;">(Optional)</span></label>
+        If there’s something you want to share — a rant, a
+        question, a struggle, or a story — we want to hear it.
+        We’ve heard hundreds of stories and we would love to hear yours. This space is yours.
+
+        <textarea id="quiz-hc-sa" name="quiz-hc-sa"
+            placeholder="Type anything you’d like to share — a story, a struggle, a thought, or a question..."
+            style="width: 100%; padding: 1rem; font-size: 1rem; border: 1px solid #d1d5db; border-radius: 8px; height: 100px; resize: vertical; box-sizing: border-box;">
+        </textarea>
+
+    </div>
+
+    <!-- Consent Checkbox -->
+
+    <label>
+        <input type="checkbox" id="subscribe" required />
+        I agree to subscribe to emails from Abundant Science.
+    </label>
+
+
+    <!-- Submit Button -->
+    <div class="input-row">
+        <button type="submit">Submit & Hear From Us Soon</button>
+        <div id="message"></div>
+    </div>
+
+
+
+    <!-- Disclaimer -->
+    <div class="form-subnote">By submitting your email address we will subscribe you to occasional updates from Abundant
+        Science. Your data is protected by our <a href="/privacy" target="_blank">privacy policy</a> and the laws
+        of Canada and Ontario.
+
+</form>
