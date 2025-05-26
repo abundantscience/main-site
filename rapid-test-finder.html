@@ -4,167 +4,54 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rapid Test Index – Abundant Science</title>
+    <title>Find Your Test – Abundant Science</title>
+    <meta name="description"
+        content="Tell us about yourself and get matched with the right rapid test. A quick 5-question survey from Abundant Science." />
 
-    <!-- Google Fonts -->
+    <!-- Fonts and CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="styles.css"> -->
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles/marketing.css" />
+    <link rel="stylesheet" href="styles/form.css" />
+    <link rel="stylesheet" href="styles/signup.css" />
+    <!-- <link rel="stylesheet" href="/styles/campaigns.css" /> -->
+    <link rel="stylesheet" href="styles/home-page.css" />
+    <link rel="stylesheet" href="styles/forms/form-base.css" />
 
-    <!-- Supabase -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.5/dist/umd/supabase.min.js"></script>
+
+    <!-- Supabase JS library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+    <!-- Your reusable Supabase form handler -->
+    <script src="/js/supabaseFormHandler.js"></script>
+
+
 </head>
 
-<body>
+<body style="background: #f2f7ff; font-family: 'Inter', sans-serif;">
 
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="logo-container">
-            <a href="index.html"
-                style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: inherit;">
-                <img src="logo-nobackground.jpg" alt="Abundant Science logo">
-                <strong>Abundant Science</strong>
-            </a>
-        </div>
-        <div class="nav-links">
-            <a href="about.html">Our Mission</a>
-        </div>
-    </nav>
+    <!-- Navigation Placeholder -->
+    <div id="nav-placeholder"></div>
 
-    <!-- 🔒 Require signup -->
-    <script>
-        const email = localStorage.getItem("user_email");
-        if (!email) {
-            window.location.href = "signup.html";
-        }
-    </script>
+    <!-- Header Section -->
+    <section class="hero-group" style="text-align: center; padding: 2rem 1rem;">
+        <h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem; color: #1e3a8a;"></h1>
+        <p class="hero-subtitle" style="font-size: 1.2rem; max-width: 700px; margin: 0 auto;"> </p>
+    </section>
 
-    <!-- Main Content -->
-    <div class="container">
-        <h1>YOU CAN RAPID TEST FOR</h1>
+    <!-- Form Placeholder -->
+    <div id="homepage-form-placeholder" style="max-width: 720px; margin: 2rem auto;"></div>
 
-        <form id="rapid-index-container">
-            <input type="text" id="search" class="input-field-claude"
-                placeholder="🔍 Search by health category, biomarker, condition topic etc." />
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
 
-            <div style="text-align: left; margin-bottom: 1rem;">
+    <!-- Supabase & Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="/scripts/supabaseFormHandler.js"></script>
+    <script src="/scripts/template-loader.js"></script>
+    <script src="scripts/component-loader.js"></script>
 
-
-                <p style="text-align: left; margin-bottom: 1rem;"> Not Sure Where to Start? Select a Category</p>
-
-                <div id="categoryFilter" class="category-filter">
-                    <button type="button" data-value="Women's Health" class="filter-button">Women's Health</button>
-                    <button type="button" data-value="Fertility" class="filter-button">Fertility</button>
-                    <button type="button" data-value="Blood Tests" class="filter-button">Blood Tests</button>
-                    <button type="button" data-value="Men's Health" class="filter-button">Tests for Men</button>
-                    <button type="button" data-value="Canada" class="filter-button">Health Canada Approved</button>
-                    <button type="button" data-value="Sexual Health" class="filter-button">STI Tests</button>
-                    <button type="button" data-value="General Wellness" class="filter-button">General Wellness</button>
-                    <button type="button" data-value="Drug Tests" class="filter-button">Drug Tests</button>
-                </div>
-
-        </form>
-
-        <div id="results" style="margin-top: 2rem;"></div>
-    </div>
-
-
-
-
-    <!-- Search Script -->
-    <script>
-        const client = window.supabase.createClient(
-            "https://jicytgdlbevccejowlnf.supabase.co",
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppY3l0Z2RsYmV2Y2Nlam93bG5mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUzNDQzNTYsImV4cCI6MjA2MDkyMDM1Nn0.DRfZefUPOLjhdxYudhvQKGePr6ex-Xf3JBkedbF7_OY"
-        );
-
-        const searchInput = document.getElementById("search");
-        const resultsDiv = document.getElementById("results");
-        let selectedCategory = null;
-
-        async function runSearch() {
-            const query = searchInput.value.trim().toLowerCase();
-
-            let supabaseQuery = client.from("tests").select("*");
-
-            console.log("Running search with:");
-            console.log("Query:", query);
-            console.log("Selected Category:", selectedCategory);
-
-            if (query && selectedCategory) {
-                supabaseQuery = supabaseQuery
-                    .ilike("name", `%${query}%`)
-                    .contains("category_tags", [selectedCategory]);
-            } else if (query) {
-                supabaseQuery = supabaseQuery.ilike("name", `%${query}%`);
-            } else if (selectedCategory) {
-                supabaseQuery = supabaseQuery.contains("category_tags", [selectedCategory]);
-            }
-
-            const { data, error } = await supabaseQuery;
-
-            console.log("Returned Data:", data);
-            console.log("Error:", error);
-
-            if (error) {
-                resultsDiv.innerHTML = "❌ Error loading results.";
-                return;
-            }
-
-            if (!data || data.length === 0) {
-                resultsDiv.innerHTML = "No results found.";
-                return;
-            }
-
-            resultsDiv.innerHTML = data.map(row => `
-        
-        
-        <div class="results">
-
-          <h3 class="result-title">${row.name}</h3>
-
-          <div class="result-middle" style="display: flex; gap: 1rem;">
-            
-            <div class="description-section" style="flex: 2;">
-              <p>${row.description}</p>
-            </div>
-            
-          </div>
-
-          <div class="result-footer" style="margin-top: 1rem;">
-            ${row.url ? `<a href="${row.url}" target="_blank" class="learn-more-button">Learn more</a>` : ''}
-            <p class="${row.available ? 'available' : 'unavailable'}">
-              ${row.available ? '✅ Available now' : '🔒 Coming soon'}
-            </p>
-          </div>
-        </div>
-      `).join('');
-        }
-
-
-        // Trigger search on typing
-        searchInput.addEventListener("input", runSearch);
-
-        // Trigger search on filter button click
-        document.querySelectorAll('.filter-button').forEach(button => {
-            button.addEventListener('click', () => {
-                selectedCategory = button.getAttribute("data-value");
-                runSearch();
-            });
-        });
-    </script>
-
-<!-- Footer -->
-<footer class="site-footer">
-    <p>&copy; 2025 Abundant Science. All rights reserved.</p>
-    <p><a href="mailto:contact@abundant.science">Contact Us</a> | <a
-            href="https://www.abundantscience.com/privacy_policy" target="_blank" rel="noopener noreferrer">Privacy
-            Policy</a>
-        | <a href="https://rapidte.st" target="_blank" rel="noopener noreferrer">Shop</a>
-    </p>
-</footer>
-    
 </body>
 
 </html>
