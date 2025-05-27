@@ -27,6 +27,14 @@
     <link rel="stylesheet" href="styles/form.css" />
     <link rel="stylesheet" href="styles/campaigns.css" />
     <link rel="stylesheet" href="styles/signup.css" />
+
+    <!-- Supabase JS library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+    <!-- Your reusable Supabase form handler -->
+    <script src="/js/supabaseFormHandler.js"></script>
+
+
 </head>
 
 
@@ -108,69 +116,11 @@
     <div id="footer-placeholder"></div>
 
 
-    <!-- Supabase Script -->
-    <script>
-        window.addEventListener("DOMContentLoaded", function () {
-            const SUPABASE_URL = "https://jicytgdlbevccejowlnf.supabase.co";
-            const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppY3l0Z2RsYmV2Y2Nlam93bG5mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUzNDQzNTYsImV4cCI6MjA2MDkyMDM1Nn0.DRfZefUPOLjhdxYudhvQKGePr6ex-Xf3JBkedbF7_OY";
 
-            const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
-            document.getElementById("waitlist-form").addEventListener("submit", async function (e) {
-                e.preventDefault();
-
-                const email = document.getElementById("email").value.trim();
-                const msg = document.getElementById("message");
-                const checkboxes = document.querySelectorAll(".campaign-checkbox:checked");
-                const discreet = document.getElementById("discreet-checkbox").checked;
-
-                let campaign = ["rapid-tests-for-clinics"]; // always include this tag
-
-                checkboxes.forEach(cb => {
-                    campaign.push(cb.value);
-                    if (cb.dataset.extra) {
-                        campaign.push(cb.dataset.extra);
-                    }
-                });
-
-                msg.textContent = "";
-                msg.className = "";
-
-                if (!email || !email.includes("@")) {
-                    msg.textContent = "Please enter a valid email.";
-                    msg.className = "error";
-                    return;
-                }
-
-                try {
-                    const { data, error } = await client
-                        .from("waitlist")
-                        .insert([{
-                            email,
-                            source_page: "Rapid Tests for Clinics",
-                            campaign,
-                            discreet
-                        }]);
-
-                    if (error) {
-                        msg.textContent = "❌ Error: " + error.message;
-                        msg.className = "error";
-                    } else {
-                        msg.textContent = "✅ You're on the list!";
-                        msg.className = "success";
-                        document.getElementById("waitlist-form").reset();
-                    }
-                } catch (err) {
-                    console.error("❗ Unexpected error:", err);
-                    msg.textContent = "❌ Something went wrong.";
-                    msg.className = "error";
-                }
-            });
-        });
-    </script>
-
-
-    <script src="scripts/template-loader.js"></script>
+    <!-- Supabase & Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="/scripts/supabaseFormHandler.js"></script>
+    <script src="/scripts/template-loader.js"></script>
     <script src="scripts/component-loader.js"></script>
 
 
