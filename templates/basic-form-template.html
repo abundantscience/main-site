@@ -1,16 +1,16 @@
 <div class="form-container">
 
 
-    <h2 class="form-hero-title"> Join Our Provider Network</h2>
+    <h2 class="form-hero-title"> Provide Your Information </h2>
 
-    <form>
+    <form id="waitlist-form">
 
-        <h3 class="form-hero-subtitle"> Get Access to Custom Rapid Test catalogs for your clinic, new tests, and offer
+        <!-- <h3 class="form-hero-subtitle"> Get Access to Custom Rapid Test catalogs for your clinic, new tests, and offer
             on-site testing and products to clients. </h3>
-        <br>
+        <br> -->
 
         <div class="input-row">
-            <input type="text" name="name" placeholder="Full Name" Your Name />
+            <input type="text" name="full_name" placeholder="Full Name" required />
             <input type="text" name="business_name" placeholder="Business Name" required />
         </div>
 
@@ -27,7 +27,13 @@
 
         <br>
 
+
         <button type="submit">Connect with Us</button>
+
+        <!-- Required for success/error messages -->
+        <div id="message"></div>
+
+
         <div class="form-consent">
             <label>
                 <input type="checkbox" name="consent" required />
