@@ -10,6 +10,7 @@ body {
     color: #111;
     /* margin: 0;
     padding-top: 70px; */
+
 }
 
 .content-wide {
@@ -176,12 +177,13 @@ nav {
 
 /* === Main Container === */
 .container {
-
     max-width: 1400px;
-    /* margin: 2rem auto; */
-    /* padding: 2rem 1rem; */
+    margin: 0 auto;
+    /* centers the container horizontally */
+    padding: 2rem 1rem;
+    /* adds spacing inside */
     text-align: center;
-
+    box-sizing: border-box;
 }
 
 
