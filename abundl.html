@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ABUNDL | Your Body, Tested</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="navbar container">
+        <div class="brand">ABUNDL</div>
+        <div class="byline">by Abundant Science</div>
+    </header>
+
+    <section class="hero container section">
+        <div class="hero-content">
+            <h1>Your Body, Tested.</h1>
+            <p>A monthly subscription box of Health Canada–approved at-home rapid wellness tests.</p>
+            <a href="#early-access" class="btn">Join Early Access</a>
+        </div>
+        <div class="hero-image">
+            <img id="boxImage" src="images/abundlbox_closed.svg" alt="Closed ABUNDL Box" onclick="openBox()">
+        </div>
+    </section>
+
+    <section class="section features">
+        <div class="container">
+            <h2>Why ABUNDL?</h2>
+            <div class="feature-grid">
+                <div class="feature">3 curated rapid tests each month</div>
+                <div class="feature">Designed for at-home testing</div>
+                <div class="feature">Ships monthly, cancel anytime</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="styled-grid">
+                <div class="step">
+                    <!-- <img class="icon" src="icons/curate.svg" alt="We Curate Icon"> -->
+                    <strong>1. We Curate</strong>
+                    <p>Each month, we select a new set of 3 tests based on what’s most relevant to your health that
+                        season.</p>
+                </div>
+                <div class="step">
+                    <!-- <img class="icon" src="icons/deliver.svg" alt="We Deliver Icon" style="text-align: left;"> -->
+                    <strong>2. We Deliver</strong>
+                    <p>Your ABUNDL arrives. Clean. Compact. Designed for discretion and ease.</p>
+                </div>
+                <div class="step">
+                    <!-- <img class="icon" src="icons/test.svg" alt="You Test Icon"> -->
+                    <strong>3. You Test</strong>
+                    <p>At your convenience. Each kit includes 3 tests, simple instructions, results within 15 minutes.
+                    </p>
+                </div>
+                <div class="step">
+                    <!-- <img class="icon" src="icons/connect.svg" alt="We Connect Icon"> -->
+                    <strong>4. Connect</strong>
+                    <p>Join our discord community to connect with experts and other test takers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="early-access" class="section cta">
+        <div class="container">
+            <h2>Reserve Your First Box</h2>
+            <p>Early Access boxes ship in July. Launching September 2025. </p>
+            <div style="margin-top: 2rem;">
+                <a href="https://buy.stripe.com/test_00w9AV87F6klgL23tYe7m00" class="btn">Get Early Access</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section testimonials">
+        <div class="container">
+            <h2>What Our Early Testers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    “This is the first time I’ve felt truly in control of my health.”<br><strong>– Jamie, 32</strong>
+                </div>
+                <div class="testimonial">
+                    “Clean, simple, effective. I didn't expect to enjoy testing!”<br><strong>– Alex, 40</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <details>
+                <summary>What types of tests are included?</summary>
+                <p>We rotate between essential markers like Vitamin D, Iron, and Inflammation indicators. All are
+                    approved for use in Canada.</p>
+            </details>
+            <details>
+                <summary>Can I cancel any time?</summary>
+                <p>Yes. ABUNDL is fully flexible. You can pause, skip, or cancel with one click.</p>
+            </details>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container">
+            &copy; 2025 Abundant Science. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function openBox() {
+            const box = document.getElementById("boxImage");
+            box.src = "images/abundlbox_open.svg";
+        }
+    </script>
+</body>
+
+</html>
