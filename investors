@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ABUNDL | Friends & Family Deck</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            background: #F6F5F3;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding: 3rem 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.6s ease;
+            cursor: pointer;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+            z-index: 1;
+        }
+
+        .slide.previous {
+            transform: translateX(-100%);
+        }
+
+        .card {
+            background: white;
+            padding: 3rem 2rem;
+            max-width: 800px;
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        p {
+            max-width: 650px;
+            margin: 0 auto 1rem;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        ul {
+            text-align: left;
+            max-width: 600px;
+            margin: 1rem auto;
+            font-size: 1.1rem;
+            padding-left: 1.2rem;
+        }
+
+        a.btn {
+            background-color: #333333;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 2rem;
+        }
+
+        .dark .card {
+            background-color: #1A1A1A;
+            color: white;
+        }
+
+        .dark ul {
+            color: #f4f4f4;
+        }
+
+        .indicator {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .image {
+            margin-top: 2rem;
+        }
+
+        .image img {
+            max-width: 100%;
+            max-height: 250px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="slide active">
+        <div class="card">
+            <h1>ABUNDL</h1>
+            <h3>Canada’s First Rapid Test Subscription Box</h3>
+            <p><em>Friends & Family Round – June 2025</em></p>
+
+
+            <form id="emailForm" style="margin-top: 2rem;">
+                <input type="email" id="emailInput" placeholder="Enter your email to continue" required
+                    style="padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid #ccc; width: 80%; max-width: 320px; font-size: 1rem;" />
+                <br />
+                <button type="submit"
+                    style="margin-top: 1rem; padding: 0.8rem 2rem; background: #FF6B00; color: white; border: none; border-radius: 8px; font-weight: bold; font-size: 1rem;">
+                    Enter
+                </button>
+            </form>
+
+        </div>
+    </div>
+
+
+    <div class="slide">
+        <div class="card">
+            <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 0.5rem;">ABUNDL</h1>
+            <p style="font-size: 1.2rem; font-style: italic; color: #555;">by Abundant Science</p>
+            <h3>Canada’s First Rapid Test Subscription Box</h3>
+            <p><em>Friends & Family Round – June 2025</em></p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="card">
+            <h2>The Problem</h2>
+            <p>Getting basic lab work in Canada takes too long and costs too much. Most people don’t test until
+                something’s already wrong.</p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="card">
+            <h2>The ABUNDL by Abundant Science</h2>
+            <p>Canada's first at-home rapid test subscription box. Test for Vitamin D, Iron, and more—in minutes.</p>
+            <p><em>Hover to peek inside</em></p>
+            <div class="image">
+                <img id="boxImage" src="images/abundlbox_closed.svg" alt="ABUNDL Box"
+                    onmouseover="this.src='images/abundlbox_open.svg';"
+                    onmouseout="this.src='images/abundlbox_closed.svg';" />
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="card">
+            <h2>Traction</h2>
+            <ul>
+                <li>✅ 300+ rapid tests sold</li>
+                <li>📧 200% month-over-month email subscriber growth</li>
+                <!-- <li>🔬 Proprietary rapid test regulatory stage monitor</li> -->
+                <li>🇨🇦 Rigorous vetting process ensuring all tests meet Health Canada approval standards</li>
+                <li>🤝 Partnership with major wellness brand in pipeline</li>
+                <li>🏥 20+ clinics sampling for wholesale order</li>
+                <li>🩺 Used in medical practice by MD partner</li>
+                <li>🌍 5+ Diverse global manufacturing partners</li>
+                <li>📹 Strong TikTok engagement, 180K views, trending on #HealthTok</li>
+
+            </ul>
+            <div class="chart-container">
+                <canvas id="emailSubscribersChart" width="800" height="400"></canvas>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script>
+                const ctx = document.getElementById('emailSubscribersChart').getContext('2d');
+                const emailSubscribersChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['February', 'March', 'April', 'May', 'June'],
+                        datasets: [{
+                            label: 'Subscriber Growth',
+                            data: [5, 50, 100, 200, 400],
+                            borderColor: '#FF6B00',
+                            backgroundColor: 'rgba(255, 107, 0, 0.2)',
+                            borderWidth: 2,
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Month'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: '# of Email Subscribers'
+                                },
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="card">
+            <h2>Market Opportunity</h2>
+            <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 2rem;">
+                ABUNDL's wedge into the $4.5T wellness industry with rapid testing as a consumer product category.
+            </p>
+            <div class="chart-container" style="text-align: center; margin: 2rem auto;">
+                <div style="display: flex; justify-content: center; align-items: center; gap: 2rem;">
+                    <div style="width: 150px; height: 150px; border-radius: 50%; background: #333333; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; font-weight: bold; padding: 1rem; text-align: center; transition: transform 0.3s ease, background-color 0.3s ease;"
+                        onmouseover="this.style.transform='scale(1.1)'; this.style.backgroundColor='#444444';"
+                        onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='#333333';">
+                        <span style="font-size: 1.2rem; margin-bottom: 0.5rem;">$7.8B → $12B</span>
+                        <span style="font-size: 0.9rem;">Rapid Testing & Diagnostics</span>
+                    </div>
+                    <div style="width: 200px; height: 200px; border-radius: 50%; background: #555555; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; font-weight: bold; padding: 1rem; text-align: center; transition: transform 0.3s ease, background-color 0.3s ease;"
+                        onmouseover="this.style.transform='scale(1.1)'; this.style.backgroundColor='#666666';"
+                        onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='#555555';">
+                        <span style="font-size: 1.2rem; margin-bottom: 0.5rem;">$575B</span>
+                        <span style="font-size: 0.9rem;">Preventive Health & Insights</span>
+                    </div>
+                    <div style="width: 250px; height: 250px; border-radius: 50%; background: #777777; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; font-weight: bold; padding: 1rem; text-align: center; transition: transform 0.3s ease, background-color 0.3s ease;"
+                        onmouseover="this.style.transform='scale(1.1)'; this.style.backgroundColor='#888888';"
+                        onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='#777777';">
+                        <span style="font-size: 1.2rem; margin-bottom: 0.5rem;">$4.5T</span>
+                        <span style="font-size: 0.9rem;">Supplements, Coaching, Personalized Care</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="slide dark">
+        <div class="card">
+            <h2>Use of Capital</h2>
+            <ul>
+                <li>✅ Supercharge ABUNDL's public launch in September 2025</li>
+                <li>✅ Build scalable ecommerce growth engine</li>
+                <li>✅ Expand rapid test offerings</li>
+                <li>✅ Elevate brand, packaging & customer experience</li>
+                <li>✅ Establish clinic & partner relationships</li>
+            </ul>
+            <p><strong>$70,000 CAD already committed</strong></p>
+            <p>Minimum investment: <strong>$20,000 CAD</strong> (~$15,000 USD) • SAFE Note, 20% discount</p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="card">
+            <h2>Our Vision</h2>
+            <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem;">
+                Unlocking a core piece of the 4.5T wellness inudstry, one test at a time.
+            </p>
+            <ul style="font-size: 1.1rem; line-height: 1.8;">
+                <li>🎯 <strong>2000 subscribers</strong> by end of year</li>
+                <li>💰 <strong>500 Monthly ABUNDL customers</strong> at $45/mo</li>
+                <li>🧪 <strong>20+ different tests</strong> in rotation</li>
+                <li>🇺🇸 <strong>U.S. launch</strong> next</li>
+            </ul>
+
+        </div>
+    </div>
+
+    <!-- <div class="slide">
+        <div class="card">
+            <h2>Why Us</h2>
+            <p><strong>Catherine Gao</strong> – I built a $100M supply business during COVID, and scaled a software
+                company from $200K to $5M in revenue. I know how to launch.</p>
+            <p><strong>Jay Gerbrandt</strong> – 10+ years in diagnostics and biotech. I turn ideas into real, testable
+                products—fast.</p>
+        </div>
+    </div> -->
+
+    <div class="slide">
+        <div class="card">
+            <h2>Want to Join Us?</h2>
+            <p>We’re closing this round in July. If you’re curious or excited, let’s chat.</p>
+            <a class="btn" href="mailto:hello@abundant.science">Let’s Talk</a>
+            <p class="footer"><br> Catherine Gao & Jay Gerbrandt<br>Co-Founders • investors@abundant.science</p>
+        </div>
+    </div>
+
+    <div class="indicator" id="indicator">Slide 1 of 9</div>
+
+    <!-- Supabase + Interaction Script -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.5/dist/umd/supabase.min.js"></script>
+    <script>
+        const SUPABASE_URL = "https://jicytgdlbevccejowlnf.supabase.co";
+        const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppY3l0Z2RsYmV2Y2Nlam93bG5mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUzNDQzNTYsImV4cCI6MjA2MDkyMDM1Nn0.DRfZefUPOLjhdxYudhvQKGePr6ex-Xf3JBkedbF7_OY";
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        const slides = document.querySelectorAll('.slide');
+        let current = 0;
+        let slidesUnlocked = false;
+
+        function updateSlides() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active', 'previous');
+                if (index === current) {
+                    slide.classList.add('active');
+                } else if (index < current) {
+                    slide.classList.add('previous');
+                }
+            });
+            document.getElementById('indicator').innerText = `Slide ${current + 1} of ${slides.length}`;
+        }
+
+        async function unlockSlides(email) {
+            const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            if (!valid) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            try {
+                const { error } = await supabase.from('investors').insert([{ email }]);
+                if (error) throw error;
+
+                slidesUnlocked = true;
+                current++;
+                updateSlides();
+            } catch (err) {
+                console.error('Error inserting email:', err.message);
+                alert('There was a problem saving your email. Please try again later.');
+            }
+        }
+
+        document.getElementById('emailForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const email = document.getElementById('emailInput').value.trim();
+            await unlockSlides(email);
+        });
+
+        document.addEventListener('click', (e) => {
+            if (slidesUnlocked && !e.target.closest('form')) {
+                current++;
+                updateSlides();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+
+        function nextSlide() {
+            if (!slidesUnlocked && current === 0) return;
+            if (current < slides.length - 1) {
+                current++;
+                updateSlides();
+            }
+        }
+
+        function prevSlide() {
+            if (current > 0) {
+                current--;
+                updateSlides();
+            }
+        }
+
+        updateSlides();
+    </script>
+
+
+</body>
+
+</html>
