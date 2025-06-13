@@ -12,7 +12,7 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            width: 100;
+            width: 100%;
             max-width: 100vw;
             overflow-x: hidden;
             overflow-y: hidden;
@@ -31,7 +31,7 @@
             left: 0;
             width: 100%;
             max-width: 100vw;
-            height: 100vh;
+            height: 100%;
             padding: 2rem 1rem;
             display: flex;
             justify-content: center;
@@ -44,7 +44,6 @@
             overflow-x: hidden;
             overflow-y: hidden;
         }
-
 
         .slide.active {
             opacity: 1;
@@ -178,7 +177,48 @@
             transform: scale(1.05);
         }
 
+        /* Form Styling */
+        #ctaForm {
+            text-align: center;
+            margin: 2rem auto;
+            max-width: 400px;
+            padding: 1rem;
+            background: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-family: 'Inter', sans-serif;
+        }
 
+        #ctaForm input,
+        #ctaForm textarea {
+            width: 100%;
+            max-width: 320px;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            box-sizing: border-box;
+            margin-bottom: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        #ctaForm button {
+            margin-top: 1rem;
+            padding: 0.8rem 2rem;
+            background: #FF6B00;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        #ctaForm button:hover {
+            background: #E65A00;
+        }
 
         @media (max-width: 600px) {
 
@@ -247,27 +287,6 @@
 
     <div class="slide active">
         <div class="card">
-            <h1>ABUNDL</h1>
-            <h3>Canada’s First Rapid Test Subscription Box</h3>
-            <p><em>Friends & Family Round – June 2025</em></p>
-
-
-            <form id="emailForm" style="margin-top: 2rem;">
-                <input type="email" id="emailInput" placeholder="Enter your email to continue" required
-                    style="padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid #ccc; width: 80%; max-width: 320px; font-size: 1rem;" />
-                <br />
-                <button type="submit"
-                    style="margin-top: 1rem; padding: 0.8rem 2rem; background: #FF6B00; color: white; border: none; border-radius: 8px; font-weight: bold; font-size: 1rem;">
-                    Enter
-                </button>
-            </form>
-
-        </div>
-    </div>
-
-
-    <div class="slide">
-        <div class="card">
             <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 0.5rem;">ABUNDL</h1>
             <p style="font-size: 1.2rem; font-style: italic; color: #555;">by Abundant Science</p>
             <h3>Canada’s First Rapid Test Subscription Box</h3>
@@ -299,12 +318,12 @@
             <h2>Traction</h2>
             <ul>
                 <li>✅ 300+ rapid tests sold</li>
-                <li>📧 200% month-over-month email subscriber growth</li>
+                <li>📧 100% month-over-month email subscriber growth</li>
                 <li>🇨🇦 Rigorous vetting process ensuring all tests meet Health Canada approval standards</li>
                 <li>🤝 Partnership with major wellness brand in pipeline</li>
                 <li>🏥 20+ clinics sampling for wholesale order</li>
                 <li>🩺 Used in medical practice by MD partner</li>
-                <li>🌍 5+ Diverse global manufacturing partners</li>
+                <li>🌍 5+ diverse global manufacturing partners</li>
                 <li>📹 Strong TikTok engagement, 180K views, trending on #HealthTok</li>
 
             </ul>
@@ -393,8 +412,8 @@
                 <li>✅ Elevate brand, packaging & customer experience</li>
                 <li>✅ Establish clinic & partner relationships</li>
             </ul>
-            <p><strong>$70,000 CAD already committed</strong></p>
-            <p>Minimum investment: <strong>$20,000 CAD</strong> (~$15,000 USD) • SAFE Note, 20% discount</p>
+            <p><strong>C$50,000 already committed</strong></p>
+            <p>Minimum investment: <strong>C$20,000</strong> (~US$15,000) • SAFE Note, 20% discount</p>
         </div>
     </div>
 
@@ -427,11 +446,28 @@
     <div class="slide">
         <div class="card">
             <h2>Want to Join Us?</h2>
-            <p>We’re closing this round in July. If you’re curious or excited, let’s chat.</p>
-            <a class="btn" href="mailto:hello@abundant.science">Let’s Talk</a>
-            <p class="footer"><br> Catherine Gao & Jay Gerbrandt<br>Co-Founders • investors@abundant.science</p>
+            <p>We're closing our friends and family round <strong>July 2025</strong>.
+                <br>If you’re curious or excited,
+                we’d love to hear from you.
+
+
+            <form id="ctaForm">
+                <input type="text" name="name" placeholder=" Name" required />
+                <input type="contact info" name="Contact Info" placeholder="Contact Info (if we don't have)" optional />
+                <textarea name="feedback"
+                    placeholder="We'd love to hear from you! Share your thoughts, questions, ideas, or feedback about the business. Let us know if you're interested in participating!"
+                    rows="4"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+
+            <p class="footer" style="margin-top: 2rem; font-size: 0.9rem; color: #666;">
+                Catherine Gao & Jay Gerbrandt<br>
+                Co-Founders • <a href="mailto:investors@abundant.science"
+                    style="color: inherit; text-decoration: underline;">investors@abundant.science</a>
+            </p>
         </div>
     </div>
+
 
     <div class="indicator" id="indicator">Slide 1 of 9</div>
     <!-- Supabase + Interaction Script -->
@@ -442,11 +478,9 @@
         const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppY3l0Z2RsYmV2Y2Nlam93bG5mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUzNDQzNTYsImV4cCI6MjA2MDkyMDM1Nn0.DRfZefUPOLjhdxYudhvQKGePr6ex-Xf3JBkedbF7_OY";
         const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-
         // Slides
         const slides = document.querySelectorAll('.slide');
         let current = 0;
-        let slidesUnlocked = false;
 
         function updateSlides() {
             slides.forEach((slide, index) => {
@@ -463,59 +497,13 @@
             }
         }
 
-
-
-
-        // Form submit listener
-        const emailForm = document.getElementById('emailForm');
-        if (emailForm) {
-            emailForm.addEventListener('submit', async function (e) {
-                e.preventDefault();
-                const emailInput = document.getElementById('emailInput');
-                const email = emailInput.value.trim();
-                await unlockSlides(email); // Slides unlock only inside `unlockSlides()` after successful insert
-            });
-        }
-
-        async function unlockSlides(email) {
-            const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-            if (!valid) {
-                alert('Please enter a valid email address.');
-                return;
-            }
-
-            console.log('Attempting to insert:', email); // 👈 Log to confirm
-
-            try {
-                const { error } = await supabase
-                    .from('investors')
-                    .insert([{ email }]); // 👈 use insert instead of upsert
-
-                if (error) throw error;
-
-                slidesUnlocked = true;
-                if (current === 0) {
-                    current++;
-                    updateSlides();
-                }
-
-            } catch (err) {
-                console.error('Supabase insert failed:', err);
-                alert(`There was a problem saving your email. ${err.message || ''}`);
-            }
-        }
-
-
-
         // Slide navigation
         function nextSlide() {
-            if (!slidesUnlocked && current === 0) return; // Block progress if not unlocked
             if (current < slides.length - 1) {
                 current++;
                 updateSlides();
             }
         }
-
 
         function prevSlide() {
             if (current > 0) {
@@ -527,7 +515,7 @@
         // Click outside of buttons/forms to advance
         document.addEventListener('click', (e) => {
             const isInteractive = e.target.closest('form, button, a, input, .image');
-            if (slidesUnlocked && !isInteractive) {
+            if (!isInteractive) {
                 nextSlide();
             }
         });
@@ -581,6 +569,7 @@
         // Initial render
         updateSlides();
     </script>
+
 
 
 
