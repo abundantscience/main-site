@@ -452,10 +452,10 @@
 
 
             <form id="ctaForm">
-                <input type="text" name="name" placeholder=" Name" required />
-                <input type="contact info" name="Contact Info" placeholder="Contact Info (if we don't have)" optional />
-                <textarea name="feedback"
-                    placeholder="We'd love to hear from you! Share your thoughts, questions, ideas, or feedback about the business. Let us know if you're interested in participating!"
+                <input type="text" id="name" name="name" placeholder=" Name" required />
+                <input type="text" id="contactInfo" name="contactInfo" placeholder="Contact Info (if we don't have)" />
+                <textarea id="feedback" name="feedback"
+                    placeholder="General thoughts, questions, feedback, IDEAS welcome!! If you're interested in a chat with both founders to learn more about the raise let us know! We'll reach out to you directly."
                     rows="4"></textarea>
                 <button type="submit">Submit</button>
             </form>
@@ -477,6 +477,7 @@
         const SUPABASE_URL = "https://jicytgdlbevccejowlnf.supabase.co";
         const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppY3l0Z2RsYmV2Y2Nlam93bG5mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUzNDQzNTYsImV4cCI6MjA2MDkyMDM1Nn0.DRfZefUPOLjhdxYudhvQKGePr6ex-Xf3JBkedbF7_OY";
         const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
 
         // Slides
         const slides = document.querySelectorAll('.slide');
@@ -565,6 +566,30 @@
                 });
             }
         }
+
+        // Handle form submission
+        const form = document.getElementById('ctaForm');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Prevent default form submission
+
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const contactInfo = document.getElementById('contactInfo').value.trim();
+            const feedback = document.getElementById('feedback').value.trim();
+
+            // Insert data into Supabase "investors" table
+            const { data, error } = await supabase.from('investors').insert([
+                { name, contact_info: contactInfo, feedback }
+            ]);
+
+            if (error) {
+                console.error('Error inserting data:', error.message);
+                alert('Failed to submit. Please try again.');
+            } else {
+                alert('Thank you for your submission!');
+                form.reset(); // Clear the form
+            }
+        });
 
         // Initial render
         updateSlides();
