@@ -12,7 +12,8 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            width: 100vw;
+            width: 100;
+            max-width: 100vw;
             overflow-x: hidden;
             overflow-y: hidden;
             font-family: 'Inter', sans-serif;
@@ -28,7 +29,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100vw;
+            width: 100%;
             max-width: 100vw;
             height: 100vh;
             padding: 2rem 1rem;
@@ -181,10 +182,12 @@
 
         @media (max-width: 600px) {
 
-              body {
+            html,
+            body {
                 max-width: 100%;
                 overflow-x: hidden;
             }
+
             .card {
                 width: calc(100% - 2rem);
                 /* Ensure card fits within screen width with padding */
