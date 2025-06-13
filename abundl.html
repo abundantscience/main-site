@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ABUNDL | Your Body, Tested</title>
-<!--     <link rel="stylesheet" href="styles.css" /> -->
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
 </head>
 
 <body>
@@ -20,9 +20,14 @@
             <p>A monthly subscription box of Health Canada–approved at-home rapid wellness tests.</p>
             <a href="#early-access" class="btn">Join Early Access</a>
         </div>
-        <div class="hero-image">
-            <img id="boxImage" src="images/abundlbox_closed.svg" alt="Closed ABUNDL Box" onclick="openBox()">
+
+        <div class="hero-image" onclick="openBox()">
+            <img id="boxImage" src="images/abundlbox_closed.svg" alt="Closed ABUNDL Box" />
+            <span id="boxHint" class="box-hint">Click to open</span>
         </div>
+
+
+
     </section>
 
     <section class="section features">
@@ -40,27 +45,24 @@
         <div class="container">
             <h2>How It Works</h2>
             <div class="styled-grid">
-                <div class="step">
-                    <!-- <img class="icon" src="icons/curate.svg" alt="We Curate Icon"> -->
-                    <strong>1. We Curate</strong>
-                    <p>Each month, we select a new set of 3 tests based on what’s most relevant to your health that
-                        season.</p>
+                <div class="step" data-step="Step 1">
+                    <strong>Curated by Experts</strong>
+                    <p>Each month, our team selects 3 evidence-based rapid tests tailored to the season and your
+                        everyday health needs.</p>
                 </div>
-                <div class="step">
-                    <!-- <img class="icon" src="icons/deliver.svg" alt="We Deliver Icon" style="text-align: left;"> -->
-                    <strong>2. We Deliver</strong>
-                    <p>Your ABUNDL arrives. Clean. Compact. Designed for discretion and ease.</p>
-                </div>
-                <div class="step">
-                    <!-- <img class="icon" src="icons/test.svg" alt="You Test Icon"> -->
-                    <strong>3. You Test</strong>
-                    <p>At your convenience. Each kit includes 3 tests, simple instructions, results within 15 minutes.
+                <div class="step" data-step="Step 2">
+                    <strong>Monthly Delivery</strong>
+                    <p>Your ABUNDL arrives in clean, minimalist packaging—compact, private, and made for your lifestyle.
                     </p>
                 </div>
-                <div class="step">
-                    <!-- <img class="icon" src="icons/connect.svg" alt="We Connect Icon"> -->
-                    <strong>4. Connect</strong>
-                    <p>Join our discord community to connect with experts and other test takers.</p>
+                <div class="step" data-step="Step 3">
+                    <strong>Simple At-Home Testing</strong>
+                    <p>Follow quick instructions. Test in 15 minutes or less. No blood draws. No appointments. No
+                        waiting rooms.</p>
+                </div>
+                <div class="step" data-step="Step 4">
+                    <strong>Get Insights, Stay Connected</strong>
+                    <p>Join conversation inside our Discord community, built for like-minded individuals.</p>
                 </div>
             </div>
         </div>
@@ -69,42 +71,72 @@
     <section id="early-access" class="section cta">
         <div class="container">
             <h2>Reserve Your First Box</h2>
-            <p>Early Access boxes ship in July. Launching September 2025. </p>
-            <div style="margin-top: 2rem;">
-                <a href="https://buy.stripe.com/test_00w9AV87F6klgL23tYe7m00" class="btn">Get Early Access</a>
-            </div>
+            <p>Early Access boxes ship in <strong> July 2025 </strong>. Launching <strong>September.</strong>
+            </p>
+            <form class="signup-form" action="https://your-form-endpoint.com" method="POST"
+                style="margin-top: 2rem; text-align: center;">
+                <input type="email" name="EMAIL" placeholder="Enter your email to reserve your box" required />
+                <button type="submit" class="btn">Join Early Access</button>
+            </form>
+            <!-- <p class="alt-option" style="margin-top: 2rem;">Not ready? Sign up to get notified of our public launch</p> -->
         </div>
     </section>
+
+
 
     <section class="section testimonials">
         <div class="container">
             <h2>What Our Early Testers Say</h2>
             <div class="testimonial-grid">
                 <div class="testimonial">
-                    “This is the first time I’ve felt truly in control of my health.”<br><strong>– Jamie, 32</strong>
+                    “After taking a Vitamin D test at home and finding out I was deficient made me start taking my
+                    health seriously. And sent me on a path to continiously improve my health"<br><strong>– Chris,
+                        31</strong>
                 </div>
-                <div class="testimonial">
+                <!-- <div class="testimonial">
                     “Clean, simple, effective. I didn't expect to enjoy testing!”<br><strong>– Alex, 40</strong>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
-
-
     <section class="section faq">
         <div class="container">
             <h2>Frequently Asked Questions</h2>
+
             <details>
                 <summary>What types of tests are included?</summary>
-                <p>We rotate between essential markers like Vitamin D, Iron, and Inflammation indicators. All are
-                    approved for use in Canada.</p>
+                <p>Each box includes tests for three different health markers, such as Vitamin D, Iron, and
+                    Inflammation. All tests are approved for use in Canada. The exact number of tests may vary depending
+                    on the biomarkers selected.</p> <br>
             </details>
+
+            <details>
+                <summary>How does testing work?</summary>
+                <p>No lab or appointment needed. Each test is self-administered at home and works like a pregnancy or
+                    COVID-19 rapid test. You’ll get results in about 15 minutes.</p> <br>
+            </details>
+
+            <details>
+                <summary>What does early access mean?</summary>
+                <p>We’ll notify you when ABUNDL becomes available for purchase. Early access members get first dibs and
+                    may receive a discount on their first boxes.</p> <br>
+            </details>
+
+            <details>
+                <summary>How much does it cost?</summary>
+                <p>ABUNDL is $45/month. We aim to include between $100–$200 of retail value in each box. Early access
+                    members may receive a discount on their first boxes.</p> <br>
+            </details>
+
             <details>
                 <summary>Can I cancel any time?</summary>
-                <p>Yes. ABUNDL is fully flexible. You can pause, skip, or cancel with one click.</p>
+                <p>Yes. ABUNDL is fully flexible. You can pause, skip, or cancel with one click—no questions asked.</p>
+                <br>
             </details>
         </div>
     </section>
+
+
 
 
     <footer>
@@ -116,9 +148,53 @@
     <script>
         function openBox() {
             const box = document.getElementById("boxImage");
+            const hint = document.getElementById("boxHint");
+
+            // Only run once
+            if (box.src.includes("abundlbox_open.svg")) return;
+
             box.src = "images/abundlbox_open.svg";
+            hint.style.opacity = 0;
+            hint.style.pointerEvents = "none";
         }
     </script>
+    <!-- Supabase + Interaction Script -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.5/dist/umd/supabase.min.js"></script>
+    <script>
+        // Supabase setup
+        const SUPABASE_URL = "https://jicytgdlbevccejowlnf.supabase.co";
+        const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppY3l0Z2RsYmV2Y2Nlam93bG5mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUzNDQzNTYsImV4cCI6MjA2MDkyMDM1Nn0.DRfZefUPOLjhdxYudhvQKGePr6ex-Xf3JBkedbF7_OY";
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        // Form submission handler
+        document.querySelector('.signup-form').addEventListener('submit', async (event) => {
+            event.preventDefault(); // Prevent default form submission
+
+            const emailInput = event.target.EMAIL.value; // Get email input value
+            const sourcePage = "abundl.com/early-access"; // Set source page name
+
+            try {
+                // Insert email and source_page into the waitlist table
+                const { data, error } = await supabase
+                    .from('waitlist')
+                    .insert([{ email: emailInput, source_page: sourcePage }]);
+
+                if (error) {
+                    console.error('Error adding to waitlist:', error.message);
+                    alert('There was an error. Please try again.');
+                } else {
+                    alert('Thank you for joining the waitlist!');
+                    event.target.reset(); // Clear the form
+                }
+            } catch (err) {
+                console.error('Unexpected error:', err);
+                alert('An unexpected error occurred. Please try again.');
+            }
+        });
+
+    </script>
+
+
 </body>
 
 </html>
@@ -194,6 +270,30 @@
     .hero-image img:hover {
         transform: scale(1.02);
     }
+
+    .hero-image {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .box-hint {
+        position: absolute;
+        bottom: -1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.85rem;
+        color: #888;
+        opacity: 0.85;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+        /* Prevents hover conflicts */
+    }
+
+    .hero-image:hover .box-hint {
+        opacity: 1;
+    }
+
 
     /* Sections */
     .section {
@@ -393,20 +493,160 @@
     }
 
     /* Grid card hover interaction */
-    .styled-grid .step {
+    .styled-grid .step,
+    .step {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         border: 1px solid #eaeaea;
         border-radius: 12px;
         padding: 1.5rem;
         background-color: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
     }
 
-    .styled-grid .step:hover {
+    .styled-grid .step:hover,
+    .step:hover {
         transform: translateY(-4px);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
     }
 
     .btn:hover {
         box-shadow: 0 0 10px rgba(242, 201, 76, 0.4);
+    }
+
+    .step {
+        position: relative;
+        padding: 2rem 1.5rem 1.5rem;
+        background-color: #ffffff;
+        border: 1px solid #eaeaea;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .step:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .step::before {
+        content: attr(data-step);
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #999;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 0.75rem;
+        letter-spacing: 0.05em;
+    }
+
+    /* Early Access Options */
+
+    .email-signup {
+        text-align: center;
+        background-color: #f9f9f9;
+        padding: 6rem 1rem;
+        border-top: 1px solid #eee;
+    }
+
+    .email-signup h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+    }
+
+    .email-signup p {
+        color: #555;
+        font-size: 1rem;
+        max-width: 520px;
+        margin: 0 auto 2rem;
+    }
+
+    .signup-form {
+        display: flex;
+        justify-content: left;
+        align-items: left;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .signup-form input[type="email"] {
+        padding: 0.85rem 1rem;
+        width: 100%;
+        max-width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 0;
+        font-size: 1rem;
+        font-family: inherit;
+        flex: 1;
+        min-width: 240px;
+    }
+
+    .signup-form button {
+        padding: 0.85rem 1.75rem;
+        font-weight: 600;
+        font-size: 1rem;
+        border: none;
+        background-color: #111;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        border-radius: 0;
+        flex-shrink: 0;
+    }
+
+    .signup-form button:hover {
+        background-color: #333;
+    }
+
+
+    /* Early Acess */
+
+    .early-access {
+        text-align: center;
+        background-color: #f9f9f9;
+        padding: 6rem 1rem;
+        border-top: 1px solid #eee;
+    }
+
+    .early-access h2 {
+        font-size: 2.25rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    .early-access p.description {
+        font-size: 1rem;
+        color: #666;
+        line-height: 1.6;
+        max-width: 500px;
+        margin: 0 auto 2.5rem;
+    }
+
+    .early-access .cta-buttons {
+        margin-bottom: 2rem;
+    }
+
+    .btn.primary {
+        background-color: #111;
+        color: #fff;
+        padding: 1rem 2rem;
+        font-weight: 600;
+        text-decoration: none;
+        border: none;
+        display: inline-block;
+        transition: background-color 0.2s ease;
+        font-size: 1rem;
+        letter-spacing: 0.02em;
+    }
+
+    .btn.primary:hover {
+        background-color: #333;
+    }
+
+    /* Alt option */
+    .alt-option {
+        font-size: 0.9rem;
+        color: #888;
+        margin-bottom: 1rem;
     }
 </style>
