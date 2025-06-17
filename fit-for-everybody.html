@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colon Cancer Screening FIT Rapid Test in Canada | Abundant Science</title>
+    <meta name="description"
+        content="Get a free, Health Canada-approved FIT test for colon cancer screening. Discreet, accurate, and easy to use. Brought to you by Abundant Science." />
+    <link rel="canonical" href="https://www.abundantscience.com/hiv" />
+
+    <meta property="og:title" content="Get a Free Colon Cancer FIT Test in Canada" />
+    <meta property="og:description"
+        content="Abundant Science offers free, discreet colon cancer FIT test kits. Approved by Health Canada. Easy and accurate screening." />
+    <meta property="og:image" content="https://www.abundantscience.com/cover-fit-image.jpg" />
+    <meta property="og:url" content="https://www.abundantscience.com/fit" />
+    <meta property="og:type" content="website" />
+
+    <!-- Fonts and CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <link rel="stylesheet" href="styles/marketing.css" />
+    <!-- <link rel="stylesheet" href="styles/form.css" /> -->
+    <link rel="stylesheet" href="styles/campaigns.css" />
+    <link rel="stylesheet" href="styles/signup.css" />
+    <link rel="stylesheet" href="styles/home-page.css" />
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.5/dist/umd/supabase.min.js"></script>
+
+
+    <!-- Supabase JS library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+    <!-- Your reusable Supabase form handler -->
+    <script src="/js/supabaseFormHandler.js"></script>
+</head>
+
+
+<body>
+
+    <!-- Navigation Bar -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Hero / Form Section -->
+    <div class="container">
+        <img src="fit_test.png" alt="Fit Rapid Test"
+            style="width: 50%; max-width: 700px; min-width:300px; margin: 1rem 0; padding-top:5%; border-radius: 8px;" />
+
+        <p style="color: #666">
+
+        <form id="waitlist-form">
+            <div style="margin: 1rem ; max-width: 700px; text-align: justify; display: flex; flex-direction: column; align-items:
+            flex-start; color: #333;">
+                <h2>You deserve to know.</h2>
+
+                <!-- make font bigger   -->
+
+                <span style="font-size: 1.1rem;">
+                    Canadian colorectal cancer screening programs start with the fecal immunochemical test (FIT), which
+                    detects fecal occult blood (FOB) and prioritizes patients for colonoscopies. Today, FIT tests are
+                    performed on mailed-in stool samples by private companies like LifeLabs, and testing is covered only
+                    for people over 50.
+
+                    <br>
+                    <br>
+
+                    Health Canada has approved numerous FIT rapid tests for their accuracy and ease of use. But they are
+                    not widely available. We believe that getting FIT rapid tests to younger people currently excluded
+                    from cancer screening is essential to address rising rates of colorectal cancer among millennials.
+                    Plus, these tests can be performed at home or at a clinic, enabling faster, smarter decision making
+                    and staunching the flow of taxpayer money to American-owned labs that keep ripping Canadians off.
+
+
+                    <br>
+                    <br>
+                    <strong> Sign up below to join the waitlist </strong> and we'll let you know when we have FIT rapid
+                    screening testsavailable.
+
+                    <br>
+                    <br>
+                </span>
+
+            </div>
+
+
+            <div style="margin: 1rem; text-align: left; display: flex; flex-direction: column; align-items:
+                flex-start; min-width:300px; max-width: 750px;">
+                <input type="email" id="email" placeholder="Your Email Address" required style="min-width: 300px;" />
+                <!-- Check boxes for campaign selection, will be inserted into campaign filed in waitlist table -->
+                <br>
+
+                <h3>Please check all that apply:</h3>
+                <label>
+                    <input type="checkbox" class="campaign-checkbox" value="fit-test-purchase-self-loved-one" />
+                    I would purchase a FIT rapid test for myself or a loved one
+                </label>
+
+                <label>
+                    <input type="checkbox" class="campaign-checkbox" value="fit-test-use-if-gov-free" />
+                    I would use a FIT rapid test if it were provided free through a government screening program
+                </label>
+
+                <label>
+                    <input type="checkbox" class="campaign-checkbox" value="family-history-colorectal-cancer" />
+                    I have a family history of colorectal cancer
+                </label>
+
+                <label>
+                    <input type="checkbox" class="campaign-checkbox" value="interest-in-other-cancer-screening-tests" />
+                    I am interested in other cancer screening rapid tests (please specify)
+                </label>
+
+                <br>
+                <label for="age" style="display: block; margin-top: 1rem; font-size: 1rem; color: #333;">
+                    Please provide your age (so we can understand demand relative to current and proposed screening
+                    ages):
+                </label>
+                <input type="number" id="age" placeholder="Age"
+                    style="width: 80px; margin-top: 0.5rem; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;" />
+
+
+                <br>
+                <div style="display: flex; justify-content: center; width: 100%;">
+                    <button type="submit" style="padding: 0.5rem 1rem; border: none; border-radius: 4px;">
+                        Join Waitlist
+                    </button>
+                </div>
+
+            </div>
+
+
+            <span style="font-size: 0.8rem; max-width: 700px; display: block; margin: 0 auto; text-align: justify;">
+                <i>By submitting your email address, we will subscribe you to occasional updates from
+                    Abundant Science. Your data are protected by <a href="privacy.html" target="_blank">our privacy
+                        policy</a> and the laws of Canada and
+                    Ontario.</i>
+            </span>
+        </form>
+
+        <div id="message"></div>
+    </div>
+
+
+    <section class="biomarker-section">
+
+
+        <section class="resources-section"
+            style="padding: 2rem; background-color: #f9f9f9; border-top: 1px solid #ddd;">
+            <h3 style="font-size: 1.75rem; margin-bottom: 1.5rem;">Abundant Resources • FIT Rapid Testing</h3>
+            <ul style="list-style: none; text-align: left; padding: 0; line-height: 1.6;">
+                <li>
+
+                    <b> <a href="https://www.cancer.ca/en/prevention-and-screening/screening/fit-test/" target="_blank">
+                            FIT testing in Canada</a></b><b> (Cancer.ca)</b>
+
+                    <br>
+                    Comprehensive overview of FIT testing options and where to access them in Canada, including
+                    provincial programs.
+
+                </li>
+                <br>
+
+                <li>
+                    <b><a href="https://www.tiktok.com/@abundant.science" target="_blank">Our TikTok Series</a></b>
+                    <br>
+                    Follow us on TikTok for engaging content about FIT rapid testing and other health science topics.
+                </li>
+                <br>
+
+                <li>
+                    <b><a href="https://www.theglobeandmail.com/canada/article-advocacy-group-urges-canada-to-lower-starting-age-for-colorectal/"
+                            target="_blank">
+                            Advocacy to Lower Screening Ages in Canada</a></b>
+                    <br>
+                    Learn about efforts to lower the starting age for colorectal cancer screening in Canada, as reported
+                    by The Globe and Mail.
+                </li>
+
+                <br>
+
+            </ul>
+        </section>
+
+        <div id="footer-placeholder"></div>
+
+
+
+        <!-- Supabase Script -->
+        <script>
+            window.addEventListener("DOMContentLoaded", function () {
+                const SUPABASE_URL = "https://jicytgdlbevccejowlnf.supabase.co";
+                const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppY3l0Z2RsYmV2Y2Nlam93bG5mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUzNDQzNTYsImV4cCI6MjA2MDkyMDM1Nn0.DRfZefUPOLjhdxYudhvQKGePr6ex-Xf3JBkedbF7_OY";
+
+                const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+                document.getElementById("waitlist-form").addEventListener("submit", async function (e) {
+                    e.preventDefault();
+
+                    const email = document.getElementById("email").value.trim();
+                    const msg = document.getElementById("message");
+                    const checkboxes = document.querySelectorAll(".campaign-checkbox:checked");
+                    // const discreet = document.getElementById("discreet-checkbox").checked;
+                    const age = document.getElementById("age").value.trim(); // Assuming there's an input field with id "age"
+
+                    let campaign = ["campaign-fit-rapid-test"]; // always include this tag
+
+                    checkboxes.forEach(cb => {
+                        campaign.push(cb.value);
+                        if (cb.dataset.extra) {
+                            campaign.push(cb.dataset.extra);
+                        }
+                    });
+
+                    msg.textContent = "";
+                    msg.className = "";
+
+                    if (!email || !email.includes("@")) {
+                        msg.textContent = "Please enter a valid email.";
+                        msg.className = "error";
+                        return;
+                    }
+
+                    try {
+                        const { data, error } = await client
+                            .from("waitlist")
+                            .insert([{
+                                email,
+                                source_page: "FIT Test",
+                                campaign
+                                // discreet
+                            }]);
+
+                        if (error) {
+                            msg.textContent = "❌ Error: " + error.message;
+                            msg.className = "error";
+                        } else {
+                            msg.textContent = "✅ You're on the list!";
+                            msg.className = "success";
+                            document.getElementById("waitlist-form").reset();
+                        }
+                    } catch (err) {
+                        console.error("❗ Unexpected error:", err);
+                        msg.textContent = "❌ Something went wrong.";
+                        msg.className = "error";
+                    }
+                });
+            });
+        </script>
+
+        <script src="scripts/template-loader.js"></script>
+        <script src="scripts/component-loader.js"></script>
+
+</body>
+
+</html>
