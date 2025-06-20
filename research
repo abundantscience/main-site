@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- --------- GLOBAL <head> FROM HOME PAGE (unchanged) --------- -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5GS1G09ML"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { { dataLayer.push(arguments); } }
+        gtag('js', new Date());
+        gtag('config', 'G-L5GS1G09ML');
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Research | Abundant Science</title>
+    <meta name="description" content="Rapid testing research by Abundant Science." />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/marketing.css" />
+    <link rel="stylesheet" href="styles/form.css" />
+    <link rel="stylesheet" href="styles/campaigns.css" />
+    <link rel="stylesheet" href="styles/signup.css" />
+    <link rel="stylesheet" href="styles/home-page.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="/js/supabaseFormHandler.js"></script>
+</head>
+
+<body>
+    <div id="nav-placeholder"></div>
+    <header class="home-hero-section">
+        <h1 class="home-title">
+            <strong>Rapid Testing Research</strong><br>
+            <span style="font-weight:400;">By Abundant Science</span>
+        </h1>
+    </header>
+
+    <section
+        style="background-color: #fffcf9; padding: 50px 60px; border-radius: 8px; margin: 20px auto; max-width: 90%; width: 900px; box-sizing: border-box; text-align: left; font-family: 'Inter', sans-serif;">
+
+        <div
+            style="display: block; padding: 5px 10px; background-color: #798ff6; border: 1px solid #798ff6; border-radius: 4px; font-size: 14px; color: #fffcf9; margin-bottom: 40px; margin-left: auto; margin-right: 0; width: fit-content;">
+            <strong>Press Release</strong>
+        </div>
+
+
+        <h2 style="text-align: center;">June 2025 Survey: 84% of Canadian Sniffies Users Want Rapid HIV PrEP Testing
+        </h2>
+
+        <p><strong> Toronto, June 20, 2025 </strong> – A cross-sectional study of Canadian men using the geospatial
+            dating platform
+            Sniffies (762,699 impressions from May 15–June 15, 2025) reveals extraordinary demand for rapid HIV PrEP
+            testing and personal drug testing supplies, with implications for Canada's 2030 HIV elimination goals and
+            unaddressed populations like discreet MSM.</p>
+
+        <h3>Key Findings (n=87, ±10.6% margin of error at 95% confidence)</h3>
+        <ul>
+            <li><strong> 72% identify as "discreet"</strong> (95% CI: 62%–81%) – Sniffies users prioritize boundaries,
+                pointing to
+                systematic gaps in current service delivery without an explicit outreach strategy</li>
+            <li><strong>84% want PrEP rapid testing</strong> (95% CI: 75%–91%) – Far exceeding general population
+                awareness rates,
+                suggesting highly activated user base interest in alternative options to lab testing.</li>
+            <li><strong>100% of non-discreet users want PrEP rapid testing</strong> (24/24, 95% CI: 85%–100%) — Among
+                “outˮ users, PrEP
+                rapid testing interest is universal, suggesting discretion may represent an access barrier</li>
+            <li><strong>97% overlap between drug supply testing and PrEP rapid test interest</strong> – Of 33 users
+                seeking drug testing, 32 also want PrEP rapid testing, indicating cross distribution opportunity for
+                this sub-segment</li>
+            <li><strong>11.6% conversion rate</strong> – High engagement from advertisement to email signup (747 clicks,
+                87 unique
+                respondents) demonstrates genuine market demand, not passive survey participation</li>
+        </ul>
+
+        <h3>The Discretion Paradox</h3>
+        <p>Strikingly, a key finding challenges assumptions about hard-to-reach populations poorly represented in the
+            corpus of research. While 100% of "non-discreet" users expressed PrEP rapid testing interest, 78% of
+            "discreet" users indicated interest. This suggests privacy needs, not health awareness, may play a bigger
+            part in barriers to ongoing PrEP compliance.</p>
+
+        <p>"We're seeing users who are highly health-conscious but may be structurally excluded by current diagnostics
+            delivery models," said Jay Gerbrandt, Chief Science Officer at Abundant Science and lead researcher. "When
+            every single non-discreet user wants PrEP rapid tests, but only 78% of discreet users show interest,
+            discretion becomes a structural barrier borne of a personal choice to further understand."</p>
+
+        <h3>Market Sizing and Opportunity</h3>
+        <p>With 5 of 7 required PrEP tests already Health Canada-approved for rapid use, regulatory barriers appear
+            surmountable. The remaining tests have European approval, suggesting technical feasibility for comprehensive
+            at-home panels.</p>
+
+        <p>Conservative estimates based on study engagement rates suggest 15,000–25,000 potential users across major
+            Canadian markets, representing $3–5M annual market opportunity at current PrEP testing costs.</p>
+
+        <h3>By the Numbers</h3>
+        <ul>
+            <li><strong>762,699</strong> advertisement impressions across two regions</li>
+            <li><strong>87</strong> unique respondents from 747 clicks (±10.6% margin
+                of error)</li>
+            <li><strong>84%</strong> expressed interest in PrEP rapid testing (95% CI: 75%–91%)</li>
+            <li><strong>100%</strong> of non-discreet users wanted PrEP testing (24/24, 95% CI:
+                85.7%–100%)
+            </li>
+            <li><strong>72%</strong> identified as "discreet" (95% CI: 62%–81%)</li>
+            <li><strong>38%</strong> wanted drug testing supplies (95% CI: 28%–49%)</li>
+            <li><strong>97%</strong> of drug test seekers also wanted PrEP rapid testing (32 / 33)</li>
+            <li><strong>5</strong> of <strong>7</strong> tests required for PrEP monitoring already Health
+                Canada-approved for rapid use</li>
+            <li><strong>52%</strong> higher conversion in Prairie vs. Coastal regions (13.4% vs
+                8.83%)
+            </li>
+        </ul>
+
+        <h3>Geographic Disparities</h3>
+        <p>Prairie users showed 52% higher conversion rates (13.4% vs 8.83%) despite mixed rural-urban coverage,
+            suggesting underserved regions are more responsive to novel access methods. This supports targeting rapid
+            testing solutions to areas with limited traditional sexual health infrastructure. Continued research in
+            different densities will provide more insight into distribution access.</p>
+
+        <h3>Public Health Implications</h3>
+        <p>Canada's HIV elimination strategy requires reaching approximately 7,000 undiagnosed individuals – 11% of
+            people living with HIV. Platform-based interventions reaching discreet MSM populations could meaningfully
+            contribute to the first "95" (diagnosis) while supporting PrEP scale-up efforts.</p>
+
+        <p>The 97% correlation between party-and-play (PnP) substance use and associated drug testing and PrEP rapid
+            testing interest illuminates critical intersections between harm reduction and HIV prevention, supporting
+            integrated service delivery models which could be integrated into existing deployment systems via expanded
+            telehealth for both clinical and rapid testing purposes.</p>
+
+        <h3>Study Methodology</h3>
+        <p>This cross-sectional survey employed advertising-based recruitment on Sniffies from May 15–June 15, 2025,
+            using sequential geographic deployment: Prairie provinces (May 15–June 8) followed by major coastal cities
+            (June 9–15). Advertisements appeared across four platform placement zones, achieving 762,699 impressions and
+            747 clicks.</p>
+
+        <p>Participants completed a secure web form at abundant.science/free-hiv-rapid-test indicating interest in:
+            discretion ("Your email won't say HIV in it"), PrEP rapid testing, and drug testing supplies. The study
+            collected 87 unique email addresses (11.6% conversion rate) with no personal health information beyond
+            self-reported interests.</p>
+
+        <p><strong>Limitations:</strong> Convenience sampling introduces selection biases limiting generalizability.
+            Small sample sizes preclude robust statistical inference for subgroup comparisons. Results represent market
+            signals rather than precise population conclusions.</p>
+
+        <p><strong>Ethics:</strong> Research conducted in accordance with Canadian privacy legislation (PIPEDA, PHIPA).
+            Informed consent obtained through web form submission with clear data use disclosure.</p>
+
+        <h3>Next Steps</h3>
+        <p>Results will inform development of Canada and the worldʼs first comprehensive rapid PrEP testing panel.
+            Abundant Science is exploring partnerships with private financing, provincial health authorities and harm
+            reduction organizations to scale privacy-preserving testing solutions.</p>
+
+        <p>Abundant Science is drafting a pre-print and whitepaper. After engagement and refinement, Gerbrandt plans to
+            submit the research for peer review and publication in a Canadian medical journal, while advancing product
+            development based on this demonstrated market demand.</p>
+
+        <h3>About the Research</h3>
+        <p>This market validation study was conducted by Abundant Science Inc., a Toronto-based, Canadian owned and
+            operated independent company developing rapid testing solutions for Canadian healthcare markets. Full
+            methodology and anonymized data available upon request via https://abundantscience.com.</p>
+
+        <p><strong>Media Contact:</strong> Jay Gerbrandt, Chief Science Officer<br>
+            Email: <a href="mailto:jay@abundant.science">jay@abundant.science</a><br>
+            Phone: 416 333 4829</p>
+    </section>
+
+
+    <div id="footer-placeholder"></div>
+    <script src="/scripts/template-loader.js"></script>
+    <script src="/scripts/component-loader.js"></script>
+</body>
+
+</html>
