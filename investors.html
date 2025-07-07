@@ -12,7 +12,7 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            width: 100%;
+            width: 100;
             max-width: 100vw;
             overflow-x: hidden;
             overflow-y: hidden;
@@ -31,7 +31,7 @@
             left: 0;
             width: 100%;
             max-width: 100vw;
-            height: 100%;
+            height: 100vh;
             padding: 2rem 1rem;
             display: flex;
             justify-content: center;
@@ -44,6 +44,7 @@
             overflow-x: hidden;
             overflow-y: hidden;
         }
+
 
         .slide.active {
             opacity: 1;
@@ -177,48 +178,7 @@
             transform: scale(1.05);
         }
 
-        /* Form Styling */
-        #ctaForm {
-            text-align: center;
-            margin: 2rem auto;
-            max-width: 400px;
-            padding: 1rem;
-            background: #FFFFFF;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            font-family: 'Inter', sans-serif;
-        }
 
-        #ctaForm input,
-        #ctaForm textarea {
-            width: 100%;
-            max-width: 320px;
-            padding: 0.8rem 1rem;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            font-size: 1rem;
-            box-sizing: border-box;
-            margin-bottom: 1rem;
-            font-family: 'Inter', sans-serif;
-        }
-
-        #ctaForm button {
-            margin-top: 1rem;
-            padding: 0.8rem 2rem;
-            background: #FF6B00;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            font-family: 'Inter', sans-serif;
-        }
-
-        #ctaForm button:hover {
-            background: #E65A00;
-        }
 
         @media (max-width: 600px) {
 
@@ -287,6 +247,27 @@
 
     <div class="slide active">
         <div class="card">
+            <h1>ABUNDL</h1>
+            <h3>Canada’s First Rapid Test Subscription Box</h3>
+            <p><em>Friends & Family Round – June 2025</em></p>
+
+
+            <form id="emailForm" style="margin-top: 2rem;">
+                <input type="email" id="emailInput" placeholder="Enter your email to continue" required
+                    style="padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid #ccc; width: 80%; max-width: 320px; font-size: 1rem;" />
+                <br />
+                <button type="submit"
+                    style="margin-top: 1rem; padding: 0.8rem 2rem; background: #FF6B00; color: white; border: none; border-radius: 8px; font-weight: bold; font-size: 1rem;">
+                    Enter
+                </button>
+            </form>
+
+        </div>
+    </div>
+
+
+    <div class="slide">
+        <div class="card">
             <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 0.5rem;">ABUNDL</h1>
             <p style="font-size: 1.2rem; font-style: italic; color: #555;">by Abundant Science</p>
             <h3>Canada’s First Rapid Test Subscription Box</h3>
@@ -310,12 +291,6 @@
             <div class="image">
                 <img id="boxImage" src="images/abundlbox_closed.svg" alt="ABUNDL Box" />
             </div>
-            <p style="margin-top: 1rem;">
-                <a href="https://www.abundl.com" target="_blank"
-                    style="color: #FF6B00; text-decoration: underline; font-weight: bold;">
-                    Early Access to ABUNDL.com
-                </a>
-            </p>
         </div>
     </div>
 
@@ -407,7 +382,6 @@
         </div>
     </div>
 
-
     <div class="slide dark">
         <div class="card">
             <h2>Use of Capital</h2>
@@ -423,6 +397,7 @@
             <p>Investment Terms: <strong>SAFE note, C$20K Target Check Size</strong> C$10M Valuation Cap</p>
         </div>
     </div>
+
 
     <div class="slide">
         <div class="card">
@@ -454,29 +429,11 @@
     <div class="slide">
         <div class="card">
             <h2>Want to Join Us?</h2>
-            <p>We're closing our friends and family round <strong>July 25, 2025</strong>.
-                <br>If you'd like to receive additional details and/or an invitation to the raise please sign up below.
-
-
-            <form id="ctaForm">
-                <input type="text" id="name" name="name" placeholder=" Name" required />
-                <input type="text" id="contactInfo" name="contactInfo" placeholder="Email" />
-                <textarea id="feedback" name="feedback"
-                    placeholder="Feel free to provide any additonal thoughts or message Catherine & Jay directly!"
-                    rows="4"></textarea>
-                <button type="submit">Submit</button>
-            </form>
-
-            <p class="footer" style="margin-top: 2rem; font-size: 0.9rem; color: #666;">
-                Catherine Gao & Jay Gerbrandt<br>
-                Co-Founders • <a href="mailto:investors@abundant.science"
-                    style="color: inherit; text-decoration: underline;">investors@abundant.science</a><br>
-                Website: <a href="https://www.abundant.science" target="_blank"
-                    style="color: inherit; text-decoration: underline;">www.abundant.science</a>
-            </p>
+            <p>We’re closing this round in July. If you’re curious or excited, let’s chat.</p>
+            <a class="btn" href="mailto:hello@abundant.science">Let’s Talk</a>
+            <p class="footer"><br> Catherine Gao & Jay Gerbrandt<br>Co-Founders • investors@abundant.science</p>
         </div>
     </div>
-
 
     <div class="indicator" id="indicator">Slide 1 of 9</div>
     <!-- Supabase + Interaction Script -->
@@ -491,6 +448,7 @@
         // Slides
         const slides = document.querySelectorAll('.slide');
         let current = 0;
+        let slidesUnlocked = false;
 
         function updateSlides() {
             slides.forEach((slide, index) => {
@@ -507,13 +465,59 @@
             }
         }
 
+
+
+
+        // Form submit listener
+        const emailForm = document.getElementById('emailForm');
+        if (emailForm) {
+            emailForm.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                const emailInput = document.getElementById('emailInput');
+                const email = emailInput.value.trim();
+                await unlockSlides(email); // Slides unlock only inside `unlockSlides()` after successful insert
+            });
+        }
+
+        async function unlockSlides(email) {
+            const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            if (!valid) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            console.log('Attempting to insert:', email); // 👈 Log to confirm
+
+            try {
+                const { error } = await supabase
+                    .from('investors')
+                    .insert([{ email }]); // 👈 use insert instead of upsert
+
+                if (error) throw error;
+
+                slidesUnlocked = true;
+                if (current === 0) {
+                    current++;
+                    updateSlides();
+                }
+
+            } catch (err) {
+                console.error('Supabase insert failed:', err);
+                alert(`There was a problem saving your email. ${err.message || ''}`);
+            }
+        }
+
+
+
         // Slide navigation
         function nextSlide() {
+            if (!slidesUnlocked && current === 0) return; // Block progress if not unlocked
             if (current < slides.length - 1) {
                 current++;
                 updateSlides();
             }
         }
+
 
         function prevSlide() {
             if (current > 0) {
@@ -525,7 +529,7 @@
         // Click outside of buttons/forms to advance
         document.addEventListener('click', (e) => {
             const isInteractive = e.target.closest('form, button, a, input, .image');
-            if (!isInteractive) {
+            if (slidesUnlocked && !isInteractive) {
                 nextSlide();
             }
         });
@@ -576,34 +580,9 @@
             }
         }
 
-        // Handle form submission
-        const form = document.getElementById('ctaForm');
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault(); // Prevent default form submission
-
-            // Get form values
-            const name = document.getElementById('name').value.trim();
-            const contactInfo = document.getElementById('contactInfo').value.trim();
-            const feedback = document.getElementById('feedback').value.trim();
-
-            // Insert data into Supabase "investors" table
-            const { data, error } = await supabase.from('investors').insert([
-                { name, contact_info: contactInfo, feedback }
-            ]);
-
-            if (error) {
-                console.error('Error inserting data:', error.message);
-                alert('Failed to submit. Please try again.');
-            } else {
-                alert('Thank you for your submission!');
-                form.reset(); // Clear the form
-            }
-        });
-
         // Initial render
         updateSlides();
     </script>
-
 
 
 
