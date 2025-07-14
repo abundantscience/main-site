@@ -245,6 +245,13 @@
 
 <body>
 
+    <!-- Toggle gating here -->
+    <script>
+        const GATED = false;   // ← set to false to make the deck ungated
+    </script>
+
+    <!-- rest of your slides follow -->
+
     <div class="slide active">
         <div class="card">
             <h1>ABUNDL</h1>
@@ -312,6 +319,7 @@
                 <canvas id="emailSubscribersChart" width="800" height="400"></canvas>
             </div>
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
             <script>
                 const ctx = document.getElementById('emailSubscribersChart').getContext('2d');
                 const emailSubscribersChart = new Chart(ctx, {
@@ -430,6 +438,7 @@
         <div class="card">
             <h2>Want to Join Us?</h2>
             <p>We’re closing this round in July. If you’re curious or excited, let’s chat.</p>
+            <p>For a more detailed deck and investor memo, please message us.</p>
             <a class="btn" href="mailto:hello@abundant.science">Let’s Talk</a>
             <p class="footer"><br> Catherine Gao & Jay Gerbrandt<br>Co-Founders • investors@abundant.science</p>
         </div>
@@ -446,9 +455,24 @@
 
 
         // Slides
+        // const slides = document.querySelectorAll('.slide');
+        // let current = 0;
+        // let slidesUnlocked = false;
+
         const slides = document.querySelectorAll('.slide');
         let current = 0;
-        let slidesUnlocked = false;
+        let slidesUnlocked = !GATED;   // already true when GATED is false
+
+        // ── NEW: when ungated, hide the gate slide and start on slide 2 ──
+        if (!GATED) {
+            document.querySelector('#emailForm')           // gate slide’s form exists
+                .closest('.slide')                     // -> the gate slide div
+                .style.display = 'none';               // hide it
+            current = 1;                                   // start at slide 2
+            updateSlides();                                // render immediately
+        }
+        // ────────────────────────────────────────────────────────────────
+
 
         function updateSlides() {
             slides.forEach((slide, index) => {
@@ -587,5 +611,6 @@
 
 
 </body>
+
 
 </html>
