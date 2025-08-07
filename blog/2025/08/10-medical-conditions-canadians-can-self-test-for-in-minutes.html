@@ -77,7 +77,7 @@
                 "mainEntityOfPage": {
                     "@id": "https://www.abundantscience.com/blog/2025/08/10-medical-conditions-canadians-can-self-test-for-in-minutes.html"
                 },
-                "wordCount": 3500,
+                "wordCount": 1200,
                 "commentCount": 0,
                 "publisher": {
                     "@id": "https://www.abundantscience.com/#organization"
@@ -92,34 +92,6 @@
                 "keywords": "rapid test, self test, Health Canada, UTI test, pregnancy test, HIV test, vitamin D test, cholesterol test, FIT test, cancer screening",
                 "description": "Comprehensive guide to all 10 Health Canada-approved rapid self-tests available for Canadians in 2025, including UTI, pregnancy, HIV, vitamin D, cholesterol, and cancer screening tests.",
                 "articleBody": "Did you know you can take a rapid test yourself, at home, for much more than just Covid? This comprehensive guide covers all 10 medical conditions for which Health Canada has approved rapid test options for at-home or self use..."
-            },
-            {
-                "@type": "ItemList",
-                "name": "Top 3 Health Canada-Approved Self Tests",
-                "numberOfItems": 3,
-                "itemListElement": [
-                    {
-                        "@type": "MedicalTest",
-                        "position": 1,
-                        "name": "UTI Rapid Test",
-                        "alternateName": "Urinary Tract Infection Test",
-                        "usedToDiagnose": "Urinary Tract Infection"
-                    },
-                    {
-                        "@type": "MedicalTest",
-                        "position": 2,
-                        "name": "Pregnancy Test",
-                        "alternateName": "hCG Test",
-                        "usedToDiagnose": "Pregnancy"
-                    },
-                    {
-                        "@type": "MedicalTest",
-                        "position": 3,
-                        "name": "HIV Self Test",
-                        "alternateName": "HIV Antibody Test",
-                        "usedToDiagnose": "HIV Infection"
-                    }
-                ]
             }
         ]
     }
@@ -255,6 +227,11 @@
             background: #2c4fa8;
         }
 
+        .inline-email-gate button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+
         .inline-email-gate .error {
             color: #dc2626;
             font-size: 0.9rem;
@@ -267,57 +244,6 @@
             font-size: 1rem;
             margin-top: 1rem;
             font-weight: 600;
-        }
-
-        /* Email Gate Styles - CRITICAL */
-        #lockedContent {
-            display: none !important;
-            visibility: hidden !important;
-        }
-        
-        #lockedContent.unlocked,
-        #lockedContent:not(.locked-content) {
-            display: block !important;
-            visibility: visible !important;
-        }
-        
-        .locked-content {
-            display: none !important;
-            visibility: hidden !important;
-        }
-        
-        #emailGate {
-            display: block;
-        }
-        
-        #emailGate.hidden {
-            display: none !important;
-        }
-
-        .test-item {
-            margin: 3rem 0;
-            padding: 2rem;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .test-item h3 {
-            color: #1e3a8a;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 0.5rem;
-        }
-
-        .test-metadata {
-            background: #f5f8ff;
-            padding: 1rem;
-            border-radius: 6px;
-            margin: 1rem 0;
-        }
-
-        .test-metadata li {
-            list-style: none;
-            padding: 0.25rem 0;
         }
 
         .cta-box {
@@ -346,35 +272,6 @@
             font-weight: 600;
         }
 
-        .conditions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .condition-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid #1e3a8a;
-        }
-
-        .condition-item strong {
-            color: #1e3a8a;
-            font-size: 1.1rem;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .condition-item p {
-            font-size: 0.9rem;
-            color: #666;
-            margin: 0;
-        }
-
         @media (max-width: 768px) {
             .blog-article-section {
                 padding: 30px 20px !important;
@@ -383,14 +280,6 @@
             .inline-email-gate form {
                 flex-direction: column;
                 align-items: stretch;
-            }
-
-            .test-item {
-                padding: 1.5rem 1rem;
-            }
-
-            .conditions-grid {
-                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -413,6 +302,10 @@
 
         <h1 style="text-align: center; font-size: 36px;">10 Medical Conditions Canadians Can Self-Test For In Minutes</h1>
 
+        <!-- Hero Image -->
+        <!-- <img src="/images/blog/rapid-tests-hero-2025.jpg" alt="Various rapid self-tests available in Canada" class="blog-image">
+        <p class="image-caption">Health Canada has approved rapid self-tests for 10 different medical conditions as of 2025</p> -->
+
         <div class="cta-box">
             <p><strong>Ad:</strong> Want to try these tests out for yourself? Try <a href="https://abundl.com">Abundl</a>. On sale now for just C$49.</p>
             <p>New from Abundant Science: Abundl, a seasonal subscription for 3 rapid self tests every 3 months, with exclusive access to the Abundl Discord, a supportive wellness groupchat of fellow-testers, experts, and more. 🇨🇦 only. Sign up at <a href="https://Abundl.com">Abundl.com</a>.</p>
@@ -424,6 +317,9 @@
 
         <h2>The Rapid Testing Revolution in Canada</h2>
 
+        <!-- <img src="/images/blog/rapid-testing-revolution-canada.jpg" alt="Timeline showing evolution of rapid testing in Canada" class="blog-image">
+        <p class="image-caption">The evolution of rapid testing from simple pregnancy tests to comprehensive diagnostic tools</p> -->
+
         <p>The landscape of medical testing has undergone a dramatic transformation over the past decade. What started with simple pregnancy tests has evolved into a comprehensive suite of diagnostic tools that put healthcare decisions directly into consumers' hands. This shift represents more than convenience—it's about democratizing health information and reducing barriers to early detection.</p>
 
         <p>Health Canada's rigorous approval process ensures that only tests meeting strict accuracy and safety standards reach Canadian consumers. Unlike the unregulated market of dubious products flooding online marketplaces, these approved tests undergo extensive clinical validation before earning their Medical Device Licence (MDL) numbers.</p>
@@ -431,6 +327,9 @@
         <p>The impact extends far beyond individual convenience. For Canada's healthcare system, struggling with wait times and access issues, rapid self-testing offers a pressure valve. Patients can monitor chronic conditions, screen for early signs of disease, and make informed decisions about when to seek professional care—all without tying up clinical resources for routine monitoring.</p>
 
         <h2>What Makes a Test "Rapid" and "Self-Use"?</h2>
+
+        <!-- <img src="/images/blog/health-canada-approval-process.jpg" alt="Health Canada approval process for rapid self-tests" class="blog-image">
+        <p class="image-caption">Health Canada's rigorous approval process ensures only safe, accurate tests reach consumers</p> -->
 
         <p>Abundant Science defines a "rapid test" as any approved diagnostic product which produces a human-legible result within minutes, without requiring laboratory equipment or professional interpretation. This excludes traditional lab tests, glucose meters requiring digital readers, or complex multi-step procedures.</p>
 
@@ -447,310 +346,113 @@
                 <button type="submit">Get Full Guide</button>
             </form>
             <div id="gateError" class="error" style="display: none;"></div>
-            <div id="gateSuccess" class="success" style="display: none;">✓ Access granted! Full content unlocked below.</div>
+            <div id="gateSuccess" class="success" style="display: none;">✓ Redirecting to full guide...</div>
             <p style="font-size: 0.85rem; color: #666; margin-top: 1rem;">
                 We respect your privacy. Unsubscribe anytime.
             </p>
         </div>
 
-        <!-- Locked Content -->
-        <div id="lockedContent">
-            <h2>Important Safety Information</h2>
-            
-            <p>Of the over 1,000 rapid tests approved by Health Canada, only 4% are approved for self or at home use. The remaining 96% are only licenced for forensic analysis or point-of-care testing—meaning that only healthcare providers can perform them on their patients, or investigators can perform them to determine substances in a subject's body.</p>
-
-            <p>So, the many gobbledygook brands selling rapid tests direct to Canadian consumers on Amazon shouldn't be trusted without checking them against <a href="https://health-products.canada.ca/mdall-limh/prepareSearch?type=active">Health Canada's MDL licence listing</a>. Other online stores ship rapid tests to Canada from overseas — most aren't Health Canada-approved, meaning their accuracy, safety, and quality can't be certain; such products may be counterfeit or even toxic. Order your rapid tests from manufacturers or trusted, Canada-based distributors of genuine rapid tests which provide MDL numbers.</p>
-
-            <p>All of the rapid tests approved for self use are also approved for point of care, with several global and in-Canada manufacturers licenced to produce each test. <em>(If you're a clinician, academic, employer, or healthcare provider, stay tuned for our guide to point-of-care rapid testing to learn how you can save time, reduce cost, and maximise patient outcomes.)</em></p>
-
-            <h2>All 10 Medical Conditions and 13 Biomarkers for Which Health Canada Has Approved Self Rapid Tests</h2>
-
-            <div class="cta-box">
-                <p><strong>One last ad:</strong> <a href="https://abundl.com">Abundl</a>. What will you learn this season? Early access pricing for C$49.</p>
-                <p>Hi – Jay here, co-founder and Chief Science Officer at Abundant Science. I wanted to thank you for reading this post. We are trying to make rapid tests an option for people across Canada who are tired of high lab prices and requisition run-arounds.</p>
-                <p>Our first product is a Vitamin D rapid self test, MDL 108140, which we sell for C$15 on our <a href="http://rapidte.st">rapidte.st</a> online store. Compare with <a href="https://www.amazon.ca/s?k=vitamin+d+self+test+kit">Amazon sellers for C$25</a>, or a mail-in blood card lab test from <a href="https://store.lifelabs.com/on/wellness/product/vitamind-kit-on">LifeLabs for C$89</a> — for C$90, <em>we will sell you 6 rapid tests</em>.</p>
-                <p>Abundl is our way to expand this category beyond Vitamin D. Every season, we will ship 3 kinds of rapid tests to your door. Hang with our Abundl Discord community, a members-only groupchat-style forum on rapid tests, wellness, and better living.</p>
-                <p>Check out <a href="http://Abundl.com">Abundl.com</a> today. Your support helps us produce research like this.</p>
-                <p>Thanks again,<br>
-                Jay Gerbrandt<br>
-                jay@abundant.science</p>
-            </div>
-            
-            <div class="test-item">
-                <h3>1. UTI (Urinary Tract Infections)</h3>
-                <ul class="test-metadata">
-                    <li><strong>Biomarkers measured:</strong> NIT (nitrites), LEU (leukocytes), BLO (blood/hematuria), PRO (proteinuria)</li>
-                    <li><strong>Specimen and technology:</strong> Urine, enzymatic (chemical reaction produces colour)</li>
-                    <li><strong>Time to results:</strong> ~2 minutes</li>
-                </ul>
-                <p><strong>About this test:</strong> UTIs are one of the most common medical conditions in Canadian women. At least 50% of women experience UTI symptoms in their lifetimes. Rapid self tests are approved for two primary urinalysis biomarkers, NIT (nitrites) and LEU (leukocytes), as well as BLO (blood) and PRO (protein), which can indicate more severe infections or inflammation. Self-testing for UTIs lets women take more control over their urinary health and reduces the interval between symptoms and antibiotics.</p>
-            </div>
-
-            <div class="test-item">
-                <h3>2. Pregnancy Status</h3>
-                <ul class="test-metadata">
-                    <li><strong>Biomarker measured:</strong> hCG (human chorionic gonadotropin)</li>
-                    <li><strong>Specimen and technology:</strong> Urine, lateral flow (two lines positive, one line negative)</li>
-                    <li><strong>Time to results:</strong> ~5 minutes</li>
-                </ul>
-                <p><strong>About this test:</strong> Pregnancy tests are among the most widely used rapid self tests, and are often extremely overpriced. Large healthcare companies have produced "digital" self pregnancy tests, which come with batteries and a tiny camera attached to a screen — but they are still using the exact same strip rapid tests found for a few dollars each elsewhere. Choose strip tests over midstream or digital for equivalent results — if Health Canada has approved them, they'll work to confirm pregnancy.</p>
-            </div>
-
-            <div class="test-item">
-                <h3>3. Ovulation Timing</h3>
-                <ul class="test-metadata">
-                    <li><strong>Biomarker measured:</strong> LH (luteinizing hormone)</li>
-                    <li><strong>Specimen and technology:</strong> Urine, lateral flow (two lines positive, one line negative)</li>
-                    <li><strong>Time to results:</strong> ~5 minutes</li>
-                </ul>
-                <p><strong>About this test:</strong> Couples and women who have had kids or are TTC ("Trying to conceive", not Toronto's transit system!) are familiar with the timing games required. Timing intercourse with ovulation windows helps to maximise conception chances. LH tests track the "LH surge" 24-36 hours before ovulation, providing a crucial metric alongside BBT (basal body temperature) to help women monitor and plan their baby-making journeys, without all the guesswork previous generations of women faced.</p>
-            </div>
-
-            <div class="test-item">
-                <h3>4. Menopause and Perimenopause Staging</h3>
-                <ul class="test-metadata">
-                    <li><strong>Biomarker measured:</strong> FSH (follicle stimulating hormone)</li>
-                    <li><strong>Specimen and technology:</strong> Urine, lateral flow (two lines positive, one line negative)</li>
-                    <li><strong>Time to results:</strong> ~5 minutes</li>
-                </ul>
-                <p><strong>About this test:</strong> After the child-bearing years end, women navigate menopause — the exhaustion of the egg cells which kicked off her fertility cycle. With cascading hormonal and physical changes, perimenopause (when it is approaching) and menopause (when the last egg is gone) create changes in the level of FSH in urine. Alongside a symptom review, FSH testing can help a woman understand whether she is experiencing menopause, perimenopause, or if her symptoms have another cause.</p>
-            </div>
-
-            <div class="test-item">
-                <h3>5. Male Infertility</h3>
-                <ul class="test-metadata">
-                    <li><strong>Biomarker measured:</strong> SP-10 sperm concentration (ACRV1 protein)</li>
-                    <li><strong>Specimen and technology:</strong> Semen, lateral flow (two lines positive, one line negative)</li>
-                    <li><strong>Time to results:</strong> 10 minutes (after 30-60 minute liquefaction of sample)</li>
-                </ul>
-                <p><strong>About this test:</strong> Does the idea of a sperm test <em>tickle</em> your fancy? You're in luck! With three distinct fertility-related rapid tests for women, a male fertility rapid test makes intuitive sense. After, well, <em>producing a sample</em> (and letting it sit to liquefy), this rapid test measures the concentration of a protein in sperm cells — letting the sampler understand whether or not his boys are pulling their weight. Guys can self-test for their sperm concentration to help triage fertility challenges before seeking support.</p>
-            </div>
-
-            <div class="test-item">
-                <h3>6. Covid Infection</h3>
-                <ul class="test-metadata">
-                    <li><strong>Biomarker measured:</strong> SARS-CoV-2 (COVID-19) coronavirus antigen</li>
-                    <li><strong>Specimen and technology:</strong> Nasal swab, lateral flow (two lines positive, one line negative)</li>
-                    <li><strong>Time to results:</strong> ~10 minutes</li>
-                </ul>
-                <p><strong>About this test:</strong> Covid rapid tests have evolved from pandemic necessity to routine health tool, much like flu tests before them. These nasal swab tests remain useful for distinguishing covid from other respiratory illnesses when symptoms arise, helping people decide whether to take antivirals, notify vulnerable contacts, or adjust work-from-home plans. Self-testing provides a quick way to identify the cause of potential symptoms without visiting clinics, particularly helpful during winter viral seasons when multiple illnesses circulate simultaneously.</p>
-            </div>
-
-            <div class="test-item">
-                <h3>7. HIV Status</h3>
-                <ul class="test-metadata">
-                    <li><strong>Biomarker measured:</strong> HIV antibodies (immunoglobulin G IgG, immunoglobulin M IgM)</li>
-                    <li><strong>Specimen and technology:</strong> Fingerstick blood, stacked membrane (two dots positive, one dot negative)</li>
-                    <li><strong>Time to results:</strong> ~1 minute</li>
-                </ul>
-                <p><strong>About this test:</strong> HIV self-tests detect antibodies your body produces after HIV exposure. These tests offer a simple alternative for people who might avoid traditional testing due to stigma, privacy concerns, or have limited access to clinics in rural areas. Early detection through self-testing means people can start antiretroviral treatment sooner, achieving undetectable viral loads that prevent further HIV transmission and help people lead long, healthy lives.</p>
-            </div>
-
-            <div class="test-item">
-                <h3>8. Dyslipidemia (High Cholesterol)</h3>
-                <ul class="test-metadata">
-                    <li><strong>Biomarker measured:</strong> Total cholesterol</li>
-                    <li><strong>Specimen and technology:</strong> Fingerstick blood, enzymatic (chemical reaction produces colour)</li>
-                    <li><strong>Time to results:</strong> ~3 minutes</li>
-                </ul>
-                <p><strong>About this test:</strong> High cholesterol often has no symptoms but significantly increases heart disease risk. This fingerstick test gives immediate cholesterol readings by harnessing an enzyme that turns from green to yellow based on cholesterol level, letting people monitor their levels between doctor visits. Those with family histories of heart disease or anyone making lifestyle changes can track how diet and exercise affect their cholesterol without waiting months for their next checkup.</p>
-            </div>
-
-            <div class="test-item">
-                <h3>9. Hypovitaminosis D (Vitamin D Deficiency)</h3>
-                <ul class="test-metadata">
-                    <li><strong>Biomarker measured:</strong> 25-hydroxyvitamin D (25[OH]D)</li>
-                    <li><strong>Specimen and technology:</strong> Fingerstick blood, lateral flow (two lines low, one line high)</li>
-                    <li><strong>Time to results:</strong> ~10 minutes</li>
-                </ul>
-                <p><strong>About this test:</strong> Living in Canada means long winters and limited sunlight, making vitamin D deficiency common. This test measures the form of vitamin D circulating in your blood, helping determine if you need supplementation. Rather than guessing at dosages or taking unnecessary megadoses, self-testing lets Canadians—especially older adults and those who spend most time indoors—optimize their vitamin D intake for better bone health and immune function.</p>
-            </div>
-
-            <div class="test-item">
-                <h3>10. Gastrointestinal (Digestive Tract) Bleeding</h3>
-                <ul class="test-metadata">
-                    <li><strong>Biomarker measured:</strong> Occult blood (aka fecal immunochemical test)</li>
-                    <li><strong>Specimen and technology:</strong> Stool, lateral flow (two lines positive, one line negative)</li>
-                    <li><strong>Time to results:</strong> ~5 minutes</li>
-                </ul>
-                <p><strong>About this test:</strong> A fecal immunochemical test detects hidden blood in stool that could signal polyps, colorectal cancer, or other digestive issues before symptoms appear. This is the same type of test used in provincial cancer screening programs for people over 50, not to be confused with the guaiac FOB which requires 3 samples. Self-testing offers a non-invasive way for people under 50 with family histories or concerning symptoms to monitor their digestive health, potentially catching serious conditions when they're most treatable.</p>
-            </div>
-
-            <h2>The Bottom Line</h2>
-
-            <p>So that's the landscape: 10 Health Canada-approved rapid self-test options, representing a significant shift in how Canadians can engage with their health. From fertility planning to cancer screening, self-testing puts valuable health information directly in your hands, reducing wait times and eliminating the need for lab requisitions for routine monitoring.</p>
-
-            <p>However, with this newfound accessibility comes responsibility: always verify that any rapid test you purchase displays a valid Health Canada MDL number, as the unregulated products flooding online marketplaces can't guarantee accuracy or safety. Remember—while rapid self-tests are powerful screening and monitoring tools, they work best as starting points to care.</p>
-
-            <p>Positive results should always be discussed with a healthcare provider, who can confirm findings, order follow-up testing if needed, and ensure you receive appropriate treatment. Used wisely, these tests offer Canadians an unprecedented opportunity to take a more active, informed role in managing their health between medical appointments.</p>
-
-            <p>Abundant Science is working constantly to bring these and other rapid tests to the Canadian market, for self-testers, healthcare providers, employers, governments, and even pet parents. Thanks for signing up and reading all the way through — we hope you learned a lot, and that you'll consider checking out <a href="https://Abundl.com">Abundl.com</a> for more on the best way to self-test in 2025.</p>
-        </div>
-        <div class="conditions-grid">
-                <div class="condition-item">
-                    <strong>UTI Testing</strong>
-                    <p>Nitrites, leukocytes, blood & protein in urine</p>
-                </div>
-                <div class="condition-item">
-                    <strong>Pregnancy</strong>
-                    <p>hCG hormone detection</p>
-                </div>
-                <div class="condition-item">
-                    <strong>Ovulation</strong>
-                    <p>LH hormone surge timing</p>
-                </div>
-                <div class="condition-item">
-                    <strong>Menopause</strong>
-                    <p>FSH hormone levels</p>
-                </div>
-                <div class="condition-item">
-                    <strong>Male Fertility</strong>
-                    <p>Sperm concentration</p>
-                </div>
-                <div class="condition-item">
-                    <strong>COVID-19</strong>
-                    <p>SARS-CoV-2 antigen</p>
-                </div>
-                <div class="condition-item">
-                    <strong>HIV Status</strong>
-                    <p>HIV antibodies</p>
-                </div>
-                <div class="condition-item">
-                    <strong>Cholesterol</strong>
-                    <p>Total cholesterol levels</p>
-                </div>
-                <div class="condition-item">
-                    <strong>Vitamin D</strong>
-                    <p>25-hydroxyvitamin D</p>
-                </div>
-                <div class="condition-item">
-                    <strong>Colon Cancer Screening</strong>
-                    <p>Occult blood in stool</p>
-                </div>
-            </div>
-
     </section>
 
     <div id="footer-placeholder"></div>
 
-    <!-- Replace the script section at the bottom of the blog post with this -->
+    <!-- Supabase & Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.5/dist/umd/supabase.min.js"></script>
+    <script src="/scripts/template-loader.js"></script>
+    <script src="/scripts/component-loader.js"></script>
 
-<!-- Supabase & Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.5/dist/umd/supabase.min.js"></script>
-<script src="/scripts/template-loader.js"></script>
-<script src="/scripts/component-loader.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Supabase
+            const SUPABASE_URL = "https://jicytgdlbevccejowlnf.supabase.co";
+            const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppY3l0Z2RsYmV2Y2Nlam93bG5mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUzNDQzNTYsImV4cCI6MjA2MDkyMDM1Nn0.DRfZefUPOLjhdxYudhvQKGePr6ex-Xf3JBkedbF7_OY";
+            const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-<script>
-    // Wait for DOM to be ready
-    document.addEventListener('DOMContentLoaded', function() {
-        // Initialize Supabase
-        const SUPABASE_URL = "https://jicytgdlbevccejowlnf.supabase.co";
-        const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppY3l0Z2RsYmV2Y2Nlam93bG5mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUzNDQzNTYsImV4cCI6MjA2MDkyMDM1Nn0.DRfZefUPOLjhdxYudhvQKGePr6ex-Xf3JBkedbF7_OY";
-        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
-        // Check if user has already provided email (via localStorage)
-        if (localStorage.getItem('blog_access_granted') === 'true') {
-            unlockContent();
-        }
-
-        // Form submission
-        const emailGateForm = document.getElementById('emailGateForm');
-        if (emailGateForm) {
-            emailGateForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                const email = document.getElementById('gateEmail').value.trim();
-                const errorDiv = document.getElementById('gateError');
-                const successDiv = document.getElementById('gateSuccess');
-                
-                // Reset messages
-                errorDiv.style.display = 'none';
-                successDiv.style.display = 'none';
-                
-                // Validate email
-                if (!email || !email.includes('@')) {
-                    errorDiv.textContent = 'Please enter a valid email address';
-                    errorDiv.style.display = 'block';
-                    return;
-                }
-                
-                try {
-                    // Save to waitlist table with blog-specific source
-                    const { error } = await supabase
-                        .from('waitlist')
-                        .insert([{ 
-                            email, 
-                            source_page: 'Blog: 10 Medical Conditions Guide',
-                            campaign: 'blog-gate,rapid-test-guide-2025'
-                        }]);
+            // Form submission with redirect
+            const emailGateForm = document.getElementById('emailGateForm');
+            if (emailGateForm) {
+                emailGateForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
                     
-                    if (error) throw error;
+                    const email = document.getElementById('gateEmail').value.trim();
+                    const errorDiv = document.getElementById('gateError');
+                    const successDiv = document.getElementById('gateSuccess');
+                    const submitBtn = emailGateForm.querySelector('button[type="submit"]');
                     
-                    // Show success and unlock
-                    successDiv.style.display = 'block';
-                    localStorage.setItem('blog_access_granted', 'true');
+                    // Reset messages
+                    errorDiv.style.display = 'none';
+                    successDiv.style.display = 'none';
                     
-                    // Hide form and unlock content
-                    setTimeout(() => {
-                        unlockContent();
-                    }, 1000);
+                    // Validate email
+                    if (!email || !email.includes('@')) {
+                        errorDiv.textContent = 'Please enter a valid email address';
+                        errorDiv.style.display = 'block';
+                        return;
+                    }
                     
-                } catch (err) {
-                    console.error('Error:', err);
-                    errorDiv.textContent = 'Sorry, something went wrong. Please try again.';
-                    errorDiv.style.display = 'block';
-                }
-            });
-        }
-
-        function unlockContent() {
-            const lockedContent = document.getElementById('lockedContent');
-            const emailGate = document.getElementById('emailGate');
-            
-            if (lockedContent) {
-                lockedContent.classList.remove('locked-content');
-                lockedContent.style.display = 'block';
-            }
-            if (emailGate) {
-                emailGate.style.display = 'none';
-            }
-        }
-
-        // Load components using ComponentLoader
-        if (window.ComponentLoader) {
-            const loader = new window.ComponentLoader();
-            
-            // Load navbar
-            if (document.getElementById('nav-placeholder')) {
-                loader.loadComponent('nav-placeholder', '/components/navbar.html', { critical: true });
-            }
-            
-            // Load footer
-            if (document.getElementById('footer-placeholder')) {
-                loader.loadComponent('footer-placeholder', '/components/footer.html', { critical: false });
-            }
-        }
-    });
-
-    // Fade in on scroll
-    const faders = document.querySelectorAll('.fade-in-section');
-    if (faders.length > 0) {
-        const appearOnScroll = new IntersectionObserver(
-            function (entries, observer) {
-                entries.forEach(entry => {
-                    if (!entry.isIntersecting) return;
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
+                    // Disable button during submission
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Submitting...';
+                    
+                    try {
+                        // Save to waitlist table with blog-specific source
+                        const { error } = await supabase
+                            .from('waitlist')
+                            .insert([{ 
+                                email, 
+                                source_page: 'Blog: 10 Medical Conditions Guide',
+                                campaign: 'blog-gate,rapid-test-guide-2025'
+                            }]);
+                        
+                        if (error) throw error;
+                        
+                        // Show success message
+                        successDiv.style.display = 'block';
+                        
+                        // Generate simple token (email + timestamp, base64 encoded)
+                        const token = btoa(email + ':' + Date.now()).replace(/[^a-zA-Z0-9]/g, '');
+                        
+                        // Track conversion with gtag if available
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'email_gate_conversion', {
+                                'event_category': 'engagement',
+                                'event_label': 'medical-conditions-guide'
+                            });
+                        }
+                        
+                        // Redirect to full guide with token
+                        setTimeout(() => {
+                            window.location.href = `/blog/2025/08/10-medical-conditions-full-guide.html?access=${token}`;
+                        }, 1500);
+                        
+                    } catch (err) {
+                        console.error('Error:', err);
+                        errorDiv.textContent = 'Sorry, something went wrong. Please try again.';
+                        errorDiv.style.display = 'block';
+                        
+                        // Re-enable button
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Get Full Guide';
+                    }
                 });
-            },
-            { threshold: 0.1 }
-        );
+            }
 
-        faders.forEach(fader => {
-            appearOnScroll.observe(fader);
+            // Load components using your existing ComponentLoader
+            if (window.ComponentLoader) {
+                const loader = new window.ComponentLoader();
+                
+                // Load navbar
+                if (document.getElementById('nav-placeholder')) {
+                    loader.loadComponent('nav-placeholder', '/components/navbar.html', { critical: true });
+                }
+                
+                // Load footer
+                if (document.getElementById('footer-placeholder')) {
+                    loader.loadComponent('footer-placeholder', '/components/footer.html', { critical: false });
+                }
+            }
         });
-    }
-</script>
+    </script>
 </body>
 
 </html>
