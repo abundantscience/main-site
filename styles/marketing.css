@@ -102,7 +102,7 @@ nav {
 
 /* === Desktop Navigation (visible by default) === */
 .desktop-nav {
-    display: flex !important; /* Force display on desktop */
+    display: flex !important;
 }
 
 /* === Hamburger Menu (hidden by default) === */
@@ -117,6 +117,8 @@ nav {
     gap: 4px;
     cursor: pointer;
     z-index: 1001;
+    padding: 8px;
+    transition: all 0.3s ease;
 }
 
 .hamburger span {
@@ -125,27 +127,57 @@ nav {
     background-color: #333;
     border-radius: 2px;
     transition: all 0.3s ease;
+    transform-origin: center;
 }
 
-/* === Dropdown under hamburger === */
+/* Hamburger animation when opened */
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* === Mobile Dropdown Menu === */
 .menu-wrapper .nav-links {
     display: none;
     position: absolute;
-    top: 40px;
+    top: 48px;
     right: 0;
     flex-direction: column;
     background-color: white;
     padding: 1rem;
     gap: 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
     min-width: 180px;
     z-index: 1000;
+    border: 1px solid #e5e7eb;
 }
 
-/* Show menu on hover */
-.menu-wrapper:hover .nav-links {
-    display: flex;
+/* Enhanced mobile menu styling */
+.menu-wrapper .nav-links a {
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    border-bottom: none;
+}
+
+.menu-wrapper .nav-links a:hover {
+    background-color: #f3f4f6;
+    color: #a33c2c;
+}
+
+/* Keep hover functionality for desktop */
+@media (hover: hover) and (pointer: fine) {
+    .menu-wrapper:hover .nav-links {
+        display: flex;
+    }
 }
 
 /* === Mobile Responsive Rules === */
@@ -164,6 +196,11 @@ nav {
     nav {
         padding: 1rem;
     }
+    
+    /* Ensure mobile menu doesn't trigger hover on touch */
+    .menu-wrapper:hover .nav-links {
+        display: none;
+    }
 }
 
 /* === Tablet and smaller desktop adjustments === */
@@ -174,6 +211,23 @@ nav {
     
     .nav-links a {
         font-size: 0.9rem;
+    }
+}
+
+/* === Touch device specific styles === */
+@media (hover: none) and (pointer: coarse) {
+    /* Disable hover on touch devices */
+    .menu-wrapper:hover .nav-links {
+        display: none !important;
+    }
+    
+    /* Ensure hamburger is easily tappable */
+    .hamburger {
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
