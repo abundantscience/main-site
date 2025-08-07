@@ -100,7 +100,12 @@ nav {
     border-bottom: 2px solid #a33c2c;
 }
 
-/* === Hamburger Button === */
+/* === Desktop Navigation (visible by default) === */
+.desktop-nav {
+    display: flex !important; /* Force display on desktop */
+}
+
+/* === Hamburger Menu (hidden by default) === */
 .menu-wrapper {
     display: none;
     position: relative;
@@ -119,6 +124,7 @@ nav {
     height: 3px;
     background-color: #333;
     border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
 /* === Dropdown under hamburger === */
@@ -134,6 +140,7 @@ nav {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     min-width: 180px;
+    z-index: 1000;
 }
 
 /* Show menu on hover */
@@ -141,17 +148,34 @@ nav {
     display: flex;
 }
 
-/* === Responsive Rules === */
+/* === Mobile Responsive Rules === */
 @media (max-width: 768px) {
+    /* Hide desktop navigation on mobile */
     .desktop-nav {
-        display: none;
+        display: none !important;
     }
 
+    /* Show hamburger menu on mobile */
     .menu-wrapper {
-        display: flex;
+        display: block !important;
+    }
+    
+    /* Adjust nav padding on mobile */
+    nav {
+        padding: 1rem;
     }
 }
 
+/* === Tablet and smaller desktop adjustments === */
+@media (max-width: 992px) and (min-width: 769px) {
+    .nav-links {
+        gap: 1.5rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+}
 
 /* === Global Footer Bar === */
 
