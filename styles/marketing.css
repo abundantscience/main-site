@@ -6,11 +6,7 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    /* background: linear-gradient(135deg, #FFD9B5, #f0f4f8); */
     color: #111;
-    /* margin: 0;
-    padding-top: 70px; */
-
 }
 
 .content-wide {
@@ -24,16 +20,13 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     text-align: left;
-
 }
 
-/* For readable paragraphs and text blocks */
 .content-narrow {
     max-width: 700px;
     margin: 0 auto;
     text-align: justify;
     background-color: white;
-
 }
 
 /* === Global Navigation Bar === */
@@ -173,11 +166,9 @@ nav {
     color: #a33c2c;
 }
 
-/* Keep hover functionality for desktop */
-@media (hover: hover) and (pointer: fine) {
-    .menu-wrapper:hover .nav-links {
-        display: flex;
-    }
+/* When menu is open via JavaScript (added by JS) */
+.menu-wrapper.menu-open .nav-links {
+    display: flex !important;
 }
 
 /* === Mobile Responsive Rules === */
@@ -197,10 +188,7 @@ nav {
         padding: 1rem;
     }
     
-    /* Ensure mobile menu doesn't trigger hover on touch */
-    .menu-wrapper:hover .nav-links {
-        display: none;
-    }
+    /* REMOVED: The problematic hover rule that was hiding menu on mobile */
 }
 
 /* === Tablet and smaller desktop adjustments === */
@@ -216,10 +204,7 @@ nav {
 
 /* === Touch device specific styles === */
 @media (hover: none) and (pointer: coarse) {
-    /* Disable hover on touch devices */
-    .menu-wrapper:hover .nav-links {
-        display: none !important;
-    }
+    /* REMOVED: The rule that was hiding nav links on touch devices */
     
     /* Ensure hamburger is easily tappable */
     .hamburger {
@@ -231,15 +216,21 @@ nav {
     }
 }
 
-/* === Global Footer Bar === */
+/* === Desktop-only hover (not touch) === */
+@media (hover: hover) and (pointer: fine) {
+    /* Only enable hover menu on desktop with mouse */
+    .menu-wrapper:hover .nav-links {
+        display: flex;
+    }
+}
 
+/* === Global Footer Bar === */
 .site-footer {
     text-align: center;
     font-size: 0.9rem;
     color: #777;
     padding: 1rem 1rem;
     border-top: 1px solid #eee;
-    /* margin-top: 2rem; */
 }
 
 .site-footer a {
@@ -252,18 +243,14 @@ nav {
     text-decoration: underline;
 }
 
-
 /* === Main Container === */
 .container {
     max-width: 1400px;
     margin: 0 auto;
-    /* centers the container horizontally */
     padding: 2rem 1rem;
-    /* adds spacing inside */
     text-align: center;
     box-sizing: border-box;
 }
-
 
 /* === Hero Section === */
 .logo {
@@ -275,7 +262,6 @@ h1 {
     font-size: 2rem;
     margin: 0.5rem 0 1rem;
 }
-
 
 p {
     font-size: 1.05rem;
