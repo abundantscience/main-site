@@ -595,6 +595,8 @@
 
     <div id="footer-placeholder"></div>
 
+    <script src="../../scripts/template-loader.js"></script>
+    <script src="../../scripts/component-loader.js"></script>
     <!-- Supabase & Gate Script -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.5/dist/umd/supabase.min.js"></script>
     <script>
@@ -602,10 +604,6 @@
         const SUPABASE_URL = "https://jicytgdlbevccejowlnf.supabase.co";
         const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppY3l0Z2RsYmV2Y2Vlam93bG5mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUzNDQzNTYsImV4cCI6MjA2MDkyMDM1Nn0.DRfZefUPOLjhdxYudhvQKGePr6ex-Xf3JBkedbF7_OY";
         const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
-        // Load navigation and footer
-        loadComponent('nav-placeholder', '/components/navbar.html');
-        loadComponent('footer-placeholder', '/components/footer.html');
 
         // Check if user has already provided email (via localStorage)
         if (localStorage.getItem('blog_access_granted') === 'true') {
