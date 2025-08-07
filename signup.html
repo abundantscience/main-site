@@ -69,6 +69,13 @@
     </h3>
 
     <div id="message"></div>
+    <div id="footer-placeholder"></div>
+
+    <!-- Supabase & Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/scripts/supabase-loader.js"></script>
+    <script src="/scripts/component-loader.js"></script>
+    <script src="/scripts/template-loader.js"></script>
 
     <script>
         const client = window.supabase.createClient(
@@ -98,13 +105,5 @@
     </script>
 
     </body>
-
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <p>&copy; 2025 Abundant Science. All rights reserved.</p>
-        <p><a href="mailto:contact@abundant.science">Contact Us</a></p>
-    </footer>
-
 
 </html>
