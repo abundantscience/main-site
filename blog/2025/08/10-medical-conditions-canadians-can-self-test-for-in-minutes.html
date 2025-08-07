@@ -252,12 +252,29 @@
             font-weight: 600;
         }
 
-        .locked-content {
+        /* Email Gate Styles - CRITICAL */
+        #lockedContent {
             display: none !important;
+            visibility: hidden !important;
         }
         
+        #lockedContent.unlocked,
         #lockedContent:not(.locked-content) {
             display: block !important;
+            visibility: visible !important;
+        }
+        
+        .locked-content {
+            display: none !important;
+            visibility: hidden !important;
+        }
+        
+        #emailGate {
+            display: block;
+        }
+        
+        #emailGate.hidden {
+            display: none !important;
         }
 
         .test-item {
@@ -420,7 +437,7 @@
         </div>
 
         <!-- Locked Content -->
-        <div id="lockedContent" class="locked-content">
+        <div id="lockedContent">
             <h2>Important Safety Information</h2>
             
             <p>Of the over 1,000 rapid tests approved by Health Canada, only 4% are approved for self or at home use. The remaining 96% are only licenced for forensic analysis or point-of-care testing—meaning that only healthcare providers can perform them on their patients, or investigators can perform them to determine substances in a subject's body.</p>
@@ -430,49 +447,6 @@
             <p>All of the rapid tests approved for self use are also approved for point of care, with several global and in-Canada manufacturers licenced to produce each test. <em>(If you're a clinician, academic, employer, or healthcare provider, stay tuned for our guide to point-of-care rapid testing to learn how you can save time, reduce cost, and maximise patient outcomes.)</em></p>
 
             <h2>All 10 Medical Conditions and 13 Biomarkers for Which Health Canada Has Approved Self Rapid Tests</h2>
-
-            <div class="conditions-grid">
-                <div class="condition-item">
-                    <strong>UTI Testing</strong>
-                    <p>Nitrites, leukocytes, blood & protein in urine</p>
-                </div>
-                <div class="condition-item">
-                    <strong>Pregnancy</strong>
-                    <p>hCG hormone detection</p>
-                </div>
-                <div class="condition-item">
-                    <strong>Ovulation</strong>
-                    <p>LH hormone surge timing</p>
-                </div>
-                <div class="condition-item">
-                    <strong>Menopause</strong>
-                    <p>FSH hormone levels</p>
-                </div>
-                <div class="condition-item">
-                    <strong>Male Fertility</strong>
-                    <p>Sperm concentration</p>
-                </div>
-                <div class="condition-item">
-                    <strong>COVID-19</strong>
-                    <p>SARS-CoV-2 antigen</p>
-                </div>
-                <div class="condition-item">
-                    <strong>HIV Status</strong>
-                    <p>HIV antibodies</p>
-                </div>
-                <div class="condition-item">
-                    <strong>Cholesterol</strong>
-                    <p>Total cholesterol levels</p>
-                </div>
-                <div class="condition-item">
-                    <strong>Vitamin D</strong>
-                    <p>25-hydroxyvitamin D</p>
-                </div>
-                <div class="condition-item">
-                    <strong>Colon Cancer Screening</strong>
-                    <p>Occult blood in stool</p>
-                </div>
-            </div>
 
             <div class="cta-box">
                 <p><strong>One last ad:</strong> <a href="https://abundl.com">Abundl</a>. What will you learn this season? Early access pricing for C$49.</p>
@@ -484,7 +458,7 @@
                 Jay Gerbrandt<br>
                 jay@abundant.science</p>
             </div>
-
+            
             <div class="test-item">
                 <h3>1. UTI (Urinary Tract Infections)</h3>
                 <ul class="test-metadata">
@@ -595,6 +569,49 @@
 
             <p>Abundant Science is working constantly to bring these and other rapid tests to the Canadian market, for self-testers, healthcare providers, employers, governments, and even pet parents. Thanks for signing up and reading all the way through — we hope you learned a lot, and that you'll consider checking out <a href="https://Abundl.com">Abundl.com</a> for more on the best way to self-test in 2025.</p>
         </div>
+        <div class="conditions-grid">
+                <div class="condition-item">
+                    <strong>UTI Testing</strong>
+                    <p>Nitrites, leukocytes, blood & protein in urine</p>
+                </div>
+                <div class="condition-item">
+                    <strong>Pregnancy</strong>
+                    <p>hCG hormone detection</p>
+                </div>
+                <div class="condition-item">
+                    <strong>Ovulation</strong>
+                    <p>LH hormone surge timing</p>
+                </div>
+                <div class="condition-item">
+                    <strong>Menopause</strong>
+                    <p>FSH hormone levels</p>
+                </div>
+                <div class="condition-item">
+                    <strong>Male Fertility</strong>
+                    <p>Sperm concentration</p>
+                </div>
+                <div class="condition-item">
+                    <strong>COVID-19</strong>
+                    <p>SARS-CoV-2 antigen</p>
+                </div>
+                <div class="condition-item">
+                    <strong>HIV Status</strong>
+                    <p>HIV antibodies</p>
+                </div>
+                <div class="condition-item">
+                    <strong>Cholesterol</strong>
+                    <p>Total cholesterol levels</p>
+                </div>
+                <div class="condition-item">
+                    <strong>Vitamin D</strong>
+                    <p>25-hydroxyvitamin D</p>
+                </div>
+                <div class="condition-item">
+                    <strong>Colon Cancer Screening</strong>
+                    <p>Occult blood in stool</p>
+                </div>
+            </div>
+
     </section>
 
     <div id="footer-placeholder"></div>
