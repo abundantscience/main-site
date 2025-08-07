@@ -4,52 +4,7 @@ html {
     width: 100%;
 }
 
-/* === Global Navigation Bar === */
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.75rem 1rem;
-    z-index: 999;
-    box-sizing: border-box;
-}
-
-nav .logo-container {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-nav img {
-    max-height: 35px;
-}
-
-nav .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-nav .nav-links a {
-    margin-left: 1rem;
-    text-decoration: none;
-    color: #222;
-    font-size: 0.95rem;
-    font-weight: 500;
-    white-space: nowrap;
-}
-
-nav .nav-links a:hover {
-    color: black;
-}
-
 /* === Global Body Background === */
-
 body {
     font-family: 'Inter', sans-serif;
     background: linear-gradient(135deg, #FFD9B5, #f0f4f8);
@@ -59,7 +14,6 @@ body {
 }
 
 /* === Global Footer Bar === */
-
 .site-footer {
     text-align: center;
     font-size: 0.9rem;
@@ -79,17 +33,13 @@ body {
     text-decoration: underline;
 }
 
-
 /* === Main Container === */
 .container {
-
     max-width: 950px;
     margin: 2rem auto;
     padding: 2rem 1rem;
     text-align: center;
-
 }
-
 
 /* === Hero Section === */
 .logo {
@@ -106,7 +56,6 @@ h3 {
     font-size: 1rem;
     margin: 0.5rem 0 1rem;
 }
-
 
 p {
     font-size: 1.05rem;
@@ -127,16 +76,10 @@ p.light {
     margin-bottom: 2rem;
 }
 
+/* ===== FORM COMPONENTS ===== */
 
-
-/* ===== COMPONENTS ===== */
-
-/* === Rapid Test Form === */
-/* Global select, input, form styles */
-
-
+/* === Global select, input, form styles === */
 select {
-    /* width: 300px; */
     padding: 0.75rem;
     font-size: 1rem;
     font-family: inherit;
@@ -145,7 +88,6 @@ select {
     border: 1px solid #ccc;
     background-color: white;
     appearance: none;
-    /* removes weird native styles */
     -webkit-appearance: none;
     -moz-appearance: none;
     background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="16" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
@@ -177,9 +119,6 @@ form button {
     border-radius: 8px;
     border: 1px solid #ccc;
     box-sizing: border-box;
-}
-
-form button {
     background-color: black;
     color: white;
     font-weight: bold;
@@ -203,8 +142,6 @@ form button:hover {
     margin-top: 1rem;
 }
 
-
-
 /* === Simple Page Section (i.e. About page) === */
 #about {
     max-width: 600px;
@@ -226,16 +163,11 @@ form button:hover {
 /* Global helper text style */
 .form-helper-text {
     font-size: 0.9rem;
-    /* smaller than normal body text */
     color: #555;
-    /* medium grey, softer than black */
     margin-top: 0.5rem;
-    /* little breathing room */
 }
 
-
 /* === Biomarker Section, landing page full list === */
-
 .biomarker-section {
     max-width: 700px;
     margin: 3rem auto;
@@ -252,9 +184,7 @@ form button:hover {
     font-size: 1.05rem;
     margin-bottom: 1rem;
     color: #888;
-    /* light grey */
 }
-
 
 /* === Rapid Test Index SIGNUP PAGE Format === */
 .signup-page {
@@ -265,7 +195,6 @@ form button:hover {
 
 .signup-page input,
 .signup-page button {
-
     width: 300px;
     padding: 0.75rem;
     font-size: 1rem;
@@ -286,11 +215,7 @@ form button:hover {
     margin-top: 1rem;
 }
 
-
 /* === Rapid Test Index Tool Page Format === */
-
-/* === Container Size for Rapid Index Search Fields and Result Cards === */
-
 #rapid-index-container {
     width: 100%;
     max-width: 900px;
@@ -305,7 +230,6 @@ form button:hover {
 #rapid-index-container button {
     width: 100%;
     max-width: 900px;
-    /* padding: 0.75rem 1rem; */
     font-size: 1rem;
     color: #333;
     border: 1px solid #ccc;
@@ -322,7 +246,6 @@ form button:hover {
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 8px;
-
 }
 
 .input-field-claude {
@@ -345,8 +268,17 @@ form button:hover {
     font-style: italic;
 }
 
+.category-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
 
-/* .filter-button {
+.filter-button {
+    flex: 1;
+    max-width: max-content;
+    min-width: 120px;
     background-color: #f7f7f7;
     border: 1px solid #ddd;
     border-radius: 999px;
@@ -356,17 +288,9 @@ form button:hover {
     color: #333;
     cursor: pointer;
     transition: all 0.2s ease;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
     white-space: nowrap;
-} */
-
-.category-filter {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1rem;
+    text-align: center;
 }
-
 
 .filter-button:hover {
     background-color: #ebebeb;
@@ -378,15 +302,7 @@ form button:hover {
     border-color: #246b4b;
 }
 
-/* .filter-button:hover {
-    background-color: #f5f5f5;
-    border-color: #bbb;
-}
-
 /* ======= RESULTS CARD SECTION ====== */
-/* === Result Styling === */
-
-
 .result {
     background-color: white;
     border: 1px solid #e0e0e0;
@@ -394,12 +310,10 @@ form button:hover {
     padding: 1.5rem;
     margin-top: 1.5rem;
     max-width: 800px;
-    /* wider card */
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
-    /* text-align: left; */
 }
 
 .results {
@@ -409,23 +323,18 @@ form button:hover {
     padding: 1.5rem;
     margin-top: 1.5rem;
     max-width: 85%;
-    /* wider card */
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-
 .results:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
     transform: translateY(-4px);
 }
 
-/*== new styles to result card == */
-
 .result-title {
-
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 0.75rem;
@@ -436,7 +345,6 @@ form button:hover {
     display: flex;
     justify-content: space-between;
     align-items: left;
-    align: left;
     gap: 1rem;
 }
 
@@ -445,7 +353,6 @@ form button:hover {
     font-size: 1rem;
     text-align: left;
     color: #555;
-    /* medium grey */
 }
 
 .result-footer {
@@ -464,43 +371,17 @@ form button:hover {
     line-height: 1.5;
     color: #555;
     text-align: left;
-    /* medium grey */
 }
 
-/* .image-section {
-    flex: 0.5;
-    text-align: right;
-} */
-
-/* .icons-section {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.icon-image {
-    max-width: 20px;
-    height: auto;
-} */
-
-
-/* Heading inside card */
 .result h3 {
     font-size: 1.1rem;
-    /* smaller and tighter */
     margin-bottom: 0.5rem;
     color: #222;
 }
 
-
 /* Available tag */
 .available {
-    /* color: #2e7d32;
-    /* deep green */
-    font-weight: 600;
-    */ display: inline-block;
+    display: inline-block;
     background-color: #e6f7ed;
     color: #0a8754;
     font-weight: 600;
@@ -509,14 +390,11 @@ form button:hover {
     font-size: 0.875rem;
 }
 
-
 /* Unavailable tag */
 .unavailable {
     color: #999;
     font-weight: 600;
 }
-
-
 
 /* Learn more button at bottom of result card */
 .learn-more-button {
@@ -529,14 +407,10 @@ form button:hover {
 @media (max-width: 480px) {
     .result {
         padding: 1rem;
-        /* smaller padding on small screens */
     }
 }
 
-
 /* === Style Change for Available Tests Pages === */
-
-/* Center and slightly larger Buy Now button */
 .container a button {
     background-color: black;
     color: white;
@@ -554,7 +428,6 @@ form button:hover {
 }
 
 /* === Feature Section Cards on Available Tests === */
-
 .features-section {
     max-width: 700px;
     margin: 3rem auto;
@@ -568,7 +441,6 @@ form button:hover {
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
     text-align: left;
-    /* Right-align bullet points */
     font-size: 1rem;
     color: #333;
 }
@@ -594,8 +466,6 @@ form button:hover {
 }
 
 /* ==== ACCESS FORM: INPUT AND SELECT Styling ==== */
-
-/* === Form Container === */
 #access-form {
     max-width: 500px;
     margin: 2rem auto;
@@ -608,7 +478,6 @@ form button:hover {
 #access-form select,
 #access-form button {
     width: 100%;
-    /* padding: 0.75rem 1rem; */
     font-size: 1rem;
     color: #333;
     border: 1px solid #ccc;
@@ -648,12 +517,10 @@ form button:hover {
     text-align: center;
 }
 
-
 /* ====== ABUNDL RELATED STYLES ======== */
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* exactly 3 columns */
     gap: 2rem;
     max-width: 1000px;
     margin: 2rem auto;
@@ -662,10 +529,8 @@ form button:hover {
 @media (max-width: 900px) {
     .pricing-grid {
         grid-template-columns: 1fr;
-        /* stack on smaller screens */
     }
 }
-
 
 /****** test_result.html format *******/
 #test_results {
@@ -688,7 +553,6 @@ form button:hover {
 #test_results th {
     padding: 1rem;
     text-align: center;
-    /* ✅ Center headers */
     font-weight: 600;
     font-size: 0.85rem;
     color: #374151;
@@ -700,7 +564,6 @@ form button:hover {
 #test_results td {
     padding: 1rem;
     text-align: center;
-    /* ✅ Center data cells */
     color: #111827;
     border-bottom: 1px solid #f1f1f1;
     background-color: #ffffff;
