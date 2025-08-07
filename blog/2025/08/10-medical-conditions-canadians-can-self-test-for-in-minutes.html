@@ -595,14 +595,19 @@
 
     <div id="footer-placeholder"></div>
 
-    <script src="/scripts/template-loader.js"></script>
-    <script src="/scripts/component-loader.js"></script>
-    <!-- Supabase & Gate Script -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.5/dist/umd/supabase.min.js"></script>
-    <script>
-        // Supabase setup
+    <!-- Replace the script section at the bottom of the blog post with this -->
+
+<!-- Supabase & Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.5/dist/umd/supabase.min.js"></script>
+<script src="/scripts/template-loader.js"></script>
+<script src="/scripts/component-loader.js"></script>
+
+<script>
+    // Wait for DOM to be ready
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize Supabase
         const SUPABASE_URL = "https://jicytgdlbevccejowlnf.supabase.co";
-        const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppY3l0Z2RsYmV2Y2Vlam93bG5mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUzNDQzNTYsImV4cCI6MjA2MDkyMDM1Nn0.DRfZefUPOLjhdxYudhvQKGePr6ex-Xf3JBkedbF7_OY";
+        const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppY3l0Z2RsYmV2Y2Nlam93bG5mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUzNDQzNTYsImV4cCI6MjA2MDkyMDM1Nn0.DRfZefUPOLjhdxYudhvQKGePr6ex-Xf3JBkedbF7_OY";
         const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
         // Check if user has already provided email (via localStorage)
@@ -611,69 +616,103 @@
         }
 
         // Form submission
-        document.getElementById('emailGateForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const email = document.getElementById('gateEmail').value.trim();
-            const errorDiv = document.getElementById('gateError');
-            const successDiv = document.getElementById('gateSuccess');
-            
-            // Reset messages
-            errorDiv.style.display = 'none';
-            successDiv.style.display = 'none';
-            
-            // Validate email
-            if (!email || !email.includes('@')) {
-                errorDiv.textContent = 'Please enter a valid email address';
-                errorDiv.style.display = 'block';
-                return;
-            }
-            
-            try {
-                // Save to waitlist table with blog-specific source
-                const { error } = await supabase
-                    .from('waitlist')
-                    .insert([{ 
-                        email, 
-                        source_page: 'Blog: 10 Medical Conditions Guide',
-                        campaign: ['blog-gate', 'rapid-test-guide-2025']
-                    }]);
+        const emailGateForm = document.getElementById('emailGateForm');
+        if (emailGateForm) {
+            emailGateForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
                 
-                if (error) throw error;
+                const email = document.getElementById('gateEmail').value.trim();
+                const errorDiv = document.getElementById('gateError');
+                const successDiv = document.getElementById('gateSuccess');
                 
-                // Show success and unlock
-                successDiv.style.display = 'block';
-                localStorage.setItem('blog_access_granted', 'true');
+                // Reset messages
+                errorDiv.style.display = 'none';
+                successDiv.style.display = 'none';
                 
-                // Hide form and unlock content
-                setTimeout(() => {
-                    unlockContent();
-                }, 1000);
+                // Validate email
+                if (!email || !email.includes('@')) {
+                    errorDiv.textContent = 'Please enter a valid email address';
+                    errorDiv.style.display = 'block';
+                    return;
+                }
                 
-            } catch (err) {
-                console.error('Error:', err);
-                errorDiv.textContent = 'Sorry, something went wrong. Please try again.';
-                errorDiv.style.display = 'block';
-            }
-        });
+                try {
+                    // Save to waitlist table with blog-specific source
+                    const { error } = await supabase
+                        .from('waitlist')
+                        .insert([{ 
+                            email, 
+                            source_page: 'Blog: 10 Medical Conditions Guide',
+                            campaign: 'blog-gate,rapid-test-guide-2025'
+                        }]);
+                    
+                    if (error) throw error;
+                    
+                    // Show success and unlock
+                    successDiv.style.display = 'block';
+                    localStorage.setItem('blog_access_granted', 'true');
+                    
+                    // Hide form and unlock content
+                    setTimeout(() => {
+                        unlockContent();
+                    }, 1000);
+                    
+                } catch (err) {
+                    console.error('Error:', err);
+                    errorDiv.textContent = 'Sorry, something went wrong. Please try again.';
+                    errorDiv.style.display = 'block';
+                }
+            });
+        }
 
         function unlockContent() {
-            document.getElementById('lockedContent').classList.remove('locked-content');
-            document.getElementById('emailGate').style.display = 'none';
+            const lockedContent = document.getElementById('lockedContent');
+            const emailGate = document.getElementById('emailGate');
+            
+            if (lockedContent) {
+                lockedContent.classList.remove('locked-content');
+                lockedContent.style.display = 'block';
+            }
+            if (emailGate) {
+                emailGate.style.display = 'none';
+            }
         }
 
-        function loadComponent(targetId, filePath) {
-            fetch(filePath)
-                .then(res => res.text())
-                .then(html => {
-                    const target = document.getElementById(targetId);
-                    if (target) {
-                        target.innerHTML = html;
-                    }
-                })
-                .catch(err => console.error(`Error loading ${filePath}:`, err));
+        // Load components using ComponentLoader
+        if (window.ComponentLoader) {
+            const loader = new window.ComponentLoader();
+            
+            // Load navbar
+            if (document.getElementById('nav-placeholder')) {
+                loader.loadComponent('nav-placeholder', '/components/navbar.html', { critical: true });
+            }
+            
+            // Load footer
+            if (document.getElementById('footer-placeholder')) {
+                loader.loadComponent('footer-placeholder', '/components/footer.html', { critical: false });
+            }
         }
-    </script>
+    });
+
+    // Fade in on scroll
+    const faders = document.querySelectorAll('.fade-in-section');
+    if (faders.length > 0) {
+        const appearOnScroll = new IntersectionObserver(
+            function (entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    }
+</script>
 </body>
 
 </html>
