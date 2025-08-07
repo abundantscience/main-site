@@ -89,55 +89,6 @@
                 ]
             },
             {
-                "@type": "WebPage",
-                "@id": "https://www.abundantscience.com/blog/#webpage",
-                "url": "https://www.abundantscience.com/blog/",
-                "name": "Blog | Abundant Science",
-                "isPartOf": {
-                    "@id": "https://www.abundantscience.com/#website"
-                },
-                "primaryImageOfPage": {
-                    "@type": "ImageObject",
-                    "url": "https://www.abundantscience.com/images/blog-header.jpg"
-                },
-                "datePublished": "2025-06-01",
-                "dateModified": "2025-08-06",
-                "description": "Blog featuring research and guides on rapid testing innovation in Canada",
-                "breadcrumb": {
-                    "@id": "https://www.abundantscience.com/blog/#breadcrumb"
-                },
-                "inLanguage": "en-CA"
-            },
-            {
-                "@type": "BreadcrumbList",
-                "@id": "https://www.abundantscience.com/blog/#breadcrumb",
-                "itemListElement": [
-                    {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": "Home",
-                        "item": "https://www.abundantscience.com/"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": "Blog",
-                        "item": "https://www.abundantscience.com/blog/"
-                    }
-                ]
-            },
-            {
-                "@type": "WebSite",
-                "@id": "https://www.abundantscience.com/#website",
-                "url": "https://www.abundantscience.com",
-                "name": "Abundant Science",
-                "description": "Making rapid testing accessible to all Canadians",
-                "publisher": {
-                    "@id": "https://www.abundantscience.com/#organization"
-                },
-                "inLanguage": "en-CA"
-            },
-            {
                 "@type": "Organization",
                 "@id": "https://www.abundantscience.com/#organization",
                 "name": "Abundant Science",
@@ -177,52 +128,18 @@
                         "jobTitle": "Chief Executive Officer"
                     }
                 ]
-            },
-            {
-                "@type": "CollectionPage",
-                "name": "Rapid Testing Research Blog",
-                "description": "Collection of research articles and guides on rapid testing in Canada",
-                "url": "https://www.abundantscience.com/blog/",
-                "hasPart": [
-                    {
-                        "@type": "Article",
-                        "name": "10 Medical Conditions Canadians Can Self-Test For In Minutes",
-                        "url": "https://www.abundantscience.com/blog/2025/08/10-medical-conditions-canadians-can-self-test-for-in-minutes.html"
-                    },
-                    {
-                        "@type": "ScholarlyArticle",
-                        "name": "Survey: 84% of Canadian Sniffies Users Want Rapid HIV PrEP Testing",
-                        "url": "https://www.abundantscience.com/blog/2025/06/84-percent-of-sniffies-users-want-rapid-hiv-prep-testing.html"
-                    }
-                ]
-            },
-            {
-                "@type": "ItemList",
-                "itemListElement": [
-                    {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "url": "https://www.abundantscience.com/blog/2025/08/10-medical-conditions-canadians-can-self-test-for-in-minutes.html",
-                        "name": "10 Medical Conditions Canadians Can Self-Test For In Minutes"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "url": "https://www.abundantscience.com/blog/2025/06/84-percent-of-sniffies-users-want-rapid-hiv-prep-testing.html",
-                        "name": "84% of Canadian Sniffies Users Want Rapid HIV PrEP Testing"
-                    }
-                ]
             }
         ]
     }
     </script>
 
+    <!-- Use absolute paths for CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../styles/marketing.css" />
-    <link rel="stylesheet" href="../styles/form.css" />
-    <link rel="stylesheet" href="../styles/campaigns.css" />
-    <link rel="stylesheet" href="../styles/signup.css" />
-    <link rel="stylesheet" href="../styles/home-page.css" />
+    <link rel="stylesheet" href="/styles/marketing.css" />
+    <link rel="stylesheet" href="/styles/form.css" />
+    <link rel="stylesheet" href="/styles/campaigns.css" />
+    <link rel="stylesheet" href="/styles/signup.css" />
+    <link rel="stylesheet" href="/styles/home-page.css" />
 
     <style>
         .blog-container {
@@ -338,6 +255,10 @@
             .blog-header h1 {
                 font-size: 2rem;
             }
+
+            .blog-container {
+                padding: 1rem;
+            }
         }
     </style>
 </head>
@@ -355,7 +276,7 @@
             <!-- August 2025 Blog Post -->
             <article class="blog-card">
                 <div class="blog-card-header">
-                    <span class="blog-badge">Market Intelligence</span>
+                    <span class="blog-badge guide">Market Intelligence</span>
                     <h3>10 Medical Conditions Canadians Can Self-Test For In Minutes</h3>
                     <p class="blog-card-date">August 6, 2025</p>
                 </div>
@@ -370,7 +291,7 @@
             <!-- June 2025 Blog Post -->
             <article class="blog-card">
                 <div class="blog-card-header">
-                    <span class="blog-badge">Research Survey</span>
+                    <span class="blog-badge research">Research Survey</span>
                     <h3>84% of Canadian Sniffies Users Want Rapid HIV PrEP Testing</h3>
                     <p class="blog-card-date">June 20, 2025</p>
                 </div>
@@ -394,8 +315,9 @@
 
     <div id="footer-placeholder"></div>
     
-    <script src="../scripts/template-loader.js"></script>
-    <script src="../scripts/component-loader.js"></script>
+    <!-- Use absolute paths for scripts -->
+    <script src="/scripts/template-loader.js"></script>
+    <script src="/scripts/component-loader.js"></script>
 </body>
 
 </html>
