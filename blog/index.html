@@ -163,11 +163,15 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
+            text-decoration: none;
+            color: inherit;
         }
 
         .blog-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            text-decoration: none;
+            color: inherit;
         }
 
         .blog-card-header {
@@ -224,9 +228,10 @@
             font-weight: 600;
             text-align: center;
             transition: background-color 0.2s ease;
+            margin-top: auto;
         }
 
-        .blog-card-link:hover {
+        .blog-card:hover .blog-card-link {
             background: #e8efff;
         }
 
@@ -247,12 +252,13 @@
             margin: 0 auto;
         }
 
-        /* NEW IMAGE STYLES FOR BLOG CARDS */
+        /* Clickable Image Styles */
         .blog-card-image {
             width: 100%;
             height: 200px;
             overflow: hidden;
             border-radius: 12px 12px 0 0;
+            cursor: pointer;
         }
 
         .card-thumbnail {
@@ -279,6 +285,12 @@
             font-weight: 600;
             text-align: center;
             font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .blog-card:hover .image-placeholder {
+            background: linear-gradient(135deg, #e8efff 0%, #ddd6fe 100%);
         }
 
         .image-placeholder.research-card {
@@ -286,10 +298,18 @@
             border-bottom-color: #798ff6;
         }
 
+        .blog-card:hover .image-placeholder.research-card {
+            background: linear-gradient(135deg, #ddd6fe 0%, #c4b5fd 100%);
+        }
+
         .image-placeholder.guide-card {
             background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
             border-bottom-color: #4CAF50;
             color: #15803d;
+        }
+
+        .blog-card:hover .image-placeholder.guide-card {
+            background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
         }
 
         @media (max-width: 768px) {
@@ -331,7 +351,7 @@
 
         <div class="blog-grid">
             <!-- August 2025 Blog Post -->
-            <article class="blog-card">
+            <a href="/blog/2025/08/10-medical-conditions-canadians-can-self-test-for-in-minutes.html" class="blog-card">
                 <div class="blog-card-image">
                     <img src="/images/blog/rapid-tests-guide-2025.jpg" 
                          alt="Thumbnail showing various rapid tests" 
@@ -346,13 +366,13 @@
                 <p class="blog-card-excerpt">
                     Discover the complete list of Health Canada-approved rapid self-tests available for Canadians. From UTIs to cancer screening, learn what you can test at home in minutes and what to watch out for when buying tests online.
                 </p>
-                <a href="/blog/2025/08/10-medical-conditions-canadians-can-self-test-for-in-minutes.html" class="blog-card-link">
+                <div class="blog-card-link">
                     Read Full Article →
-                </a>
-            </article>
+                </div>
+            </a>
 
             <!-- June 2025 Blog Post -->
-            <article class="blog-card">
+            <a href="/blog/2025/06/84-percent-of-sniffies-users-want-rapid-hiv-prep-testing.html" class="blog-card">
                 <div class="blog-card-image">
                     <img src="/images/blog/hiv-prep-study-2025.jpg" 
                          alt="Chart showing 84% study result" 
@@ -367,10 +387,10 @@
                 <p class="blog-card-excerpt">
                     A cross-sectional study reveals extraordinary demand for rapid HIV PrEP testing and personal drug testing supplies, with implications for Canada's 2030 HIV elimination goals and unaddressed populations like discreet MSM.
                 </p>
-                <a href="/blog/2025/06/84-percent-of-sniffies-users-want-rapid-hiv-prep-testing.html" class="blog-card-link">
+                <div class="blog-card-link">
                     Read Full Article →
-                </a>
-            </article>
+                </div>
+            </a>
         </div>
     </div>
 
