@@ -253,7 +253,11 @@
         }
 
         .locked-content {
-            display: none;
+            display: none !important;
+        }
+        
+        #lockedContent:not(.locked-content) {
+            display: block !important;
         }
 
         .test-item {
