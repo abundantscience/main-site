@@ -100,23 +100,24 @@
         /**
          * Handle form submission with validation
          */
+        
         async handleFormSubmit(form) {
             const formData = new FormData(form);
             const submitButton = form.querySelector('button[type="submit"]');
             const messageEl = form.querySelector('#message') || this.createMessageElement(form);
-
+        
             // Disable submit button
             if (submitButton) {
                 submitButton.disabled = true;
                 submitButton.textContent = 'Submitting...';
             }
-
+        
             // Build data object
             const dataToSubmit = {
                 source_page: window.location.pathname,
                 timestamp: new Date().toISOString()
             };
-
+        
             // Supported fields
             const FIELDS = [
                 "email", "full_name", "name", "phone", "province", "country",
@@ -124,20 +125,36 @@
                 "consent", "age", "quiz-dr-rb", "quiz-lab-rb", "quiz-hc-sa", 
                 "quiz_source"
             ];
-
+        
             // Process form data
             for (let [key, value] of formData.entries()) {
-                if (FIELDS.includes(key)) {
+                if (FIELDS.includes(key) && key !== 'campaign') {
                     dataToSubmit[key] = value;
                 }
             }
-
-            // Handle checkboxes
-            const checkboxes = form.querySelectorAll('.campaign-checkbox:checked');
-            if (checkboxes.length) {
-                dataToSubmit.campaign = Array.from(checkboxes).map(cb => cb.value);
+        
+            // Handle campaign checkboxes specially
+            const campaignCheckboxes = form.querySelectorAll('.campaign-checkbox:checked');
+            if (campaignCheckboxes.length > 0) {
+                const campaigns = Array.from(campaignCheckboxes).map(cb => cb.value);
+                // Store as JSON string for Supabase JSONB column
+                dataToSubmit.campaign = JSON.stringify(campaigns);
+            } else {
+                // Check for regular campaign field
+                const campaignValue = formData.get('campaign');
+                if (campaignValue) {
+                    dataToSubmit.campaign = Array.isArray(campaignValue) 
+                        ? JSON.stringify(campaignValue) 
+                        : campaignValue;
+                }
             }
-
+        
+            // Handle discreet checkbox
+            const discreetCheckbox = form.querySelector('#discreet-checkbox');
+            if (discreetCheckbox) {
+                dataToSubmit.discreet = discreetCheckbox.checked;
+            }
+        
             // Validate email
             if (dataToSubmit.email) {
                 const validation = this.validateEmail(dataToSubmit.email);
@@ -150,10 +167,10 @@
                     return;
                 }
             }
-
+        
             // Submit to Supabase
             const result = await this.submitForm(dataToSubmit);
-
+        
             if (result.success) {
                 this.showMessage(messageEl, "✅ You're on the list!", 'success');
                 form.reset();
@@ -168,14 +185,13 @@
             } else {
                 this.showMessage(messageEl, `❌ ${result.error}`, 'error');
             }
-
+        
             // Re-enable submit button
             if (submitButton) {
                 submitButton.disabled = false;
                 submitButton.textContent = 'Submit';
             }
         }
-
         /**
          * Show message to user
          */
