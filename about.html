@@ -4,66 +4,340 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us – Abundant Science</title>
     
-    <!-- Add the same CSS files as other pages -->
+    <!-- Primary SEO Meta Tags -->
+    <title>About Us - Our Mission | Abundant Science | Canadian Rapid Testing Innovation</title>
+    <meta name="description"
+        content="Learn about Abundant Science's mission to democratize health testing in Canada. We're building rapid testing as a category - making diagnosis faster, easier, and more accessible to everyone." />
+    <link rel="canonical" href="https://www.abundantscience.com/about.html" />
+    
+    <!-- Keywords for search engines -->
+    <meta name="keywords" content="Abundant Science mission, rapid testing Canada, health testing democratization, Canadian healthcare innovation, diagnostic platform, at-home testing revolution" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="About Abundant Science - Our Mission | Canadian Rapid Testing Innovation" />
+    <meta property="og:description"
+        content="Learn about our mission to democratize health testing by making rapid testing a category in Canada. Building a smarter, more human-centered healthcare future." />
+    <meta property="og:image" content="https://www.abundantscience.com/logo.png" />
+    <meta property="og:url" content="https://www.abundantscience.com/about.html" />
+    <meta property="og:site_name" content="Abundant Science" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:title" content="About Abundant Science - Our Mission" />
+    <meta property="twitter:description"
+        content="Canadian company building rapid testing as a category. Making health knowledge abundant for everyone." />
+    <meta property="twitter:image" content="https://www.abundantscience.com/logo.png" />
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow, max-snippet:-1" />
+    <meta name="author" content="Abundant Science" />
+    <meta name="geo.region" content="CA-ON" />
+    <meta name="geo.placename" content="Toronto, Ontario, Canada" />
+    <meta name="language" content="English" />
+    
+    <!-- Fonts and CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles/marketing.css" />
     <link rel="stylesheet" href="styles/form.css" />
+    <link rel="stylesheet" href="styles/campaigns.css" />
     <link rel="stylesheet" href="styles/signup.css" />
     <link rel="stylesheet" href="styles/home-page.css" />
+    <link rel="stylesheet" href="styles/forms/form-base.css" />
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://www.abundantscience.com/#organization",
+                "name": "Abundant Science",
+                "alternateName": "Abundant Science Inc.",
+                "url": "https://www.abundantscience.com",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.abundantscience.com/logo-nobackground.jpg",
+                    "width": 200,
+                    "height": 200
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "email": "contact@abundant.science",
+                    "contactType": "Customer Service",
+                    "areaServed": "CA",
+                    "availableLanguage": ["en", "fr"]
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Toronto",
+                    "addressRegion": "ON",
+                    "addressCountry": "CA"
+                },
+                "founder": [
+                    {
+                        "@type": "Person",
+                        "name": "Jay Gerbrandt",
+                        "jobTitle": "Chief Science Officer"
+                    },
+                    {
+                        "@type": "Person",
+                        "name": "Catherine Gao",
+                        "jobTitle": "Chief Executive Officer"
+                    }
+                ],
+                "description": "Canadian company democratizing health testing by building rapid testing as a category",
+                "foundingLocation": {
+                    "@type": "Place",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Toronto",
+                        "addressRegion": "Ontario",
+                        "addressCountry": "Canada"
+                    }
+                },
+                "sameAs": [
+                    "https://www.tiktok.com/@abundant.science",
+                    "https://rapidte.st"
+                ],
+                "knowsAbout": [
+                    "Rapid Testing",
+                    "Health Canada Regulations",
+                    "Point-of-Care Diagnostics",
+                    "Healthcare Innovation"
+                ],
+                "areaServed": {
+                    "@type": "Country",
+                    "name": "Canada"
+                }
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://www.abundantscience.com/about.html/#webpage",
+                "url": "https://www.abundantscience.com/about.html",
+                "name": "About Us - Our Mission | Abundant Science",
+                "description": "Learn about Abundant Science's mission to democratize health testing and build rapid testing as a category in Canada",
+                "publisher": {
+                    "@id": "https://www.abundantscience.com/#organization"
+                },
+                "inLanguage": "en-CA",
+                "dateModified": "2025-08-06",
+                "datePublished": "2025-05-06",
+                "isPartOf": {
+                    "@type": "WebSite",
+                    "@id": "https://www.abundantscience.com/#website",
+                    "url": "https://www.abundantscience.com",
+                    "name": "Abundant Science",
+                    "publisher": {
+                        "@id": "https://www.abundantscience.com/#organization"
+                    }
+                }
+            },
+            {
+                "@type": "AboutPage",
+                "name": "About Abundant Science",
+                "url": "https://www.abundantscience.com/about.html",
+                "dateModified": "2025-08-06",
+                "publisher": {
+                    "@id": "https://www.abundantscience.com/#organization"
+                },
+                "description": "Information about Abundant Science's mission, vision, and approach to rapid testing innovation",
+                "inLanguage": "en-CA",
+                "mainEntity": {
+                    "@id": "https://www.abundantscience.com/#organization"
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What is Abundant Science's mission?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We're on a mission to democratize health testing by making rapid testing a category. We're making diagnosis faster, easier, and more accessible to everyone, without overdependence on traditional labs."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What makes Abundant Science different?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We believe people deserve access to insights about their bodies without waiting weeks, navigating gatekeepers, or relying on systems that prioritize efficiency over experience. We're building a connected ecosystem where at-home tests deliver immediate, meaningful results."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What products does Abundant Science offer?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We offer Health Canada-approved rapid tests including free HIV rapid tests and Vitamin D rapid tests, along with our ABUNDL subscription service."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        main {
+            max-width: 960px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            text-align: justify;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            padding-top: 3rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .mission-highlights {
+            background: #f5f8ff;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #1e3a8a;
+        }
+
+        .mission-highlights h3 {
+            color: #1e3a8a;
+            margin-top: 0;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .value-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .value-card strong {
+            color: #1e3a8a;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 0 1rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Use component-based navbar like other pages -->
+    <!-- Navigation Bar -->
     <div id="nav-placeholder"></div>
 
-    <!-- About Page Content -->
-    <section id="about" style="margin-top: 3rem;">
+    <main>
+        <h1>About Abundant Science</h1>
+
         <h2>Our Mission</h2>
-        <p>
-            <br>
+        <p>At Abundant Science, we're on a mission to democratize health testing by making rapid testing a category. We're making diagnosis faster, easier, and more accessible to everyone, without overdependence on traditional labs.</p>
 
-            At Abundant Science, we're on a mission to democratize health testing by making rapid testing a category.
-            Making diagnosis faster, easier, and more accessible to everyone, without overdependence on traditional
-            labs.
+        <p>We believe people deserve access to insights about their bodies without waiting weeks, navigating gatekeepers, or relying on systems that prioritize efficiency over experience. As demand for proactive, preventive care grows, we're building a new kind of diagnostic platform — one that puts individuals in control.</p>
 
-            <br>
-            <br>
+        <div class="mission-highlights">
+            <h3>Our Vision</h3>
+            <p>We envision a connected ecosystem where at-home tests deliver immediate, meaningful results — feeding back into both personal health decisions and the broader healthcare system. We're not just accelerating testing — we're reshaping how it fits into people's lives.</p>
+        </div>
 
-            We believe people deserve access to insights about their bodies without waiting weeks, navigating
-            gatekeepers, or relying on systems that prioritize efficiency over experience. As demand for proactive,
-            preventive care grows, we're building a new kind of diagnostic platform — one that puts individuals in
-            control.
-            <br>
-            <br>
+        <h2>What Drives Us</h2>
+        <p>We exist to make health knowledge abundant — and to build a smarter, more human-centered healthcare future.</p>
 
-            Our vision is a connected ecosystem where at-home tests deliver immediate, meaningful results — feeding back
-            into both personal health decisions and the broader healthcare system. We're not just accelerating testing —
-            we're reshaping how it fits into people's lives.
+        <div class="values-grid">
+            <div class="value-card">
+                <strong>No Labs</strong>
+                <p>Skip the traditional lab wait times and get results when you need them</p>
+            </div>
+            <div class="value-card">
+                <strong>No Waiting</strong>
+                <p>Immediate results that fit into your life, not the other way around</p>
+            </div>
+            <div class="value-card">
+                <strong>No Unfair Prices</strong>
+                <p>Accessible pricing that doesn't break the bank for essential health information</p>
+            </div>
+        </div>
 
-            <br>
-            <br>
+        <h2>Our Products</h2>
+        <p>We offer Health Canada-approved rapid testing solutions designed to put health information directly in your hands:</p>
 
-            We exist to make health knowledge abundant — and to build a smarter, more human-centered healthcare future.
+        <h3>For Everyone</h3>
+        <ul>
+            <li><strong><a href="free-hiv-rapid-test.html">Free HIV Rapid Test</a></strong> - Discreet, accurate HIV self-testing with 99% accuracy</li>
+            <li><strong><a href="https://rapidte.st" target="_blank" rel="noopener noreferrer">Vitamin D Rapid Tests</a></strong> - Monitor your vitamin D levels without expensive lab work</li>
+            <li><strong><a href="https://abundl.com" target="_blank" rel="noopener noreferrer">ABUNDL Subscription</a></strong> - Canada's first rapid test subscription box</li>
+        </ul>
 
-            <br>
-            <br>
+        <h3>For Healthcare Providers</h3>
+        <ul>
+            <li><strong><a href="vitamin-d-rapid-test-clinic.html">Clinic Sample Kits</a></strong> - Professional-grade rapid tests for point-of-care use</li>
+            <li><strong><a href="rapid-tests-for-clinics.html">Provider Network</a></strong> - Join our network of forward-thinking healthcare providers</li>
+        </ul>
 
-            <br>
-            <strong>X</strong> No Labs <strong>X</strong> No Waiting <strong>X</strong> No Unfair Prices
-        </p>
+        <h2>Our Commitment</h2>
+        <p>As a proudly Canadian company based in Toronto, we're committed to advancing healthcare innovation while respecting privacy and maintaining the highest standards of quality. All our rapid tests meet Health Canada approval standards, ensuring accuracy and safety for Canadian consumers.</p>
 
-        <br>Free HIV Rapid Test <a href="free-hiv-rapid-test.html" target="_blank" rel="noopener noreferrer">Learn More</a>
-        <br>Our <a href="https://rapidte.st" target="_blank" rel="noopener noreferrer">Rapid Tests</a>
-        </p>
+        <h2>Contact Us</h2>
+        <p>Ready to learn more about our rapid testing solutions?</p>
+        <p><strong>General Email:</strong> <a href="mailto:contact@abundant.science">contact@abundant.science</a></p>
+        <p><strong>Business Partnerships:</strong> <a href="mailto:partner@abundant.science">partner@abundant.science</a></p>
+        <p><strong>Investment Opportunities:</strong> <a href="mailto:investors@abundant.science">investors@abundant.science</a></p>
 
-    </section>
+        <p><em>Last Updated: August 6, 2025</em></p>
+    </main>
 
-    <!-- Use component-based footer -->
+    <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
-    <!-- Add the component loading scripts -->
+    <!-- Scripts -->
     <script src="scripts/template-loader.js"></script>
     <script src="scripts/component-loader.js"></script>
 </body>
