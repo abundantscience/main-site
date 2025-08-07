@@ -12,9 +12,9 @@ function loadComponent(targetId, filePath) {
 
 document.addEventListener("DOMContentLoaded", () => {
     const components = [
-        { id: "header-placeholder", path: "components/header.html" },
-        { id: "nav-placeholder", path: "components/navbar.html" },
-        { id: "footer-placeholder", path: "components/footer.html" }
+        { id: "header-placeholder", path: "/components/header.html" },
+        { id: "nav-placeholder", path: "/components/navbar.html" },
+        { id: "footer-placeholder", path: "/components/footer.html" }
     ];
 
     components.forEach(({ id, path }) => loadComponent(id, path));
